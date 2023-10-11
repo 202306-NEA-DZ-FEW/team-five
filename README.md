@@ -2,11 +2,11 @@
 
 ## Project information
 
--   Project name: [Project name]
--   Project description: [Project description]
--   Technology used: Nextjs, TailwindCSS, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
--   Team members: Member1, Member2, etc,
--   Bootcamp: GIZ YE 2022
+-   Project name: Feed the Needy
+-   Project description: This website provides the means for users to donate in order to make an impact on the issue of hunger locally. It also provides educational information and pointers to further resources.
+-   Technology used: Nextjs, TailwindCSS, i18next, Husky, Prettier, Eslint, Commitlinter,FireBase, Redux,Redux persist, Stripe
+-   Team members: Sidahmed Zine el Abidine Slikh - Mohamed Redha Tchoketch - Abdlehamid Serhan Ahmidat - Achraf Mehanneche - Melissa Sidisaid
+-   Bootcamp: 202306-NEA-DZ-FEW 2023 
 
 ## Installation
 
