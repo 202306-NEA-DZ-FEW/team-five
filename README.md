@@ -7,6 +7,7 @@
 -   Technology used: Nextjs, TailwindCSS, i18next, Husky, Prettier, Eslint, Commitlinter,FireBase, Redux,Redux persist, Stripe
 -   Team members: Sidahmed Zine el Abidine Slikh, Mohamed Redha Tchoketch, Abdlehamid Serhan Ahmidat, Achraf Mehanneche, Melissa Sidisaid
 -   Bootcamp: 202306 NEA DZ FEW
+
 ## Installation
 
 ```shell
