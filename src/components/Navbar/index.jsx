@@ -4,6 +4,8 @@ function Navbar() {
     return (
         <nav className='flex items-center justify-center  bg-sky-400 h-16'>
             <div className='flex items-center justify-center gap-40'>
+                {/* Logo and the name of the website the icon is just placeholder untile i find one better */}
+
                 <div className='flex items-center space-x-5'>
                     <a className='hover:text-gray-600' href='#'>
                         <svg
@@ -27,6 +29,8 @@ function Navbar() {
                     >
                         Food on coupons
                     </a>
+
+                    {/* Navbar component links Home page, Coupons page and Blog page. */}
                 </div>
                 <div className='hidden md:flex px-4 mx-auto font-semibold font-heading space-x-0'>
                     <a
@@ -49,6 +53,8 @@ function Navbar() {
                     </a>
                 </div>
 
+                {/* Loging in icon */}
+
                 <div className='flex items-center space-x-5'>
                     <a className='hover:text-gray-600' href='#'>
                         <svg
@@ -66,6 +72,8 @@ function Navbar() {
                             />
                         </svg>
                     </a>
+
+                    {/* cart icon */}
 
                     <a className='hover:text-gray-200' href='#'>
                         <svg
