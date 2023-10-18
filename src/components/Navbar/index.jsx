@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 
 function Navbar() {
     const [isSelected, setIsSelected] = useState(false);
+    const { t } = useTranslation("common");
 
     function handleLagSelection() {
         setIsSelected((isSelected) => !isSelected);
@@ -11,7 +13,7 @@ function Navbar() {
     return (
         <nav className='flex items-center justify-center  bg-sky-400 h-16'>
             <div className='flex items-center justify-center gap-40'>
-                {/* Logo and the name of the website the icon is just placeholder untile i find one better */}
+                {/* Logo and the name of the website the icon */}
 
                 <div className='flex items-center space-x-5'>
                     <Link href='/home'>
@@ -27,22 +29,22 @@ function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Navbar component links Home page, Coupons page and Blog page. */}
+                    {/* Navbar component links Home page, Coupons page and Blog page and add EN, AR functionalty */}
                 </div>
                 <div className='hidden md:flex px-4 mx-auto font-semibold font-heading space-x-0'>
                     <Link href='/home'>
                         <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
-                            Home
+                            {t("navbar.home")}
                         </p>
                     </Link>
                     <Link href='/coupons'>
                         <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
-                            Coupons
+                            {t("navbar.coupons")}
                         </p>
                     </Link>
                     <Link href='/blog'>
                         <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
-                            Blog
+                            {t("navbar.blog")}
                         </p>
                     </Link>
                 </div>

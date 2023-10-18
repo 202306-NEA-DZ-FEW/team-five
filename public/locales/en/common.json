@@ -1,5 +1,12 @@
 {
     "test": "Hello",
-    "Home": "Home",
-    "Blog": "Blog"
+    
+    "navbar": {
+        "home": "Home",
+        "coupons": "Coupons",
+        "blog": "Blog"
+      }
+      
 }
+
+

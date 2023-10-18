@@ -51,7 +51,7 @@ exports[`renders correctly 1`] = `
         <p
           className="text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300"
         >
-          Home
+          navbar.home
         </p>
       </a>
       <a
@@ -63,7 +63,7 @@ exports[`renders correctly 1`] = `
         <p
           className="text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300"
         >
-          Coupons
+          navbar.coupons
         </p>
       </a>
       <a
@@ -75,7 +75,7 @@ exports[`renders correctly 1`] = `
         <p
           className="text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300"
         >
-          Blog
+          navbar.blog
         </p>
       </a>
     </div>
