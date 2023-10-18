@@ -1,12 +1,9 @@
 {
     "test": "Hello",
-    
+
     "navbar": {
         "home": "Home",
         "coupons": "Coupons",
         "blog": "Blog"
-      }
-      
+    }
 }
-
-
