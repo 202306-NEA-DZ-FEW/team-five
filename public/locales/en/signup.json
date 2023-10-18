@@ -1,0 +1,16 @@
+{
+  "signup": {
+    "haveAccount": "Have an account?",
+    "signIn": "Sign In",
+    "registrationSavesLives": "Your registration saves lives",
+    "gettingStarted": "Getting started is easy",
+    "googleButton": "Google",
+    "orContinueWith": "or continue with",
+    "nameLabel": "Name of Organization",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "createAccountButton": "Create Account",
+    "termsOfUse": "By continuing you indicate that you read and agreed to the Terms of Use"
+  }
+}
