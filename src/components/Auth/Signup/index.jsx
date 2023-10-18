@@ -12,7 +12,7 @@ import React, { useState } from "react";
 
 import { auth } from "@/Utils/firebase";
 
-export default function Signup() {
+export default function Signup({ onToggleComponent }) {
     const { t } = useTranslation("signup");
     const router = useRouter();
     const [formData, setFormData] = useState({
@@ -75,7 +75,10 @@ export default function Signup() {
                 <div className='flex h-screen items-center justify-center'>
                     <div className='top-5 flex gap-4 right-5 absolute text-right'>
                         <h2 className=''>{t("signup.haveAccount")}</h2>
-                        <button className='text-[#20DC49] '>
+                        <button
+                            className='text-[#20DC49]  '
+                            onClick={() => onToggleComponent("signin")}
+                        >
                             {t("signup.signIn")}
                         </button>
                     </div>

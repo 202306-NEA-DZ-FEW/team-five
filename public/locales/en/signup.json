@@ -12,5 +12,14 @@
     "confirmPasswordLabel": "Confirm Password",
     "createAccountButton": "Create Account",
     "termsOfUse": "By continuing you indicate that you read and agreed to the Terms of Use"
+  },
+
+  "signin": {
+    "wlcmback": "Welcome Back",
+    "loginacc": "Login into your account",
+    "recover": "Recover Password",
+    "login": "Log In",
+    "donthaveAccount": "Don't have an account?",
+    "signUp": "Sign Up!"
   }
 }
