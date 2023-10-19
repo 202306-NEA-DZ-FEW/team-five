@@ -4,6 +4,7 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     updateProfile,
+    sendEmailVerification,
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
@@ -51,14 +52,28 @@ export default function Signup({ onToggleComponent }) {
             formData.email,
             formData.password,
             formData.name
-        ).then((userCredential) => {
-            const user = userCredential.user;
-            updateProfile(user, {
-                displayName: formData.name,
-            }).then(() => {
-                router.push("/");
+        )
+            .then((userCredential) => {
+                const user = userCredential.user;
+                updateProfile(user, {
+                    displayName: formData.name,
+                })
+                    .then(() => {
+                        sendEmailVerification(user)
+                            .then(() => {
+                                router.push("/");
+                            })
+                            .catch((error) => {
+                                console.error(error);
+                            });
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            })
+            .catch((error) => {
+                console.error(error);
             });
-        });
     };
 
     return (
