@@ -1,0 +1,27 @@
+{
+  "signup": {
+    "haveAccount": "لديك حساب؟",
+    "signIn": "تسجيل الدخول",
+    "registrationSavesLives": "تسجيلك ينقذ الأرواح",
+    "gettingStarted": "التسجيل السهل",
+    "googleButton": "جوجل",
+    "orContinueWith": "أو قم بالمتابعة مع",
+    "nameLabel": "اسم المنظمة",
+    "emailLabel": "البريد الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "confirmPasswordLabel": "تأكيد كلمة المرور",
+    "createAccountButton": "إنشاء حساب",
+    "termsOfUse": "بمتابعتك، تشير إلى أنك قرأت ووافقت على شروط الاستخدام"
+  },
+  
+  "signin": {
+    "wlcmback": "مرحبًا بعودتك",
+    "loginacc": "قم بتسجيل الدخول إلى حسابك",
+    "recover": "هل نسيت كلمة المرور؟",
+    "login": "تسجيل الدخول",
+    "donthaveAccount": "ليس لديك حساب؟",
+    "signUp": "سجل الان"
+    
+  }
+
+}
