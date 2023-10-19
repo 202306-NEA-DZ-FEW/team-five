@@ -4,11 +4,18 @@ import React, { useState } from "react";
 
 import Signin from "@/components/Auth/Signin/index";
 import Signup from "@/components/Auth/Signup/index";
+import Email from "@/components/Auth/Email/index";
 
 export default function Auth() {
     // eslint-disable-next-line unused-imports/no-unused-vars
     const { t } = useTranslation("signup");
     const [currentComponent, setCurrentComponent] = useState("signin");
+
+    const ToggleMail = () => {
+        if (currentComponent === "signin") {
+            setCurrentComponent("email");
+        }
+    };
 
     const toggleComponent = () => {
         if (currentComponent === "signin") {
@@ -21,10 +28,16 @@ export default function Auth() {
     return (
         <div>
             {currentComponent === "signin" ? (
-                <Signin onToggleComponent={toggleComponent} />
-            ) : (
+                <Signin
+                    onToggleComponent={toggleComponent}
+                    onToggleMail={ToggleMail}
+                />
+            ) : currentComponent === "signup" ? (
                 <Signup onToggleComponent={toggleComponent} />
-            )}
+            ) : currentComponent === "email" ? (
+                <Email onToggleComponent={toggleComponent} />
+            ) : null}{" "}
+            {/* Add a fallback case or handle other values if needed */}
         </div>
     );
 }

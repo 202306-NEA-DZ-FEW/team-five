@@ -21,5 +21,14 @@
     "login": "Log In",
     "donthaveAccount": "Don't have an account?",
     "signUp": "Sign Up!"
+  },
+
+  "email": {
+    "check": "Change Password!",
+    "spam": "Successful! Don't forget to look in the spam folder. If you don't receive a password recovery email within 5 minutes, please resend it.",
+    "yourmail": "Your E-Mail",
+    "send": "Send again",
+    "help": "I need help"
   }
+  
 }

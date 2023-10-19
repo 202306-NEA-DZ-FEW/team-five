@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 
 import { auth } from "@/Utils/firebase";
 
-export default function Signin({ onToggleComponent }) {
+export default function Signin({ onToggleComponent, onToggleMail }) {
     const { t } = useTranslation("signup");
     const router = useRouter();
     const [user, setUser] = useState(null);
@@ -141,7 +141,10 @@ export default function Signin({ onToggleComponent }) {
                                 />
                             </div>
                             <div className='top-5 flex flex-row-reverse mr-5'>
-                                <button className='text-[#D93F21] '>
+                                <button
+                                    onClick={() => onToggleMail("email")}
+                                    className='text-[#D93F21] '
+                                >
                                     {t("signin.recover")}
                                 </button>
                             </div>
