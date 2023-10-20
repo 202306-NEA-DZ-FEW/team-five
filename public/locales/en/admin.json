@@ -1,0 +1,19 @@
+{
+  "coupon": {
+    "Used": "Used Coupons",
+    "Daily": "Daily Coupon Used",
+    "Monthly": "Monthly Coupon Used",
+    "Yearly": "Yearly Coupon Used",
+    "Total": "Total Coupon Used",
+    "Best": "Best Doner",
+    "urDonation": "Your Donation",
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July"
+  }
+  
+}

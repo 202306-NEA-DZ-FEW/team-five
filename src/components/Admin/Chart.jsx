@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
 import ChartJS from "chart.js/auto";
+import { useEffect, useRef } from "react";
 
 const Chart = ({ data, type, options }) => {
     const chartRef = useRef();
