@@ -33,10 +33,11 @@ yarn-error.log*
 
 # vercel
 .vercel
-
+members.json
 # changelog
 CHANGELOG.md
-
+members.json
 README.md
 tailwind.config.js
 postcss.config.js
+signup.json
