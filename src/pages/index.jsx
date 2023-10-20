@@ -4,15 +4,12 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
 
 import Layout from "@/layout/Layout";
-import Button from "@/components/Button/Button";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
 
     return (
         <Layout>
-            <Button />
-
             <p>{t("test")}</p>
 
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
