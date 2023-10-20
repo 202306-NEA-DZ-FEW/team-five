@@ -9,10 +9,10 @@ function Email() {
             <div className='grid grid-cols-2 '>
                 <div className='col-start'>
                     <h1 className='text-gray-500  font-bold text-lg'>
-                        <p>{t("Get update on Blog and Events")}</p>
+                        <p>{t("GetupdateonBlogandEvents")}</p>
                     </h1>
                     <h2 className='text-gray-400  font-bold text-lg'>
-                        <p>{t("Get directly on your email")}</p>
+                        <p>{t("Getdirectlyonyouremail")}</p>
                     </h2>
                 </div>
                 <div className='col-end flex h-7'>

@@ -8,7 +8,7 @@ export default function Donation() {
     return (
         <div>
             <Link href='/coupons'>
-                <button class='py-2 px-4 bg-green-500 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full'>
+                <button class='py-2 px-4 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540]'>
                     <p>{t("donation")}</p>
                 </button>
             </Link>
