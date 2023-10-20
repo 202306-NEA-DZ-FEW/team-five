@@ -37,7 +37,6 @@ export default function Auth() {
             ) : currentComponent === "email" ? (
                 <Email onToggleComponent={toggleComponent} />
             ) : null}{" "}
-            {/* Add a fallback case or handle other values if needed */}
         </div>
     );
 }
