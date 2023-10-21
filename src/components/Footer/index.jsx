@@ -1,8 +1,6 @@
-// import Button
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 import {
     FaFacebookF,
@@ -12,20 +10,20 @@ import {
     FaYoutube,
 } from "react-icons/fa";
 
-const Footer = () => {
+export default function Footer() {
     const current_year = new Date().getFullYear();
     const { t } = useTranslation("footer");
     return (
         <div>
-            <div className='container mx-auto text-white bg-[#43AFD6] py-6'>
-                <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4'>
-                    <div className='space-y-3'>
+            <div className='mx-auto text-white bg-[#43AFD6] py-6 '>
+                <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 justify-center items-center ml-10 sm:ml-10 md:ml-20 lg:ml-40 xl:ml-40'>
+                    <div className='space-y-3 '>
                         <div>
                             <Image
                                 src='/footer_icons/logo.svg'
                                 alt='logo-image'
-                                width='40'
-                                height='70'
+                                width={40}
+                                height={70}
                             />
                         </div>
                         <div>
@@ -39,14 +37,20 @@ const Footer = () => {
                     </div>
                     <div className='space-y-3'>
                         <div className='space-y-1 space-x-10'>
-                            <Link className='text-white' href='/Home'>
-                                <b>{t("footer.homePage")}</b>
+                            <Link href='/Home'>
+                                <b className='text-white'>
+                                    {t("footer.homePage")}
+                                </b>
                             </Link>
-                            <Link className='text-white' href='/Coupons'>
-                                <b>{t("footer.couponsPage")}</b>
+                            <Link href='/Coupons'>
+                                <b className='text-white'>
+                                    {t("footer.couponsPage")}
+                                </b>
                             </Link>
-                            <Link className='text-white' href='/Blog'>
-                                <b>{t("footer.blogPage")}</b>
+                            <Link href='/Blog'>
+                                <b className='text-white'>
+                                    {t("footer.blogPage")}
+                                </b>
                             </Link>
                         </div>
                         <div className='flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4'>
@@ -57,8 +61,8 @@ const Footer = () => {
                                 <Image
                                     src='/footer_icons/map-marker.svg'
                                     alt='map-marker'
-                                    width='40'
-                                    height='40'
+                                    width={40}
+                                    height={40}
                                 />
                                 <p>{t("footer.address")}</p>
                             </div>
@@ -69,8 +73,8 @@ const Footer = () => {
                                 <Image
                                     src='/footer_icons/phone-marker.svg'
                                     alt='phone-marker'
-                                    width='40'
-                                    height='40'
+                                    width={40}
+                                    height={40}
                                 />
                                 <p>
                                     +229-955-5388-336 <br />
@@ -84,8 +88,8 @@ const Footer = () => {
                                 <Image
                                     src='/footer_icons/email-marker.svg'
                                     alt='email-marker'
-                                    width='40'
-                                    height='40'
+                                    width={40}
+                                    height={40}
                                 />
                                 <p>
                                     office@mail.com <br />
@@ -141,13 +145,4 @@ const Footer = () => {
             </div>
         </div>
     );
-};
-
-export default Footer;
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["footer"])),
-        },
-    };
 }

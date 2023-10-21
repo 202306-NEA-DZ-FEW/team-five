@@ -1,7 +1,17 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
 
-import Layout from "@/layout/Layout";
-
 export default function NotFoundPage() {
-    return <Layout>404</Layout>;
+    const { t } = useTranslation("footer", "common");
+    return <div>404</div>;
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["footer", "common"])),
+            // Will be passed to the page component as props
+        },
+    };
 }
