@@ -42,7 +42,7 @@ function Navbar() {
                             {t("navbar.coupons")}
                         </p>
                     </Link>
-                    <Link href='/blog'>
+                    <Link href='Blog'>
                         <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
                             {t("navbar.blog")}
                         </p>
