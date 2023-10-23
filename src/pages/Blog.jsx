@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import React from "react";
 
@@ -49,7 +48,7 @@ function Blog() {
     return (
         <div>
             <div className='absolute flex justify-between'>
-                <Image
+                <img
                     className='relative top-0 right-0 bottom-0 left-0 h-full w-full overflow'
                     src='children.png'
                     alt='cheldren image'
