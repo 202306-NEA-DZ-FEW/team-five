@@ -24,7 +24,7 @@ const BlogCard = ({ blog }) => {
                 <p className='text-gray-600 mb-4'>{blog.shortDescription}</p>
                 <Link href={`/blog/${blog.slug}`}>
                     <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>
-                        <p>{t("Read More")}</p>
+                        <p>{t("BlogCard.Read")}</p>
                     </button>
                 </Link>
             </div>
