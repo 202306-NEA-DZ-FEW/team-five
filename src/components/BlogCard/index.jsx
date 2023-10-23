@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
@@ -5,7 +6,7 @@ const BlogCard = ({ blog }) => {
     const { t } = useTranslation("BlogCard");
     return (
         <div className='max-w-sm rounded overflow-hidden shadow-lg m-4'>
-            <img
+            <Image
                 src={blog.image}
                 alt={blog.title}
                 className='w-full h-56 object-cover'
@@ -13,7 +14,7 @@ const BlogCard = ({ blog }) => {
             <div className='p-4'>
                 <h2 className='font-bold text-xl mb-2'>{blog.title}</h2>
                 <div className='flex items-center mb-2'>
-                    <img
+                    <Image
                         src={blog.authorImage}
                         alt={blog.author}
                         className='w-8 h-8 rounded-full mr-2'
