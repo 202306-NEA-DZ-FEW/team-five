@@ -1,0 +1,22 @@
+{
+    "payment": {
+        "paymentDetails": "بيانات الدفع",
+        "title": "المطاعم المشتري منها",
+        "DonoAmount": "مبلغ التبرع",
+        "donoInfo": "معلومات المتبرع",
+        "persDonation": "تبرع شخصي",
+        "orgDonation": "تبرع منظمة",
+        "name": "الاسم",
+        "firstName": "الاسم",
+        "lastName": "اللقب",
+        "orgName": "اسم المنظمة",
+        "paymentInfo": "معلومات الدفع",
+        "creditCard": "البطاقة الائتمانية",
+        "paypal": "باي بال",
+        "cardHolderName": "إسم صاحب البطاقة",
+        "expiryMonth": "شهر انتهاء الصلاحية",
+        "expiryYear": "سنة انتهاء الصلاحية",
+        "cvv": "رمز أمان البطاقة",
+        "thanks": "❤️ شكرا لك على تبرعك"
+    }
+}
