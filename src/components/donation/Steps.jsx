@@ -224,9 +224,12 @@ function Steps() {
                 >
                     <Image
                         src='/Give.png'
-                        width={300}
-                        height={200}
-                        alt='this is an image '
+                        width={700}
+                        height={100}
+                        alt='this is an image'
+                        style={{
+                            marginTop: "-80px",
+                        }}
                     />
 
                     <Image
@@ -237,7 +240,7 @@ function Steps() {
                         style={{
                             position: "absolute",
                             left: "50%",
-                            top: "50%",
+                            top: "40%",
                             transform: "translate(-50%, -50%)",
                         }}
                     />
