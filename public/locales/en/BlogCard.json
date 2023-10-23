@@ -1,6 +1,6 @@
 {
-  "BlogCard": {
-    "Read": "Read More"
+  "blogcard": {
+    "read": "Read More"
   }
   
 }

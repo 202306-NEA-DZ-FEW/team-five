@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 const BlogCard = ({ blog }) => {
-    const { t } = useTranslation("BlogCard");
+    const { t } = useTranslation("blogcard");
     return (
         <div className='max-w-sm rounded overflow-hidden shadow-lg m-4'>
             <Image
@@ -24,7 +24,7 @@ const BlogCard = ({ blog }) => {
                 <p className='text-gray-600 mb-4'>{blog.shortDescription}</p>
                 <Link href={`/blog/${blog.slug}`}>
                     <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>
-                        <p>{t("BlogCard.Read")}</p>
+                        <p>{t("blogcard.Read")}</p>
                     </button>
                 </Link>
             </div>
