@@ -14,6 +14,26 @@
     "May": "May",
     "June": "June",
     "July": "July"
+  },
+  "edit": {
+    "changeemail": "Change Email",
+    "email": "Email",
+    "name": "Name",
+    "nameoforg": "Name of Organization",
+    "changepassword": "Change Password",
+    "newpass": "New Password",
+    "confirmpass": "Confirm Password",
+    "urcurrent": "Your Current Password",
+    "current": "Current Password",
+    "update": "Update",
+    "editcoupons": "Edit Coupons",
+    "defaultcouponamounts": "Default Coupon Amounts",
+    "uploadlogo": "Upload Your Logo",
+    "uploadphototext": "Drag & drop your profile photo or click to select a file",
+    "editorgdetails": "Edit Organization Details",
+    "Upload": "Upload",
+    "uploading": "Uploading image...",
+
   }
   
 }
