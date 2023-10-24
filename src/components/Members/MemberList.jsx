@@ -112,7 +112,7 @@ const MemberList = () => {
         slider.scrollLeft = slider.scrollLeft + 500;
     };
     return (
-        <main className='px-4 md:p-0 flex flex-col container justify-center mx-auto min-h-screen gap-20 overflow-y-visible'>
+        <section className='px-4 md:p-0 flex flex-col container justify-center mx-auto min-h-screen gap-20 overflow-y-visible'>
             <h1 className='text-4xl font-bold text-center text-[#212B36]'>
                 {t("member.team")}
             </h1>
@@ -136,7 +136,7 @@ const MemberList = () => {
                     size={40}
                 />
             </div>
-        </main>
+        </section>
     );
 };
 
