@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import React from "react";
 
-function sponsor() {
+function Sponsor() {
+    const { t } = useTranslation("sponsor");
     return (
         <>
             <div
@@ -12,7 +15,7 @@ function sponsor() {
                 }}
             >
                 <center>
-                    <b style={{ fontSize: "19px" }}>Our sponsor</b>
+                    <b style={{ fontSize: "19px" }}>{t("Oursponsor")}</b>
                 </center>
                 <div
                     style={{
@@ -22,12 +25,14 @@ function sponsor() {
                     }}
                 >
                     <Image
+                        alt='image'
                         src='/burger.png'
                         width={200}
                         height={30}
                         style={{ marginTop: "40px" }}
                     />
                     <Image
+                        alt='image'
                         src='/macdo.png'
                         width={200}
                         height={30}
@@ -35,12 +40,14 @@ function sponsor() {
                     />
 
                     <Image
+                        alt='image'
                         src='/Tesco.png'
                         width={200}
                         height={30}
                         style={{ marginTop: "4px" }}
                     />
                     <Image
+                        alt='image'
                         src='/pizza.png'
                         width={200}
                         height={30}
@@ -57,12 +64,16 @@ function sponsor() {
                     justifyContent: "center",
                 }}
             >
-                <div class='flex flex-nowrap bg-blue-800 mt-10'>
+                <div
+                    class='flex flex-nowrap bg-blue-800 mt-10'
+                    style={{ overflow: "hidden" }}
+                >
                     <div>
                         <Image
+                            alt='image'
                             src='/mask.png'
                             width={1000}
-                            height={30}
+                            height={20}
                             style={{ marginTop: "40px", marginLeft: "100px" }}
                         />
                     </div>
@@ -71,6 +82,7 @@ function sponsor() {
                             style={{
                                 display: "flex",
                                 flexWrap: "wrap",
+
                                 width: "100px",
                                 marginTop: "130px",
                                 position: "absolute",
@@ -78,11 +90,16 @@ function sponsor() {
                                 fontSize: "20px",
                             }}
                         >
-                            join us
+                            {t("joinus")}
                         </b>
                     </div>
                     <div>
-                        <p style={{ marginTop: "200px", color: "white" }}>
+                        <p
+                            style={{
+                                marginTop: "200px",
+                                color: "white",
+                            }}
+                        >
                             Lorem ipsum is placeholder text commonly used in the
                             graphic, print, and publishing industries for
                             previewing layouts and visual mockups Lorem ipsum is
@@ -93,13 +110,21 @@ function sponsor() {
                     </div>
                     <p style={{ marginTop: "300px", marginRight: "100px" }}>
                         <button class='py-2 px-4 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540]'>
-                            donation
+                            {t("donation")}
                         </button>
                     </p>
                 </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
+                <Link href='/sponsor' locale='en'>
+                    English
+                </Link>
+                <Link href='/sponsor' locale='ar'>
+                    العربية
+                </Link>
             </div>
         </>
     );
 }
 
-export default sponsor;
+export default Sponsor;

@@ -8,7 +8,12 @@ function newsletter() {
                 style={{ border: "1px solid gray" }}
             >
                 <div class='row-span-3 ...'>
-                    <Image src='/heart.png' width={400} height={500} />
+                    <Image
+                        src='/heart.png'
+                        width={400}
+                        height={500}
+                        alt='image'
+                    />
                 </div>
                 <div class='col-span-2 ...'>
                     <b>join our newsletter to know more</b>
@@ -68,7 +73,12 @@ function newsletter() {
                 style={{ border: "1px solid gray" }}
             >
                 <div class='row-span-3 ...'>
-                    <Image src='/Group.png' width={400} height={500} />
+                    <Image
+                        src='/Group.png'
+                        width={400}
+                        height={500}
+                        alt='image'
+                    />
                 </div>
                 <div class='col-span-2 ...'>
                     <b>join our newsletter to know more</b>
@@ -128,7 +138,12 @@ function newsletter() {
                 style={{ border: "1px solid gray" }}
             >
                 <div class='row-span-3 ...'>
-                    <Image src='/flat.png' width={400} height={500} />
+                    <Image
+                        src='/flat.png'
+                        width={400}
+                        height={500}
+                        alt='image'
+                    />
                 </div>
                 <div class='col-span-2 ...'>
                     <b>join our newsletter to know more</b>
