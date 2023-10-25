@@ -2,9 +2,9 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useState } from "react";
 
+import Email from "@/components/Auth/Email/index";
 import Signin from "@/components/Auth/Signin/index";
 import Signup from "@/components/Auth/Signup/index";
-import Email from "@/components/Auth/Email/index";
 
 export default function Auth() {
     // eslint-disable-next-line unused-imports/no-unused-vars

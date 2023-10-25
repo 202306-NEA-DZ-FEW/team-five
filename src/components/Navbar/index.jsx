@@ -16,7 +16,7 @@ function Navbar() {
                 {/* Logo and the name of the website the icon */}
 
                 <div className='flex items-center space-x-5'>
-                    <Link href='/home'>
+                    <Link href='/'>
                         <img src='/Logo.svg' alt='Logo' className='mt-4' />
                     </Link>
                     <div className='grid md:flex mx-auto justify-items-start text-slate-100 hover:text-gray-500 text-xl font-bold md:text-2x'>
@@ -42,7 +42,7 @@ function Navbar() {
                             {t("navbar.coupons")}
                         </p>
                     </Link>
-                    <Link href='/blog'>
+                    <Link href='/Blog'>
                         <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
                             {t("navbar.blog")}
                         </p>
@@ -61,12 +61,20 @@ function Navbar() {
                         <img src='/cart.svg' alt='cart' />
                     </Link>
                     <div>
-                        <button
-                            className='w-10 h-10 font-semibold bg-white rounded-full'
+                        <div
+                            className='w-10 h-10 font-bold text-center pt-2 bg-white rounded-full'
                             onClick={handleLagSelection}
                         >
-                            {isSelected ? "EN" : "AR"}
-                        </button>
+                            {isSelected ? (
+                                <Link href='/' locale='en'>
+                                    EN
+                                </Link>
+                            ) : (
+                                <Link href='/' locale='ar'>
+                                    AR
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

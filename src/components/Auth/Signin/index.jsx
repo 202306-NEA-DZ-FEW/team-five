@@ -8,12 +8,15 @@ import { getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addUser, removeUser } from "@/redux/shopperSlice";
 
 import { auth } from "@/Utils/firebase";
 
 export default function Signin({ onToggleComponent, onToggleMail }) {
     const { t } = useTranslation("signup");
     const router = useRouter();
+    const dispatch = useDispatch();
     const [user, setUser] = useState(null);
     const [formData, setFormData] = useState({
         email: "",
@@ -50,6 +53,7 @@ export default function Signin({ onToggleComponent, onToggleMail }) {
             .then((userCredential) => {
                 const user = userCredential.user;
                 setUser(user);
+                dispatch(addUser(user));
                 router.push("/");
             })
             .catch((error) => {
@@ -59,10 +63,12 @@ export default function Signin({ onToggleComponent, onToggleMail }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
-            if (user) {
+            if (user !== user) {
                 setUser(user);
-            } else {
+                dispatch(addUser(user));
+            } else if (user === null && user !== null) {
                 setUser(null);
+                dispatch(removeUser());
             }
         });
 
