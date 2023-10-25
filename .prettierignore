@@ -42,3 +42,7 @@ tailwind.config.js
 postcss.config.js
 signup.json
 admin.json
+
+blog.json
+blogcard.json
+
