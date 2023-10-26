@@ -1,14 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
-
 function Steps() {
+    const { t } = useTranslation("steps");
+
     return (
         <>
             <div style={{ backgroundColor: "#eee" }}>
                 <center>
-                    <b style={{ fontSize: "50px" }}>donation process</b>
+                    <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
                 </center>
                 <br />
+
                 <div
                     class='grid grid-cols-4 gap-4 flex-wrap '
                     style={{
@@ -42,11 +47,11 @@ function Steps() {
                             }}
                         >
                             <b>
-                                <center>step1</center>
+                                <center>{t("step")}1</center>
                             </b>
                             <p>
-                                Donator buy the coupon in
-                                <br /> the website
+                                {t("Donatorbuythecoupon")}
+                                <br /> {t("inthewebsite")}
                             </p>
                         </div>
                     </div>
@@ -73,13 +78,13 @@ function Steps() {
                         >
                             <b>
                                 <center>
-                                    <b>step 2</b>
+                                    <b>{t("step")} 2</b>
                                 </center>
                             </b>
                             <p>
-                                the person in need can
-                                <br /> eat without asking in
-                                <br /> any available Restaurant{" "}
+                                {t("thepersoninneedcan")}
+                                <br /> {t("eatwithoutaskingin")}
+                                <br /> {t("anyavailableRestaurant")}
                             </p>
                         </div>
                     </div>
@@ -101,13 +106,13 @@ function Steps() {
                             }}
                         >
                             <center>
-                                <b>Step 3</b>
+                                <b>{t("step")} 3</b>
                             </center>
                             <p>
-                                the Restaurant delete <br />
-                                the used coupon in the
+                                {t("theRestaurantdelete")} <br />
+                                {t("theusedcouponinthe")}
                                 <br />
-                                website{" "}
+                                {t("website")}
                             </p>
                         </div>
                     </div>
@@ -146,9 +151,9 @@ function Steps() {
                     >
                         <center>
                             <b style={{ fontSize: "40px" }}>
-                                NO
+                                {t("NO")}
                                 <br />
-                                POVERTY
+                                {t("POVERTY")}
                             </b>
                         </center>
                     </div>
@@ -176,9 +181,9 @@ function Steps() {
                     >
                         <center>
                             <b style={{ fontSize: "40px" }}>
-                                ZERO
+                                {t("ZERO")}
                                 <br />
-                                HUNGER
+                                {t("HUNGER")}
                             </b>
                         </center>
                     </div>
@@ -206,9 +211,9 @@ function Steps() {
                     >
                         <center>
                             <b style={{ fontSize: "40px" }}>
-                                GOOD
+                                {t("GOOD")}
                                 <br />
-                                HEALTH
+                                {t("HEALTH")}
                             </b>
                         </center>
                     </div>
@@ -255,7 +260,7 @@ function Steps() {
                     }}
                 >
                     <div style={{ fontSize: "20px", marginTop: "20px" }}>
-                        <b>Working together to end Hunger</b>
+                        <b>{t("WorkingtogethertoendHunger")}</b>
                     </div>
                     <div>
                         <p>
@@ -271,9 +276,30 @@ function Steps() {
                         </p>
                     </div>
                 </div>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "20px",
+                    }}
+                ></div>
+                <Link href='/Steps' locale='en'>
+                    English
+                </Link>
+                <Link href='/Steps' locale='ar'>
+                    العربية
+                </Link>
             </div>
         </>
     );
 }
 
 export default Steps;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["steps"])),
+            // Will be passed to the page component as props
+        },
+    };
+}

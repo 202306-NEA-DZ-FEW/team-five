@@ -1,57 +1,39 @@
 import { useTranslation } from "next-i18next";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import BlogCard from "@/components/BlogCard";
 
-// PlaceHolder for Fake api
-
-const articles = [
-    {
-        id: 1,
-        title: "Sample Article 1",
-        slug: "sample-article-1",
-        image: "children.png",
-        author: "Achraf",
-        authorImage: "children.png",
-        shortDescription: "This is the short description of the first article.",
-        fullArticle: "This is the full content of the first article.",
-    },
-    {
-        id: 2,
-        title: "Sample Article 2",
-        slug: "sample-article-2",
-        image: "children.png",
-        author: "Zino",
-        authorImage: "children.png",
-        shortDescription:
-            "This is the short description of the second article.",
-        fullArticle: "This is the full content of the second article.",
-    },
-
-    {
-        id: 3,
-        title: "Sample Article 3",
-        slug: "sample-article-3",
-        image: "children.png",
-        author: "Hamide",
-        authorImage: "children.png",
-        shortDescription:
-            "This is the short description of the second article.",
-        fullArticle: "This is the full content of the second article.",
-    },
-
-    // Add more articles as needed
-];
-
 function Blog() {
-    const { t } = useTranslation("blog");
+    const { t, i18n } = useTranslation("blog");
+    const [articles, setArticles] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=bf2ac5e52b565310b91b2082f2814153&lang=${i18n.language}`
+                );
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setArticles(data.articles);
+                } else {
+                    console.error("Error fetching data:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, [i18n.language]);
     return (
         <div>
-            <div className='absolute flex justify-between'>
+            <div className='absolute flex items-center justify-between'>
                 <img
                     className='relative top-0 right-0 bottom-0 left-0 h-full w-full overflow'
                     src='children.png'
-                    alt='cheldren image'
+                    alt='children image'
                 />
                 <div className='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow bg-[hsla(0,0%,0%,0.75)]'>
                     <div className='flex h-full items-center justify-center'>
@@ -60,27 +42,18 @@ function Blog() {
                                 <span>{t("blog.lives")}</span>
                             </h1>
                             <p className='text-xl mb-10'>{t("blog.give")}</p>
+
                             <button
-                                type='button'
-                                className='rounded border-2
-             border-neutral-50 
-             px-[46px] pt-[14px] 
-             pb-[12px] text-sm font-medium 
-             uppercase leading-normal
-             text-neutral-50 transition 
-             duration-150 ease-in-out
-              hover:border-neutral-100
-               hover:bg-neutral-100 hover:bg-opacity-10
-                hover:text-neutral-100
-                 focus:border-neutral-100
-                  focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200'
-                                data-te-ripple-init
-                                data-te-ripple-color='light'
+                                onClick={() =>
+                                    console.log("Donate button clicked")
+                                }
+                                className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-[150px]'
                             >
-                                Donation
+                                Donate 🤍
                             </button>
                         </div>
                     </div>
+
                     <div>
                         <p className='text-xl font-semibold text-sky-600'>
                             {t("blog.latest")}
