@@ -1,23 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/shopperSlice";
 
-const companies = [
-    {
-        id: 1,
-        name: "Mcdonalds",
-    },
-    {
-        id: 2,
-        name: "KFC",
-    },
-];
-
-const Coupons = () => {
+const Coupons = ({ companies }) => {
     // Define state variables using the useState hook
-    const [restaurants, setRestaurants] = useState(companies);
+
     const [selectedRestaurants, setSelectedRestaurants] = useState([]);
     const [selectedCoupon, setSelectedCoupon] = useState(null);
     const [customCouponAmount, setCustomCouponAmount] = useState(0);
 
+    const dispatch = useDispatch();
+
+    const [restaurants, setRestaurants] = useState(companies);
     // Function to toggle the selection of a restaurant
     const handleToggleSelectRestaurant = (restaurant) => {
         // If the restaurant is already selected, remove it from the selection; otherwise, add it.
@@ -74,7 +68,17 @@ const Coupons = () => {
                         coupon: couponAmount,
                     })
                 );
-                console.log("Sending to backend:", restaurantsWithCoupon);
+                restaurantsWithCoupon.forEach((restaurant) => {
+                    dispatch(
+                        addToCart({
+                            id: restaurant.id,
+                            UserName: restaurant.UserName,
+                            image: restaurant.ProductImg,
+                            price: restaurant.coupon,
+                            quantity: 1,
+                        })
+                    );
+                });
                 // Reset state variables
                 setSelectedRestaurants([]);
                 setSelectedCoupon(null);
@@ -97,16 +101,18 @@ const Coupons = () => {
             <div className='bg-white p-6 m-10 rounded-lg drop-shadow-2xl w-4/5'>
                 {/* List of restaurants */}
                 <div className='restaurants space-y-4'>
-                    {restaurants.map((r) => (
+                    {companies.map((r, index) => (
                         <div
-                            key={r.id}
+                            key={index}
                             className={`flex items-center justify-between p-4 rounded-md bg-white shadow-md ${
                                 selectedRestaurants.includes(r)
                                     ? "bg-green-200"
                                     : "bg-gray-100"
                             }`}
                         >
-                            <h3 className='text-lg font-semibold'>{r.name}</h3>
+                            <h3 className='text-lg font-semibold'>
+                                {r.UserName}
+                            </h3>
                             <button
                                 className={`p-2 rounded-md bg-gray-400 ${
                                     selectedRestaurants.includes(r)

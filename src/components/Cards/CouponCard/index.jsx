@@ -14,7 +14,7 @@ function CouponCard({
     image,
     UserName,
     price,
-    id,
+    _id,
     ProductImg,
     CouponAmount,
     quantity,
@@ -62,7 +62,7 @@ function CouponCard({
 
                     <div className='mt-4'>
                         <button
-                            onClick={() => dispatch(deleteItem({ _id: id }))}
+                            onClick={() => dispatch(deleteItem({ _id: _id }))}
                             className='text-xl text-white hover:underline hover:text-gray-800 focus:outline-none'
                         >
                             Remove
@@ -72,7 +72,7 @@ function CouponCard({
                                 onClick={() =>
                                     dispatch(
                                         plusQuantity({
-                                            _id: id,
+                                            _id: _id,
                                             UserName: UserName,
                                             image: ProductImg,
                                             price: CouponAmount,
@@ -91,7 +91,7 @@ function CouponCard({
                                 onClick={() =>
                                     dispatch(
                                         minusQuantity({
-                                            _id: id,
+                                            _id: _id,
                                             UserName: UserName,
                                             image: ProductImg,
                                             price: CouponAmount,
