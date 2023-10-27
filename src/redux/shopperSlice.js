@@ -10,14 +10,8 @@ export const shopperslice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            const item = state.productData.find(
-                (item) => item._id === action.payload._id
-            );
-            if (item) {
-                item.quantity += action.payload.quantity;
-            } else {
-                state.productData.push(action.payload);
-            }
+            const newItem = { ...action.payload, _id: generateUniqueId() };
+            state.productData.push(newItem);
         },
         plusQuantity: (state, action) => {
             const item = state.productData.find(
@@ -42,7 +36,6 @@ export const shopperslice = createSlice({
                 (item) => item._id !== action.payload._id
             );
         },
-
         resetCart: (state) => {
             state.productData = [];
         },
@@ -54,6 +47,10 @@ export const shopperslice = createSlice({
         },
     },
 });
+
+function generateUniqueId() {
+    return "_" + Math.random().toString(36).substr(2, 9);
+}
 
 export const {
     addToCart,
