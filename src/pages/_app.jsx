@@ -10,7 +10,7 @@ import Layout from "@/layout/Layout";
 import { persistor, store } from "@/redux/store";
 
 function MyApp({ Component, pageProps }) {
-    const { t } = useTranslation("footer", "common");
+    const { t } = useTranslation("footer", "common", "cart");
     return (
         <Provider store={store}>
             <PersistGate loading={"loading"} persistor={persistor}>
@@ -27,7 +27,11 @@ export default appWithTranslation(MyApp);
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["footer", "common"])),
+            ...(await serverSideTranslations(locale, [
+                "footer",
+                "common",
+                "cart",
+            ])),
             // Will be passed to the page component as props
         },
     };
