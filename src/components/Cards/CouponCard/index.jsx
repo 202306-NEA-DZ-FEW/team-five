@@ -1,20 +1,15 @@
-import FormatePrice from "@/pages/auth/FormatePrice";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-    deleteItem,
-    minusQuantity,
-    plusQuantity,
-    resetCart,
-} from "@/redux/shopperSlice";
 import Link from "next/link";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+
+import { deleteItem, minusQuantity, plusQuantity } from "@/redux/shopperSlice";
 
 function CouponCard({
     image,
     UserName,
     price,
-    id,
+    _id,
     ProductImg,
     CouponAmount,
     quantity,
@@ -25,7 +20,7 @@ function CouponCard({
     const [totalSavings, setTotalSavings] = useState(0);
     const [totalamt, setTotalAmt] = useState(0);
     const userInfo = useSelector((state) => state.shopper.userInfo);
-
+    const { t } = useTranslation(["cart"]);
     useEffect(() => {
         let oldprice = 0;
         let savings = 0;
@@ -57,22 +52,22 @@ function CouponCard({
                         {UserName}
                     </h2>
                     <p className='text-xl md:text-2xl font-semibold text-white'>
-                        Price: ${price}
+                        {t("couponCard.price")} ${price}
                     </p>
 
                     <div className='mt-4'>
                         <button
-                            onClick={() => dispatch(deleteItem({ _id: id }))}
+                            onClick={() => dispatch(deleteItem({ _id: _id }))}
                             className='text-xl text-white hover:underline hover:text-gray-800 focus:outline-none'
                         >
-                            Remove
+                            {t("couponCard.remove")}
                         </button>
                         <div className='flex items-center pb-4'>
                             <button
                                 onClick={() =>
                                     dispatch(
                                         plusQuantity({
-                                            _id: id,
+                                            _id: _id,
                                             UserName: UserName,
                                             image: ProductImg,
                                             price: CouponAmount,
@@ -91,7 +86,7 @@ function CouponCard({
                                 onClick={() =>
                                     dispatch(
                                         minusQuantity({
-                                            _id: id,
+                                            _id: _id,
                                             UserName: UserName,
                                             image: ProductImg,
                                             price: CouponAmount,
@@ -106,7 +101,7 @@ function CouponCard({
                             <div className='mt-4 flex justify-between items-center'>
                                 <div className='flex gap-2 ml-[90px] mt-[-20px] xl:ml-[300px]  md:ml-[90px] sm:ml-[10px]  '>
                                     <p className='text-xl md:text-2xl text-white font-semibold'>
-                                        Total :
+                                        {t("couponCard.total")}
                                     </p>
                                     <p className='text-xl md:text-2xl text-white font-semibold'>
                                         ${price * quantity}
