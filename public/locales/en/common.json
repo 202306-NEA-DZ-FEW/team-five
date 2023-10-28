@@ -1,9 +1,13 @@
 {
     "test": "Hello",
+    "you": "By you it's happened",
+    "event": "EVENTS",
+    "know": "Know more",
 
     "navbar": {
         "home": "Home",
         "coupons": "Coupons",
         "blog": "Blog"
+        
     }
 }
