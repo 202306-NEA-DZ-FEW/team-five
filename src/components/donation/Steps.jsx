@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 function Steps() {
     const { t } = useTranslation("steps");
@@ -9,6 +8,19 @@ function Steps() {
     return (
         <>
             <div style={{ backgroundColor: "#eee" }}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "20px",
+                    }}
+                ></div>
+                <Link href='/home' locale='en'>
+                    EN/
+                </Link>
+                <Link href='/home' locale='ar'>
+                    AN
+                </Link>
                 <center>
                     <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
                 </center>
@@ -276,30 +288,9 @@ function Steps() {
                         </p>
                     </div>
                 </div>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        gap: "20px",
-                    }}
-                ></div>
-                <Link href='/Steps' locale='en'>
-                    English
-                </Link>
-                <Link href='/Steps' locale='ar'>
-                    العربية
-                </Link>
             </div>
         </>
     );
 }
 
 export default Steps;
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["steps"])),
-            // Will be passed to the page component as props
-        },
-    };
-}

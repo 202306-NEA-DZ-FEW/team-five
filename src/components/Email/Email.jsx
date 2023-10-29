@@ -1,8 +1,25 @@
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
+import Donation from "../Button/donation";
 
 function Email() {
+    <div
+        style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "20px",
+
+            marginTop: "2rem",
+        }}
+    >
+        <Link href='/Emails' locale='en'>
+            EN
+        </Link>
+        <Link href='/Emails' locale='ar'>
+            AR
+        </Link>
+    </div>;
     const { t } = useTranslation("emails");
     return (
         <layout>
@@ -34,12 +51,8 @@ function Email() {
                             value='New submission!'
                         />
 
-                        <button
-                            type='submit'
-                            class='py-2 px-4 bg-green-500 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full'
-                            style={{ width: "150px" }}
-                        >
-                            {t("submit")}
+                        <button>
+                            <Donation />
                         </button>
                         <input
                             type='hidden'
@@ -54,33 +67,17 @@ function Email() {
                 <h1></h1>
                 <h1 className='col-end flex h-7'>{t("privacyPolicy")}</h1>
             </div>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: "20px",
-
-                    marginTop: "2rem",
-                }}
-            >
-                <Link href='/Emails' locale='en'>
-                    English
-                </Link>
-                <Link href='/Emails' locale='ar'>
-                    العربية
-                </Link>
-            </div>
         </layout>
     );
 }
 
 export default Email;
 
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["emails"])),
-            // Will be passed to the page component as props
-        },
-    };
-}
+// export async function getStaticProps({ locale }) {
+//     return {
+//         props: {
+//             ...(await serverSideTranslations(locale, ["emails"])),
+//             // Will be passed to the page component as props
+//         },
+//     };
+// }
