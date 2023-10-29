@@ -23,7 +23,7 @@ function Email() {
     const { t } = useTranslation("emails");
     return (
         <layout>
-            <div className='grid grid-cols-2 '>
+            <div className='grid grid-cols-2 mt-10 '>
                 <div className='col-start'>
                     <h1 className='text-gray-500  font-bold text-lg'>
                         <p>{t("GetupdateonBlogandEvents")}</p>
@@ -65,19 +65,10 @@ function Email() {
 
             <div className='grid grid-cols-2'>
                 <h1></h1>
-                <h1 className='col-end flex h-7'>{t("privacyPolicy")}</h1>
+                <h1 className='col-end flex h-7 mb-10'>{t("privacyPolicy")}</h1>
             </div>
         </layout>
     );
 }
 
 export default Email;
-
-// export async function getStaticProps({ locale }) {
-//     return {
-//         props: {
-//             ...(await serverSideTranslations(locale, ["emails"])),
-//             // Will be passed to the page component as props
-//         },
-//     };
-// }
