@@ -1,13 +1,44 @@
 import { useTranslation } from "next-i18next";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import FormatePrice from "@/pages/auth/FormatePrice";
+import { loadStripe } from "@stripe/stripe-js";
+import { resetCart } from "@/redux/shopperSlice";
 
 const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
     const productData = useSelector((state) => state.shopper.productData);
+    const stripePromise = loadStripe(
+        "pk_test_51O6byUK7ISzWtqlYUj6XjZRB9ynV7BYRPUYhcPYyEvVy3asqXVrY3iS2luIXHEAsE2EC11CkzZ3adU1IRhI6yFkQ00lYWfsxlt"
+    );
+    const dispatch = useDispatch();
 
-    const handleCheckout = () => {};
+    const handleCheckout = async () => {
+        const stripe = await stripePromise;
+
+        fetch("/api/checkoutpage", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                items: productData,
+            }),
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (session) {
+                return stripe.redirectToCheckout({ sessionId: session.id });
+            })
+            .then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+        dispatch(resetCart());
+    };
+
     const { t } = useTranslation("cart", "footer", "common");
 
     return (
