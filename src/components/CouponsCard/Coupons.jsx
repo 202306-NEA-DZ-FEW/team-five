@@ -156,6 +156,20 @@ const Coupons = ({ companies }) => {
                         </button>
                     ))}
                 </div>
+                {/* Custom coupon amount input */}
+                <div className='relative w-full rounded-md border-[#20DC49] border-2 border-opacity-50'>
+                    <input
+                        type='number'
+                        name='custom amount'
+                        placeholder='Custom amount'
+                        className='h-28 p-8 w-full text-[#20DC49] font-bold text-4xl placeholder-[#20DC49] rounded-md bg-white shadow-md'
+                        value={customCouponAmount}
+                        onChange={handleCustomCouponAmountChange}
+                    />
+                    <span className='h-28 justify-center flex items-center bg-[#20DC49] bg-opacity-10 text-gray-500 absolute right-0 bottom-0 w-48 font-bold text-5xl'>
+                        $
+                    </span>
+                </div>
             </div>
         </div>
     );
