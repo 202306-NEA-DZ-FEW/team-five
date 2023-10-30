@@ -1,7 +1,5 @@
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 export default function Donation() {
     const { t } = useTranslation("button");
@@ -12,15 +10,6 @@ export default function Donation() {
                     <p>{t("donation")}</p>
                 </button>
             </Link>
-            <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-                <Link href='/donation' locale='ar'>
-                    {/*we just need to direct the href to the page we need so if we are in home page we leave it empty other wise we only put /.. */}
-                    العربية
-                </Link>
-                <Link href='/donation' locale='en'>
-                    English
-                </Link>
-            </div>
         </div>
     );
 }
@@ -32,13 +21,4 @@ export function Auth() {
             <donation />
         </div>
     );
-}
-
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["button"])),
-            // Will be passed to the page component as props
-        },
-    };
 }
