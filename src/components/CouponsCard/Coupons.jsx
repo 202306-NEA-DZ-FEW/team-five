@@ -170,6 +170,14 @@ const Coupons = ({ companies }) => {
                         $
                     </span>
                 </div>
+                {/* "Add to Cart" button */}
+                <button
+                    type='submit'
+                    className='p-4 py-6 text-4xl font-bold w-full bg-[#20DC49] text-white rounded-2xl mb-28'
+                    onClick={handleAddToCart}
+                >
+                    Add to Cart 🛒
+                </button>
             </div>
         </div>
     );
