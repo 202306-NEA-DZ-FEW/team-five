@@ -1,11 +1,11 @@
+import { collection, getDocs } from "firebase/firestore";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React, { useEffect, useState } from "react";
 
 import Coupons from "@/components/CouponsCard/Coupons";
 import CouponsBanner from "@/components/CouponsCard/CouponsBanner";
-import Link from "next/link";
-import { collection, getDocs } from "firebase/firestore";
+
 import { db } from "@/Utils/firebase";
-import React, { useState, useEffect, useRef } from "react";
 
 export default function CouponsPage() {
     const [Data, setData] = useState([]);
