@@ -10,6 +10,7 @@ const Coupons = ({ companies }) => {
     const [selectedRestaurants, setSelectedRestaurants] = useState([]);
     const [selectedCoupon, setSelectedCoupon] = useState(null);
     const [customCouponAmount, setCustomCouponAmount] = useState(0);
+    const couponCards = [10, 25, 50, 100];
 
     const dispatch = useDispatch();
 
@@ -135,6 +136,24 @@ const Coupons = ({ companies }) => {
                                     : "Select"}
                             </button>
                         </div>
+                    ))}
+                </div>
+                {/* Coupon selection section */}
+
+                {/* Buttons for predefined coupon amounts */}
+                <div className='flex gap-4 items-center flex-wrap justify-between border-t-4 border-dashed border-t-green-500 pt-14'>
+                    {couponCards.map((coupon, i) => (
+                        <button
+                            key={coupon + i}
+                            className={`px-2 py-2 w-[45%] md:w-[22%] h-28 text-2xl font-bold bg-white shadow-2xl rounded-sm ${
+                                selectedCoupon === coupon
+                                    ? "ring-4 ring-[#20DC49]"
+                                    : "ring-1 ring-gray-100"
+                            }`}
+                            onClick={() => handleSelectCoupon(coupon)}
+                        >
+                            ${coupon}
+                        </button>
                     ))}
                 </div>
             </div>
