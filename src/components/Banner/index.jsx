@@ -16,7 +16,7 @@ const Banner = ({ description, title, title1, imageUrl, btnText, title2 }) => {
                             <br />
                             {title2}
                         </h1>
-                        <p className='mt-6 sm:mt-8 md:mt-10 text-center text-[9px] sm:text-xs md:text-sm '>
+                        <p className='mt-6 sm:mt-8 md:mt-10 text-center text-[9px] sm:text-xs md:text-xl '>
                             {description}
                         </p>
                     </div>

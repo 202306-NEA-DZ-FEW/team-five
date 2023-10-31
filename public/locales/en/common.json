@@ -2,7 +2,13 @@
     "test": "Hello",
     "you": "By you it's happened",
     "event": "EVENTS",
+    "donationsText": "Donations are the key to fighting hunger. They empower food banks and charities to provide food and hope to those in need. Your contribution makes a significant impact in our collective effort to end hunger.",
+    "donationInfo": "We Get 6500$ Donation from Multiple donors",
     "know": "Know more",
+    "veteransInfo": "Food Insecurity Hits Hard With Veterans",
+    "foodWasteInfo": "Food waste solutions",
+    "globalEffortInfo": "Inside the Global Effort to Keep Perfectly Good Food Out of the Dump",
+    "foodInsecurityInfo": "Rising prices, food insecurity add to ranks of hungry",
 
     "navbar": {
         "home": "Home",
