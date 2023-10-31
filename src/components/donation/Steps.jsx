@@ -19,7 +19,7 @@ function Steps() {
                     EN/
                 </Link>
                 <Link href='/home' locale='ar'>
-                    AN
+                    AR
                 </Link>
                 <center>
                     <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
