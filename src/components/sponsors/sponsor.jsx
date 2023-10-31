@@ -7,21 +7,16 @@ function Sponsor() {
     const { t } = useTranslation("sponsor");
     return (
         <>
-            <div
-                style={{
-                    width: "100%",
-                    height: "400px",
-                    border: "3px solid red",
-                }}
-            >
-                <center>
-                    <b style={{ fontSize: "19px" }}>{t("Oursponsor")}</b>
+            <div>
+                <center className='mt-10'>
+                    <b style={{ fontSize: "30px" }}>{t("Oursponsor")}</b>
                 </center>
                 <div
                     style={{
                         display: "flex",
                         justifyContent: "space-around",
                         flexWrap: "wrap",
+                        marginTop: "40px",
                     }}
                 >
                     <Image
@@ -55,73 +50,23 @@ function Sponsor() {
                     />
                 </div>
             </div>
-            <div
-                style={{
-                    width: "100%",
-                    height: "400px",
-
-                    display: "flex",
-                    justifyContent: "center",
-                }}
-            >
-                <div
-                    class='flex flex-nowrap bg-blue-800 mt-10'
-                    style={{ overflow: "hidden" }}
-                >
-                    <div>
-                        <Image
-                            alt='image'
-                            src='/mask.png'
-                            width={1000}
-                            height={20}
-                            style={{ marginTop: "40px", marginLeft: "100px" }}
-                        />
-                    </div>
-                    <div>
-                        <b
-                            style={{
-                                display: "flex",
-                                flexWrap: "wrap",
-
-                                width: "100px",
-                                marginTop: "130px",
-                                position: "absolute",
-                                color: "white",
-                                fontSize: "20px",
-                            }}
-                        >
-                            {t("joinus")}
-                        </b>
-                    </div>
-                    <div>
-                        <p
-                            style={{
-                                marginTop: "200px",
-                                color: "white",
-                            }}
-                        >
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts and visual mockups Lorem ipsum is
-                            placeholder text commonly used in the graphic,
-                            print, and publishing industries for previewing
-                            layouts and visual mockups..
-                        </p>
-                    </div>
-                    <p style={{ marginTop: "300px", marginRight: "100px" }}>
-                        <button class='py-2 px-4 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540]'>
-                            {t("donation")}
-                        </button>
-                    </p>
+            <div className='flex flex-nowrap bg-[#80D6F6] mt-20'>
+                <div className='w-1/2 flex items-center justify-center'>
+                    <img
+                        alt='image'
+                        src='/comm.png'
+                        className='mt-10'
+                        width={300}
+                        height={20}
+                    />
                 </div>
-            </div>
-            <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-                <Link href='/sponsor' locale='en'>
-                    English
-                </Link>
-                <Link href='/sponsor' locale='ar'>
-                    العربية
-                </Link>
+                <div className='w-1/2 text-white relative mt-20 ml-[-200px]'>
+                    <b className='text-4xl mt-30'>{t("joinus")}</b>
+                    <p className='text-xl mt-10'>{t("disc")}</p>
+                    <button className='py-2 px-4 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540] mt-4 mr-10'>
+                        {t("donation")}
+                    </button>
+                </div>
             </div>
         </>
     );

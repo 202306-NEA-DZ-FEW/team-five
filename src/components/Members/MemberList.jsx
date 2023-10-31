@@ -112,7 +112,7 @@ const MemberList = () => {
         slider.scrollLeft = slider.scrollLeft + 500;
     };
     return (
-        <section className='px-4 md:p-0 flex flex-col container justify-center mx-auto min-h-screen gap-20 overflow-y-visible'>
+        <section className='px-4 md:p-0 mt-[-90px] flex flex-col container justify-center mx-auto min-h-screen gap-20 overflow-y-visible'>
             <h1 className='text-4xl font-bold text-center text-[#212B36]'>
                 {t("member.team")}
             </h1>
@@ -124,7 +124,7 @@ const MemberList = () => {
                 />
                 <div
                     id='slider'
-                    className='w-full h-full flex gap-20 whitespace-nowrap overflow-x-scroll scroll-smooth no-scrollbar relative overflow-y-visible p-40'
+                    className='w-full h-full flex gap-20 whitespace-nowrap overflow-x-hidden scroll-smooth no-scrollbar relative overflow-y-visible pt-40 pl-40 pr-40'
                 >
                     {members.map((member, index) => (
                         <MemberCard key={index} member={member} />
