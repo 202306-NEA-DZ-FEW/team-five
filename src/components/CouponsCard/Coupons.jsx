@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { addToCart } from "@/redux/shopperSlice";
 
 const Coupons = ({ companies }) => {
@@ -8,6 +10,7 @@ const Coupons = ({ companies }) => {
     const [selectedRestaurants, setSelectedRestaurants] = useState([]);
     const [selectedCoupon, setSelectedCoupon] = useState(null);
     const [customCouponAmount, setCustomCouponAmount] = useState(0);
+    const couponCards = [10, 25, 50, 100];
 
     const dispatch = useDispatch();
 
@@ -98,26 +101,33 @@ const Coupons = ({ companies }) => {
             </div>
 
             {/* Main content section */}
-            <div className='bg-white p-6 m-10 rounded-lg drop-shadow-2xl w-4/5'>
+            <div className='bg-white p-10 m-10 flex flex-col gap-16 rounded-lg border border-gray-100 shadow-2xl lg:max-w-7xl'>
                 {/* List of restaurants */}
-                <div className='restaurants space-y-4'>
-                    {companies.map((r, index) => (
+                <div className='flex flex-row flex-wrap gap-24 justify-center 2xl:justify-start w-[570] h-[417]'>
+                    {companies?.map((r, index) => (
                         <div
                             key={index}
-                            className={`flex items-center justify-between p-4 rounded-md bg-white shadow-md ${
+                            className={`flex flex-col items-center justify-center p-4  bg-white shadow-md gap-2 border border-gray-100 ${
                                 selectedRestaurants.includes(r)
                                     ? "bg-green-200"
                                     : "bg-gray-100"
                             }`}
                         >
-                            <h3 className='text-lg font-semibold'>
+                            <Image
+                                className=''
+                                alt={r.UserName}
+                                src={r.image}
+                                width={300}
+                                height={200}
+                            />
+                            <h3 className='font-semibold text-3xl my-5'>
                                 {r.UserName}
                             </h3>
                             <button
-                                className={`p-2 rounded-md bg-gray-400 ${
+                                className={`p-2 rounded-xl text-white font-semibold text-2xl  w-4/5 py-2 mb-5 text-center ${
                                     selectedRestaurants.includes(r)
-                                        ? "bg-green-500"
-                                        : ""
+                                        ? "bg-gray-800"
+                                        : "bg-green-500"
                                 }`}
                                 onClick={() => handleToggleSelectRestaurant(r)}
                             >
@@ -128,76 +138,46 @@ const Coupons = ({ companies }) => {
                         </div>
                     ))}
                 </div>
-
                 {/* Coupon selection section */}
-                <div className='coupons mt-4 space-y-4'>
-                    <div>
-                        <h1 className='text-lg font-semibold'>
-                            Coupon Amount:
-                        </h1>
-                    </div>
-                    <div className='flex space-x-4'>
-                        {/* Buttons for predefined coupon amounts */}
-                        <button
-                            className={`p-2 rounded-md bg-gray-400 ${
-                                selectedCoupon === 10 ? "bg-green-500" : ""
-                            }`}
-                            onClick={() => handleSelectCoupon(10)}
-                        >
-                            $10
-                        </button>
-                        <button
-                            className={`p-2 rounded-md bg-gray-400 ${
-                                selectedCoupon === 25 ? "bg-green-500" : ""
-                            }`}
-                            onClick={() => handleSelectCoupon(25)}
-                        >
-                            $25
-                        </button>
-                        <button
-                            className={`p-2 rounded-md bg-gray-400 ${
-                                selectedCoupon === 50 ? "bg-green-500" : ""
-                            }`}
-                            onClick={() => handleSelectCoupon(50)}
-                        >
-                            $50
-                        </button>
-                        <button
-                            className={`p-2 rounded-md bg-gray-400 ${
-                                selectedCoupon === 100 ? "bg-green-500" : ""
-                            }`}
-                            onClick={() => handleSelectCoupon(100)}
-                        >
-                            $100
-                        </button>
-                    </div>
 
-                    {/* Custom coupon amount input */}
-                    <div>
-                        <h1 className='text-lg font-semibold'>
-                            Custom Amount:
-                        </h1>
-                        <input
-                            type='number'
-                            name='custom amount'
-                            placeholder='amount'
-                            className='w-20 p-2 rounded-md bg-white shadow-md'
-                            value={customCouponAmount}
-                            onChange={handleCustomCouponAmountChange}
-                        />
-                    </div>
+                {/* Buttons for predefined coupon amounts */}
+                <div className='flex gap-4 items-center flex-wrap justify-between border-t-4 border-dashed border-t-green-500 pt-14'>
+                    {couponCards.map((coupon, i) => (
+                        <button
+                            key={coupon + i}
+                            className={`px-2 py-2 w-[45%] md:w-[22%] h-28 text-2xl font-bold bg-white shadow-2xl rounded-sm ${
+                                selectedCoupon === coupon
+                                    ? "ring-4 ring-[#20DC49]"
+                                    : "ring-1 ring-gray-100"
+                            }`}
+                            onClick={() => handleSelectCoupon(coupon)}
+                        >
+                            ${coupon}
+                        </button>
+                    ))}
                 </div>
-
+                {/* Custom coupon amount input */}
+                <div className='relative w-full rounded-md border-[#20DC49] border-2 border-opacity-50'>
+                    <input
+                        type='number'
+                        name='custom amount'
+                        placeholder='Custom amount'
+                        className='h-28 p-8 w-full text-[#20DC49] font-bold text-4xl placeholder-[#20DC49] rounded-md bg-white shadow-md'
+                        value={customCouponAmount}
+                        onChange={handleCustomCouponAmountChange}
+                    />
+                    <span className='h-28 justify-center flex items-center bg-[#20DC49] bg-opacity-10 text-gray-500 absolute right-0 bottom-0 w-48 font-bold text-5xl'>
+                        $
+                    </span>
+                </div>
                 {/* "Add to Cart" button */}
-                <div className='add-to-cart mt-4'>
-                    <button
-                        type='submit'
-                        className='p-2 bg-red-500 text-white rounded-md'
-                        onClick={handleAddToCart}
-                    >
-                        Add to Cart
-                    </button>
-                </div>
+                <button
+                    type='submit'
+                    className='p-4 py-6 text-4xl font-bold w-full bg-[#20DC49] text-white rounded-2xl mb-28'
+                    onClick={handleAddToCart}
+                >
+                    Add to Cart 🛒
+                </button>
             </div>
         </div>
     );
