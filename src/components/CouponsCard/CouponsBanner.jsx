@@ -1,10 +1,23 @@
+import Image from "next/image";
+import bannerImage from "public/couponBanner.svg";
 import React from "react";
 
 const CouponsBanner = () => {
     return (
-        <div className='flex items-center justify-center'>
-            <h1>Banner</h1>
-        </div>
+        <section>
+            <div>
+                <Image
+                    className=''
+                    alt='banner image'
+                    src={bannerImage}
+                    width={500}
+                    height={500}
+                />
+            </div>
+            <div>
+                <h1>description</h1>
+            </div>
+        </section>
     );
 };
 
