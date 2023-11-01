@@ -1,32 +1,11 @@
 import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 
-function Blog() {
+function Blog({ articles }) {
     const { t, i18n } = useTranslation("blog");
-    const [articles, setArticles] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(
-                    `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=bf2ac5e52b565310b91b2082f2814153&lang=${i18n.language}`
-                );
-
-                if (response.ok) {
-                    const data = await response.json();
-                    setArticles(data.articles);
-                } else {
-                    console.error("Error fetching data:", response.statusText);
-                }
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        fetchData();
-    }, [i18n.language]);
     return (
         <div>
             <div className='absolute flex items-center justify-between'>
@@ -63,8 +42,16 @@ function Blog() {
 
                     <div>
                         <div className='flex flex-wrap justify-center'>
-                            {articles.map((article) => (
-                                <BlogCard key={article.id} blog={article} />
+                            {articles.map((article, index) => (
+                                <div key={index} className='mx-2'>
+                                    <Link
+                                        href={`/blog/${encodeURIComponent(
+                                            article.title
+                                        )}`}
+                                    >
+                                        <BlogCard blog={article} />
+                                    </Link>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -75,3 +62,37 @@ function Blog() {
 }
 
 export default Blog;
+
+export async function getServerSideProps({ locale }) {
+    try {
+        let endpoint = "";
+
+        if (locale === "ar") {
+            endpoint =
+                "https://gnews.io/api/v4/search?q=food&token=d9cd9b96515ab722697a60b53ba6cd37&lang=ar";
+        } else {
+            endpoint =
+                "https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=d9cd9b96515ab722697a60b53ba6cd37&lang=en";
+        }
+
+        const response = await fetch(endpoint);
+
+        if (response.ok) {
+            const data = await response.json();
+            const articles = data.articles;
+            return {
+                props: { articles },
+            };
+        } else {
+            console.error("Error fetching data:", response.statusText);
+            return {
+                props: { articles: [] },
+            };
+        }
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return {
+            props: { articles: [] },
+        };
+    }
+}

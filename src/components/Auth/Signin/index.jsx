@@ -81,7 +81,7 @@ export default function Signin({ onToggleComponent, onToggleMail }) {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-0 h-screen'>
             <div className='md:col-span-1 h-screen'>
                 <div className='flex h-screen items-center justify-center'>
-                    <div className='top-5 flex gap-4 ml-[35%] absolute text-right'>
+                    <div className='top-20 flex gap-4 ml-[35%] absolute text-right'>
                         <h2 className=''>{t("signin.donthaveAccount")}</h2>
                         <button
                             className='text-[#20DC49] '
@@ -164,11 +164,11 @@ export default function Signin({ onToggleComponent, onToggleMail }) {
                         </form>
                     </div>
                 </div>
-                <p className='text-left ml-20  text-gray-500 text-[12px] '>
+                <p className='text-left ml-20  text-gray-500 text-[12px] mb-10 '>
                     {t("signup.termsOfUse")}
                 </p>
             </div>
-            <div className='col-span-1 bg-white h-screen  '>
+            <div className='relative col-span-1 bg-white h-screen mb-10'>
                 <img src='/sign.svg' alt='signin' width='100%' />
             </div>
         </div>

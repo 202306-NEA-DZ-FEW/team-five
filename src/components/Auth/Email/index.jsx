@@ -71,17 +71,12 @@ export default function Email({ onToggleComponent }) {
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-0 h-screen'>
-            <div className='md:col-span-1 bg-gray-300 h-screen'>
-                <img
-                    src='/signup.svg'
-                    alt='signup'
-                    width='100%'
-                    height='100%'
-                />
+            <div className='md:col-span-1  h-screen'>
+                <img src='/signup.svg' alt='signup' width='99%' height='100%' />
             </div>
             <div className='col-span-1 bg-white h-screen'>
                 <div className='flex h-screen items-center justify-center'>
-                    <div className='top-5 flex gap-4 right-5 absolute text-right'>
+                    <div className='top-20 flex gap-4 right-5 absolute text-right'>
                         <h2 className=''>{t("signup.haveAccount")}</h2>
                         <button
                             className='text-[#20DC49]  '
