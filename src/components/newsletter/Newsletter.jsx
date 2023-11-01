@@ -217,7 +217,7 @@ function Newsletter() {
                     العربية
                 </Link>
             </div>
-            {/* test */}
+            {/**/}
         </>
     );
 }

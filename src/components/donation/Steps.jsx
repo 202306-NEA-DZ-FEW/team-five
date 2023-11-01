@@ -16,9 +16,7 @@ function Steps() {
                     }}
                 ></div>
 
-
                 <center className='mt-20'>
-
                     <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
                 </center>
                 <br />
