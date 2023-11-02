@@ -4,7 +4,7 @@ import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 
 function Blog({ articles }) {
-    const { t, i18n } = useTranslation("blog");
+    const { t } = useTranslation("blog", "common", "footer");
 
     return (
         <div>
@@ -42,7 +42,7 @@ function Blog({ articles }) {
 
                     <div>
                         <div className='flex flex-wrap justify-center'>
-                            {articles.map((article, index) => (
+                            {articles?.map((article, index) => (
                                 <div key={index} className='mx-2'>
                                     <Link
                                         href={`/blog/${encodeURIComponent(
@@ -65,16 +65,15 @@ export default Blog;
 
 export async function getServerSideProps({ locale }) {
     try {
+        const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
+
         let endpoint = "";
 
         if (locale === "ar") {
-            endpoint =
-                "https://gnews.io/api/v4/search?q=food&token=d9cd9b96515ab722697a60b53ba6cd37&lang=ar";
+            endpoint = `https://gnews.io/api/v4/search?q=food&token=${apiToken}&lang=ar`;
         } else {
-            endpoint =
-                "https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=d9cd9b96515ab722697a60b53ba6cd37&lang=en";
+            endpoint = `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=${apiToken}&lang=en`;
         }
-
         const response = await fetch(endpoint);
 
         if (response.ok) {
