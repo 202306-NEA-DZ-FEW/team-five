@@ -15,7 +15,21 @@ const CouponsBanner = () => {
                     />
                 </figure>
             </div>
-            <div className='flex-1 text-center'></div>
+            <div className='flex-1 text-center'>
+                <div>
+                    <h1>Let`s make an impact</h1>
+                    <p>
+                        Togather we can fight poverty and stop the hunger around
+                        us.
+                    </p>
+                </div>
+                <div>
+                    <div>Your help</div>
+                    <div>Right place</div>
+                    <div>Your Donation</div>
+                    <div>Our valunteers</div>
+                </div>
+            </div>
         </section>
     );
 };
