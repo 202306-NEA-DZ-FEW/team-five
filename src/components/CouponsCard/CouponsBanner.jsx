@@ -1,22 +1,21 @@
 import Image from "next/image";
-import bannerImage from "public/couponBanner.svg";
+import couponsBanner from "public/couponsBanner.svg";
 import React from "react";
-
 const CouponsBanner = () => {
     return (
-        <section>
-            <div>
-                <Image
-                    className=''
-                    alt='banner image'
-                    src={bannerImage}
-                    width={500}
-                    height={500}
-                />
+        <section className='flex  flex-col md:flex-row  h-[70vh]  w-full'>
+            <div className='flex-1 flex justify-center items-center'>
+                <figure className='md:scale-125'>
+                    <Image
+                        className=''
+                        alt=''
+                        src={couponsBanner}
+                        width={700}
+                        height={700}
+                    />
+                </figure>
             </div>
-            <div>
-                <h1>description</h1>
-            </div>
+            <div className='flex-1 text-center'></div>
         </section>
     );
 };
