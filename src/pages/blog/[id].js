@@ -55,16 +55,15 @@ export default BlogSingle;
 
 export async function getServerSideProps({ params, locale }) {
     try {
+        const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
+
         let endpoint = "";
 
         if (locale === "ar") {
-            endpoint =
-                "https://gnews.io/api/v4/search?q=food&token=d9cd9b96515ab722697a60b53ba6cd37&lang=ar";
+            endpoint = `https://gnews.io/api/v4/search?q=food&token=${apiToken}&lang=ar`;
         } else {
-            endpoint =
-                "https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=d9cd9b96515ab722697a60b53ba6cd37&lang=en";
+            endpoint = `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=${apiToken}&lang=en`;
         }
-
         const response = await fetch(endpoint);
 
         if (response.ok) {
