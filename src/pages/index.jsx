@@ -54,6 +54,7 @@ export async function getStaticProps({ locale }) {
                 "footer",
                 "members",
                 "sponsor",
+                "navbar",
             ])),
             // Will be passed to the page component as props
         },

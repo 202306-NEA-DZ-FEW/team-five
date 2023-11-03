@@ -3,15 +3,21 @@ import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
+import LanguageDropdown from "../Language";
+
 function Navbar() {
     const productData = useSelector((state) => state.shopper.productData);
     const [totalAmt, setTotalAmt] = useState("");
-    const [isSelected, setIsSelected] = useState(false);
-    const { t } = useTranslation("common");
 
-    function handleLagSelection() {
-        setIsSelected((isSelected) => !isSelected);
-    }
+    const { t, i18n } = useTranslation("navbar");
+    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+    const [isSelected, setIsSelected] = useState(false);
+
+    const handleLanguageChange = (languageChange) => {
+        setSelectedLanguage(languageChange);
+        setIsSelected(false);
+        i18n.changeLanguage(languageChange);
+    };
 
     useEffect(() => {
         let price = 0;
@@ -23,7 +29,7 @@ function Navbar() {
     }, [productData]);
 
     return (
-        <nav className='flex items-center justify-center  bg-sky-400 h-16'>
+        <nav className='flex items-center justify-center  bg-[#43AFD6] h-16'>
             <div className='flex items-center justify-center gap-40'>
                 {/* Logo and the name of the website the icon */}
 
@@ -31,7 +37,7 @@ function Navbar() {
                     <Link href='/'>
                         <img src='/Logo.svg' alt='Logo' className='mt-4' />
                     </Link>
-                    <div className='grid md:flex mx-auto justify-items-start text-slate-100 hover:text-gray-500 text-xl font-bold md:text-2x'>
+                    <div className='md:flex mx-auto justify-items-start text-slate-100 hover:text-gray-500 text-xl font-bold md:text-2x hidden'>
                         <Link href='/home'>
                             <img
                                 src='/LogoFood.svg'
@@ -45,17 +51,17 @@ function Navbar() {
                 </div>
                 <div className='hidden md:flex px-4 mx-auto font-semibold font-heading space-x-0'>
                     <Link href='/home'>
-                        <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
+                        <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover:bg-[#43acd6]'>
                             {t("navbar.home")}
                         </p>
                     </Link>
                     <Link href='/coupons'>
-                        <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
+                        <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover:bg-[#43acd6]'>
                             {t("navbar.coupons")}
                         </p>
                     </Link>
                     <Link href='/Blog'>
-                        <p className='text-slate-100 bg-sky-400 py-5 px-5 hover:bg-sky-300'>
+                        <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover:bg-[#43acd6]'>
                             {t("navbar.blog")}
                         </p>
                     </Link>
@@ -83,19 +89,18 @@ function Navbar() {
                     </div>
 
                     <div>
-                        <div
-                            className='w-10 h-10 font-bold text-center pt-2 bg-white rounded-full'
-                            onClick={handleLagSelection}
-                        >
-                            {isSelected ? (
-                                <Link href='/' locale='en'>
-                                    EN
-                                </Link>
-                            ) : (
-                                <Link href='/' locale='ar'>
-                                    AR
-                                </Link>
-                            )}
+                        <div className='flex items-center space-x-5'>
+                            <LanguageDropdown
+                                selectedLanguage={selectedLanguage}
+                                onLanguageChange={handleLanguageChange}
+                            />
+                            <div onClick={() => setIsSelected(!isSelected)}>
+                                {isSelected ? (
+                                    <Link href='/' locale='en'></Link>
+                                ) : (
+                                    <Link href='/' locale='ar'></Link>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
