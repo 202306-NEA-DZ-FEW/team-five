@@ -8,10 +8,12 @@ import Email from "@/components/Email/Email";
 import MemberList from "@/components/Members/MemberList";
 import Sponsor from "@/components/sponsors/sponsor";
 import Blogcontainer from "@/containers/Blogcontainer";
+import Newsl from "@/containers/Newsl";
 
 function homepage() {
     return (
         <>
+            <Newsl />
             <Banner
                 btnText='Donate now'
                 imageUrl='/BannerHome.svg'
