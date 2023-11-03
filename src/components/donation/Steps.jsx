@@ -75,7 +75,7 @@ function Steps() {
                     </div>
                     <div>
                         <Image
-                            src='/foodd.png'
+                            src='/food.png'
                             alt='this is an image'
                             width={300}
                             height={400}

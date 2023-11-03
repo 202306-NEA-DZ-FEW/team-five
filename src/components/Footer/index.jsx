@@ -14,8 +14,8 @@ export default function Footer() {
     const current_year = new Date().getFullYear();
     const { t } = useTranslation("footer");
     return (
-        <div>
-            <div className='mx-auto text-white bg-[#43AFD6] py-6 '>
+        <div className='relative'>
+            <div className=' mx-auto text-white bg-[#43AFD6] py-6 '>
                 <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 justify-center items-center ml-10 sm:ml-10 md:ml-20 lg:ml-40 xl:ml-40'>
                     <div className='space-y-3 '>
                         <div>

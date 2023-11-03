@@ -1,17 +1,19 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
-import Steps from "@/components/donation/Steps";
-import Email from "@/components/Email/Email";
-import Blogcontainer from "@/containers/Blogcontainer";
 import Banner from "@/components/Banner";
 import Goal from "@/components/donation/Goal";
+import Steps from "@/components/donation/Steps";
+import Email from "@/components/Email/Email";
 import MemberList from "@/components/Members/MemberList";
 import Sponsor from "@/components/sponsors/sponsor";
+import Blogcontainer from "@/containers/Blogcontainer";
+import Newsl from "@/containers/Newsl";
 
 function homepage() {
     return (
         <>
+            <Newsl />
             <Banner
                 btnText='Donate now'
                 imageUrl='/BannerHome.svg'
@@ -52,6 +54,7 @@ export async function getStaticProps({ locale }) {
                 "footer",
                 "members",
                 "sponsor",
+                "navbar",
             ])),
             // Will be passed to the page component as props
         },
