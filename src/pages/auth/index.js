@@ -44,7 +44,11 @@ export default function Auth() {
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["signup"])),
+            ...(await serverSideTranslations(locale, [
+                "signup",
+                "footer",
+                "common",
+            ])),
         },
     };
 }
