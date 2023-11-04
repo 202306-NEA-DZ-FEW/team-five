@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import articles from "./pages/Blog";
+import articles from "./pages/Bloga";
 
 const BlogPost = () => {
     const router = useRouter();

@@ -7,7 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Disc from "@/components/Cards/Disc";
 
 function BlogSingle({ article, articles }) {
-    const { t } = useTranslation("cart", "footer", "common");
+    const { t } = useTranslation("cart", "footer", "emails", "common", "blog");
     const router = useRouter();
     const { id } = router.query;
 
@@ -30,11 +30,11 @@ function BlogSingle({ article, articles }) {
                             {article.description}
                         </p>
                         <p className='mx-4 md:mx-20'>
-                            {article.content} <Disc />
+                            {article.content} {t("blog.disc")}
                         </p>
 
                         <h1 className='text-3xl font-semibold mb-4 mt-5'>
-                            {t("read")}
+                            {t("blog.read")}
                         </h1>
                         <div className='flex flex-wrap justify-center gap-4'>
                             {articles.slice(0, 4).map((member, index) => (
@@ -72,32 +72,50 @@ export async function getServerSideProps({ params, locale }) {
             const article = articles.find(
                 (a) => a.title === decodeURIComponent(params.id)
             );
+
             return {
                 props: {
                     article,
                     articles,
                     ...(await serverSideTranslations(locale, [
-                        "steps",
-                        "emails",
-                        "button",
+                        "blog",
                         "common",
                         "footer",
-                        "members",
-                        "sponsor",
-                        "blog",
+                        "emails",
+                        "navbar",
                     ])),
                 },
             };
         } else {
             console.error("Error fetching data:", response.statusText);
             return {
-                props: { article: null },
+                props: {
+                    article: null,
+                    articles: [],
+                    ...(await serverSideTranslations(locale, [
+                        "blog",
+                        "common",
+                        "footer",
+                        "emails",
+                        "navbar",
+                    ])),
+                },
             };
         }
     } catch (error) {
         console.error("Error fetching data:", error);
         return {
-            props: { article: null },
+            props: {
+                article: null,
+                articles: [],
+                ...(await serverSideTranslations(locale, [
+                    "common",
+                    "blog",
+                    "footer",
+                    "emails",
+                    "navbar",
+                ])),
+            },
         };
     }
 }
