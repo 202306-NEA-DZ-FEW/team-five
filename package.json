@@ -25,6 +25,7 @@
         "axios": "^1.6.0",
         "chart.js": "^4.4.0",
         "clsx": "^1.2.1",
+        "core-js": "^3.33.2",
         "date-fns": "^2.29.1",
         "eslint-plugin-jest": "^26.6.0",
         "firebaseui": "^6.1.0",
