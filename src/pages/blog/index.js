@@ -23,7 +23,7 @@ const Blog = ({ articles }) => {
                 <p className='text-gray-600'>{t("blog.needs")}</p>
             </div>
             <div>
-                <div className='flex flex-wrap justify-center'>
+                {/* <div className='flex flex-wrap justify-center'>
                     {articles?.map((article, index) => (
                         <div key={index} className='mx-2'>
                             <Link
@@ -35,7 +35,7 @@ const Blog = ({ articles }) => {
                             </Link>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </div>
     );
