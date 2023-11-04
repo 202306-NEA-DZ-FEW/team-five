@@ -7,4 +7,5 @@ module.exports = {
         dirs: ["src"],
     },
     reactStrictMode: true,
+    transpileModules: ["core-js"],
 };
