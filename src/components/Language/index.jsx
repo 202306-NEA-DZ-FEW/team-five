@@ -12,7 +12,7 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
             <div>
                 <button
                     type='button'
-                    className='flex items-center space-x-2 focus:outline-none'
+                    className='flex items-center space-x-2 text-white font-semibold focus:outline-none'
                     onClick={handleDropdownToggle}
                 >
                     {selectedLanguage === "en" ? (
@@ -43,7 +43,7 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                 >
                     <div className='py-1' role='none'>
                         <button
-                            className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                            className='block flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                             role='menuitem'
                             onClick={() => {
                                 handleDropdownToggle();
@@ -54,11 +54,11 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                                 src='gb.svg'
                                 className='w-4 h-4 mr-2'
                                 name='GB'
-                            />
+                            />{" "}
                             English
                         </button>
                         <button
-                            className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                            className='block flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                             role='menuitem'
                             onClick={() => {
                                 handleDropdownToggle();

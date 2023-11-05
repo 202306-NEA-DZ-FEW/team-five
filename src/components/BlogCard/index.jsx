@@ -5,11 +5,11 @@ const BlogCard = ({ blog }) => {
     const { t } = useTranslation("BlogCard");
 
     const authorsNames = [
-        "Achraf Mehanneche",
-        "Sidahmed Slikh",
+        "Achraf Mehanneche ",
+        "Sidahmed Slikh    ",
         "Mohammed Tchoketch",
-        "Abdelhamid Serhan",
-        "MelisaMilyssa Sidisaid",
+        "Abdelhamid Serhan ",
+        "Mellisa Sidisaid  ",
     ];
     const images = [
         "achraf.jpg",
@@ -23,15 +23,25 @@ const BlogCard = ({ blog }) => {
     const randomAuthorName = authorsNames[randomIndex];
     const randomAuthorImage = images[randomIndex];
 
+    const truncateText = (text, maxLength) => {
+        if (text.length <= maxLength) {
+            return text;
+        }
+        return text.slice(0, maxLength) + "... ";
+    };
+
+    const truncatedTitle = truncateText(blog.title, 65);
+    const truncatedDescription = truncateText(blog.description, 210);
+
     return (
-        <div className='relative max-w-sm rounded overflow-hidden shadow-lg m-4 '>
+        <div className='relative w-[416px] h-[528px] rounded overflow-hidden shadow-lg m-4 hover:bg-gray-100 transform hover:scale-105 transition duration-300 ease-in-out'>
             <img
                 src={blog.image}
                 alt={blog.title}
                 className='w-full h-56 object-cover'
             />
             <div className='flex flex-col flex-grow p-4'>
-                <h2 className='font-bold text-xl mb-2'>{blog.title}</h2>
+                <h2 className='font-bold text-xl mb-2'>{truncatedTitle}</h2>
                 <div className='flex items-center mb-2'>
                     <img
                         src={`./${randomAuthorImage}`}
@@ -46,14 +56,16 @@ const BlogCard = ({ blog }) => {
                     </div>
                 </div>
                 <p className='text-gray-600 mb-4 flex-grow p-4'>
-                    {blog.description}
+                    {truncatedDescription}
                 </p>
                 <div className='mt-auto'></div>
-                <Link href={`/blog/${blog.slug}`}>
-                    <button className='absolute bottom-0 left-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-1 rounded-full text-center'>
-                        <p>{t("Read")}</p>
-                    </button>
-                </Link>
+
+                <button
+                    className='absolute bottom-0 left-0 hover:text-gray-300 text-green-500 font-bold py-2 px-4 mb-1 rounded-full text-center'
+                    style={{ textDecoration: "underline" }}
+                >
+                    <p>{t("Read")}</p>
+                </button>
             </div>
         </div>
     );
