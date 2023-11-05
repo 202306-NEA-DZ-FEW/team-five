@@ -4,7 +4,7 @@ import Article from "@/components/Cards/Article";
 import "core-js/modules/es.array.map";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-function BlogSingle({ translations }) {
+function BlogSingle() {
     const { t } = useTranslation([
         "cart",
         "footer",
