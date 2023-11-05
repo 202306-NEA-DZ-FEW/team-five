@@ -20,8 +20,32 @@ function BlogSingle({ translations, article, articles }) {
 }
 
 export default BlogSingle;
-
 export async function getStaticPaths() {
+    const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
+    let endpoint = `https://gnews.io/api/v4/search?q=food&token=${apiToken}&lang=en`;
+
+    try {
+        const response = await fetch(endpoint);
+
+        if (response.ok) {
+            const data = await response.json();
+            const articles = data.articles;
+
+            const paths = articles.map((article) => ({
+                params: { id: encodeURIComponent(article.title) },
+            }));
+
+            return {
+                paths,
+                fallback: false,
+            };
+        } else {
+            console.error("Failed to fetch data from the API.");
+        }
+    } catch (error) {
+        console.error("An error occurred while fetching data:", error);
+    }
+
     return {
         paths: [],
         fallback: false,
