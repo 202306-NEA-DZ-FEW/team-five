@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import React from "react";
 import Article from "@/components/Cards/Article";
-import { getTranslations } from "@/Utils/translation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function BlogSingle() {
     const { t } = useTranslation(
@@ -21,21 +21,17 @@ function BlogSingle() {
 
 export default BlogSingle;
 
-export const getStaticProps = async ({ locale }) => {
-    const translations = await getTranslations(locale);
-
+export async function getServerSideProps({ locale }) {
     return {
         props: {
-            ...translations,
+            ...(await serverSideTranslations(locale, [
+                "cart",
+                "footer",
+                "emails",
+                "navbar",
+                "common",
+            ])),
+            // Will be passed to the page component as props
         },
-    };
-};
-
-export async function getStaticPaths() {
-    const paths = [];
-
-    return {
-        paths,
-        fallback: false,
     };
 }
