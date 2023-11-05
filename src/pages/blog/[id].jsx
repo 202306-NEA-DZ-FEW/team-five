@@ -2,6 +2,7 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import Article from "@/components/Cards/Article";
 import "core-js/modules/es.array.map";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function BlogSingle({ article }) {
     const { t } = useTranslation([
@@ -21,25 +22,17 @@ function BlogSingle({ article }) {
 
 export default BlogSingle;
 
-export async function getServerSideProps({ params, locale }) {
-    const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
-
-    const endpoint = `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=${apiToken}&lang=en`;
-
-    const response = await fetch(endpoint);
-
-    if (response.ok) {
-        const data = await response.json();
-        const articles = data.articles;
-        const foundArticle = articles.find(
-            (a) => a.title === decodeURIComponent(params.id)
-        );
-        return {
-            props: { article: foundArticle, articles },
-        };
-    }
-
+export async function getServerSideProps({ locale }) {
     return {
-        props: {},
+        props: {
+            ...(await serverSideTranslations(locale, [
+                "cart",
+                "footer",
+                "emails",
+                "navbar",
+                "common",
+                "blog",
+            ])),
+        },
     };
 }
