@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
 import React from "react";
 import Article from "@/components/Cards/Article";
+import "core-js/modules/es.array.map";
 
 function BlogSingle({ article }) {
     const { t } = useTranslation([
