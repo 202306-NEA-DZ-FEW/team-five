@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import Email from "@/components/Email/Email";
 import { useRouter } from "next/router";
 
-const Article = () => {
+const Article = ({ article, articles }) => {
     const { t, i18n } = useTranslation(
         "blog",
         "footer",
@@ -14,39 +14,9 @@ const Article = () => {
         "common",
         "emails"
     );
-    const [article, setArticle] = useState(null);
-    const [articles, setArticles] = useState(null);
+
     const router = useRouter();
     const { id } = router.query;
-
-    useEffect(() => {
-        const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
-        async function fetchData() {
-            let endpoint = "";
-
-            if (i18n.language === "ar") {
-                endpoint = `https://gnews.io/api/v4/search?q=food&token=${apiToken}&lang=ar`;
-            } else {
-                endpoint = `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=${apiToken}&lang=en`;
-            }
-
-            const response = await fetch(endpoint);
-
-            if (response.ok) {
-                const data = await response.json();
-                const articles = data.articles;
-                const foundArticle = articles.find(
-                    (a) => a.title === decodeURIComponent(id)
-                );
-                setArticle(foundArticle);
-                setArticles(articles);
-            }
-        }
-
-        if (id) {
-            fetchData();
-        }
-    }, [i18n.language, id]);
 
     return (
         <div className='text-center'>
@@ -74,7 +44,7 @@ const Article = () => {
                             {t("blog.read")}
                         </h1>
                         <div className='flex flex-wrap justify-center gap-4'>
-                            {articles?.slice(0, 4).map((member, index) => (
+                            {articles?.slice(0, 3).map((member, index) => (
                                 <BlogCard key={member.id} blog={member} />
                             ))}
                         </div>

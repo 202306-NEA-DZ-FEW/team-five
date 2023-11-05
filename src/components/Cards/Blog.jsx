@@ -55,7 +55,7 @@ export default function Blog() {
                     </h1>
                 </div>
                 <div className='flex flex-wrap justify-center gap-4'>
-                    {articles?.slice(4, 8).map((member, index) => (
+                    {articles?.slice(4, 7).map((member, index) => (
                         <BlogCard key={member.id} blog={member} />
                     ))}
                 </div>
