@@ -33,7 +33,6 @@ export async function getServerSideProps({ locale }) {
                 "common",
                 "blog",
             ])),
-            // Will be passed to the page component as props
         },
     };
 }
