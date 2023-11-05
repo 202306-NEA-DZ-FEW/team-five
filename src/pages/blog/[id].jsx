@@ -20,6 +20,7 @@ function BlogSingle({ translations, article, articles }) {
 }
 
 export default BlogSingle;
+
 export async function getStaticPaths() {
     const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
     let endpoint = `https://gnews.io/api/v4/search?q=food&token=${apiToken}&lang=en`;
@@ -52,7 +53,7 @@ export async function getStaticPaths() {
     };
 }
 
-export const getStaticProps = async ({ locale, params }) => {
+export const getStaticProps = async ({ params, locale }) => {
     const id = params.id;
     const translations = await getTranslations(locale);
 
@@ -65,25 +66,41 @@ export const getStaticProps = async ({ locale, params }) => {
         endpoint = `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=${apiToken}&lang=en`;
     }
 
-    const response = await fetch(endpoint);
+    try {
+        const response = await fetch(endpoint);
 
-    if (response.ok) {
-        const data = await response.json();
-        const articles = data.articles;
-        const foundArticle = articles.find(
-            (a) => a.title === decodeURIComponent(id)
-        );
+        if (response.ok) {
+            const data = await response.json();
+            const articles = data.articles;
+            const foundArticle = articles.find(
+                (a) => a.title === decodeURIComponent(id)
+            );
 
-        return {
-            props: {
-                translations,
-                article: foundArticle,
-                articles: articles,
-            },
-        };
-    } else {
-        return {
-            notFound: true,
-        };
+            if (foundArticle) {
+                return {
+                    props: {
+                        translations,
+                        article: foundArticle,
+                        articles: articles,
+                    },
+                };
+            } else {
+                return {
+                    props: {
+                        translations,
+                        article: null,
+                        articles: articles,
+                    },
+                };
+            }
+        } else {
+            console.error("Failed to fetch data from the API.");
+        }
+    } catch (error) {
+        console.error("An error occurred while fetching data:", error);
     }
+
+    return {
+        notFound: true,
+    };
 };
