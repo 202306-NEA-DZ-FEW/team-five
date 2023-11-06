@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import { BsBalloonHeart } from "react-icons/bs";
 import { LiaHandHoldingHeartSolid } from "react-icons/lia";
@@ -5,7 +6,9 @@ import { RiUserHeartLine } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 
 import ImpactCard from "./ImpactCard";
+
 const CouponsBanner = () => {
+    const { t } = useTranslation("couponsPage");
     return (
         <section className='flex  flex-col xl:flex-row  items-center h-screen gap-10 w-full'>
             <div
@@ -20,38 +23,35 @@ const CouponsBanner = () => {
             <div className='flex-1 px-4 lg:px-10 mb-8 lg:mb-0'>
                 <div className='w-full'>
                     <h1 className='lg:text-7xl md:text-5xl text-4xl font-bold text-[#1A8FE3]'>
-                        Let`s make an <span className='underline'>impact</span>
+                        {t("banner.title")}
+                        <span className='underline'>
+                            {t("banner.titleStyle")}
+                        </span>
                     </h1>
                     <p className='mt-6 mb-12 text-gray-600 font-semibold '>
-                        Togather we can fight poverty and stop the hunger around
-                        us. Your donation is the shield to protect the poor from
-                        suffering.
+                        {t("banner.description")}
                     </p>
                 </div>
                 <div className='mt-10 grid grid-cols-2 gap-10'>
                     <ImpactCard
-                        title='Your help'
+                        title={t("banner.title1")}
                         icon={<BsBalloonHeart />}
-                        description='Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Praesentium, itaque.'
+                        description={t("banner.description1")}
                     />
                     <ImpactCard
-                        title='Right place'
+                        title={t("banner.title2")}
                         icon={<SlLocationPin />}
-                        description='Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Praesentium, itaque.'
+                        description={t("banner.description2")}
                     />
                     <ImpactCard
-                        title='Your Donation'
+                        title={t("banner.title3")}
                         icon={<LiaHandHoldingHeartSolid />}
-                        description='Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Praesentium, itaque.'
+                        description={t("banner.description3")}
                     />
                     <ImpactCard
-                        title='Our valunteers'
+                        title={t("banner.title4")}
                         icon={<RiUserHeartLine />}
-                        description='Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Praesentium, itaque.'
+                        description={t("banner.description4")}
                     />
                 </div>
             </div>
