@@ -23,9 +23,9 @@ const CouponsBanner = () => {
             <div className='flex-1 px-4 lg:px-10 mb-8 lg:mb-0'>
                 <div className='w-full'>
                     <h1 className='lg:text-7xl md:text-5xl text-4xl font-bold text-[#1A8FE3]'>
-                        {t("banner.title")}
+                        {t("banner.title")}{" "}
                         <span className='underline'>
-                            {t("banner.titleStyle")}
+                            {t("banner.titleStyled")}{" "}
                         </span>
                     </h1>
                     <p className='mt-6 mb-12 text-gray-600 font-semibold '>
