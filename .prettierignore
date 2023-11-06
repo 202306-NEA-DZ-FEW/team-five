@@ -42,7 +42,7 @@ tailwind.config.js
 postcss.config.js
 signup.json
 admin.json
-
+couponsPage.json
 blog.json
 blogcard.json
 common.json
