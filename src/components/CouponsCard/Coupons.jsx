@@ -133,7 +133,7 @@ const Coupons = ({ companies }) => {
                                 onClick={() => handleToggleSelectRestaurant(r)}
                             >
                                 {selectedRestaurants.includes(r)
-                                    ? "Selected"
+                                    ? `${t("cards.selected")}`
                                     : "Select"}
                             </button>
                         </div>
