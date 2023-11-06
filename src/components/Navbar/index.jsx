@@ -15,6 +15,7 @@ function Navbar() {
     const handleLanguageChange = (languageChange) => {
         setSelectedLanguage(languageChange);
         setIsSelected(false);
+
         i18n.changeLanguage(languageChange);
     };
 
