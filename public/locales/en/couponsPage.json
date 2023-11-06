@@ -11,5 +11,12 @@
     "description2":"We are the right choice for your donation. We will guarantee your donation reach the right place.",
     "description3":"Your donation will shape your smile and make poor people happy. Don`t underestimate your donation.",
     "description4":"We have the elite as a volunteers, they know what they are doing and they value what you wish for."
+  },
+  "cards":{
+    "title":"Restaurants",
+    "select":"Select",
+    "selected":"Selected",
+   "placeholder":"Custom amount",
+   "addTocart":"Add to Cart"
   }
 }

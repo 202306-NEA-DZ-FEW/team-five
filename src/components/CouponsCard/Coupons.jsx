@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -6,7 +7,7 @@ import { addToCart } from "@/redux/shopperSlice";
 
 const Coupons = ({ companies }) => {
     // Define state variables using the useState hook
-
+    const { t } = useTranslation("couponsPage");
     const [selectedRestaurants, setSelectedRestaurants] = useState([]);
     const [selectedCoupon, setSelectedCoupon] = useState(null);
     const [customCouponAmount, setCustomCouponAmount] = useState(0);
@@ -96,7 +97,7 @@ const Coupons = ({ companies }) => {
             {/* Header section */}
             <div className='bg-sky-400 w-full h-28 rounded-b-full'>
                 <h1 className='text-4xl text-white font-semibold mb-4 text-center m-3'>
-                    Restaurants
+                    {t("cards.title")}
                 </h1>
             </div>
 
