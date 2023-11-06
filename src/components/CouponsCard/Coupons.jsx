@@ -134,7 +134,7 @@ const Coupons = ({ companies }) => {
                             >
                                 {selectedRestaurants.includes(r)
                                     ? `${t("cards.selected")}`
-                                    : "Select"}
+                                    : `${t("cards.select")}`}
                             </button>
                         </div>
                     ))}
@@ -162,7 +162,7 @@ const Coupons = ({ companies }) => {
                     <input
                         type='number'
                         name='custom amount'
-                        placeholder='Custom amount'
+                        placeholder={t("cards.placeholder")}
                         className='h-28 p-8 w-full text-[#20DC49] font-bold text-4xl placeholder-[#20DC49] rounded-md bg-white shadow-md'
                         value={customCouponAmount}
                         onChange={handleCustomCouponAmountChange}
@@ -177,7 +177,7 @@ const Coupons = ({ companies }) => {
                     className='p-4 py-6 text-4xl font-bold w-full bg-[#20DC49] text-white rounded-2xl mb-28'
                     onClick={handleAddToCart}
                 >
-                    Add to Cart 🛒
+                    {t("cards.addTocart")} 🛒
                 </button>
             </div>
         </div>
