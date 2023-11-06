@@ -53,17 +53,13 @@ const Coupons = ({ companies }) => {
 
             if (isNaN(couponAmount)) {
                 // Show an alert if the amount is not a valid number
-                alert(
-                    "You need to choose a valid amount of money you want to donate."
-                );
+                alert(`${t("alert.alert1")}`);
             } else if (couponAmount === 0) {
                 // Show an alert if the amount is 0
-                alert(
-                    "You need to choose the amount of money you want to donate."
-                );
+                alert(`${t("alert.alert2")}`);
             } else if (couponAmount < 5) {
                 // Show an alert if the amount is less than $5
-                alert("Please, the donation needs to be $5 or more.");
+                `${t("alert.alert3")}`;
             } else {
                 // Prepare data for the backend and log it
                 const restaurantsWithCoupon = selectedRestaurants.map(

@@ -18,5 +18,11 @@
     "selected":"Selected",
    "placeholder":"Custom amount",
    "addTocart":"Add to Cart"
+  },
+  "alert":{
+    "alert1":"You need to choose a valid amount of money you want to donate.",
+    "alert2":"You need to choose the amount of money you want to donate.",
+    "alert3":"Please, the donation needs to be $5 or more."
   }
+
 }

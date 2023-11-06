@@ -9,7 +9,7 @@ import CouponsBanner from "@/components/CouponsCard/CouponsBanner";
 import { db } from "@/Utils/firebase";
 
 export default function CouponsPage() {
-    const { t } = useTranslation("couponsPage,common,footer");
+    const { t } = useTranslation("couponsPage,common,footer,navbar");
     const [Data, setData] = useState([]);
 
     useEffect(() => {
@@ -48,6 +48,7 @@ export async function getStaticProps({ locale }) {
                 "common",
                 "footer",
                 "couponsPage",
+                "navbar",
             ])),
         },
     };
