@@ -66,7 +66,7 @@ const MemberList = () => {
         },
         {
             name: `${t("member.tchoketch")}`,
-            image: "/hamid_ahmidat.jpg",
+            image: "/mohamed_tchoketch.png",
             memberShip: `${t("member.member")}`,
             description: `${t("member.tchoketchDiscription")}`,
             socialMedia: [
