@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
@@ -12,7 +13,7 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
             <div>
                 <button
                     type='button'
-                    className='flex items-center space-x-2 focus:outline-none'
+                    className='flex items-center space-x-2 text-white font-semibold focus:outline-none'
                     onClick={handleDropdownToggle}
                 >
                     {selectedLanguage === "en" ? (
@@ -42,8 +43,10 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                     aria-orientation='vertical'
                 >
                     <div className='py-1' role='none'>
-                        <button
-                            className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                        <Link
+                            href='/'
+                            locale='en'
+                            className='flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                             role='menuitem'
                             onClick={() => {
                                 handleDropdownToggle();
@@ -52,13 +55,17 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                         >
                             <img
                                 src='gb.svg'
+                                alt='Gb'
                                 className='w-4 h-4 mr-2'
                                 name='GB'
-                            />
+                            />{" "}
                             English
-                        </button>
-                        <button
-                            className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                        </Link>
+
+                        <Link
+                            href='/'
+                            locale='ar'
+                            className=' flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                             role='menuitem'
                             onClick={() => {
                                 handleDropdownToggle();
@@ -67,11 +74,12 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                         >
                             <img
                                 src='dz.svg'
+                                alt='dz'
                                 className='w-4 h-4 mr-2'
                                 name='DZ'
                             />
                             العربية
-                        </button>
+                        </Link>
                     </div>
                 </div>
             )}

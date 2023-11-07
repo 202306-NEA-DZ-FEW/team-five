@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import nextI18NextConfig from "../../next-i18next.config";
 
 import "@/styles/globals.css";
 
@@ -22,7 +23,7 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig);
 
 export async function getStaticProps({ locale }) {
     return {
