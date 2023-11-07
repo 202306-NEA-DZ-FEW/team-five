@@ -41,9 +41,9 @@ const Newsl = () => {
         <div>
             {showNewsletter && (
                 <div className='fixed inset-0 flex items-center justify-center z-50'>
-                    <div className='bg-white border rounded-lg p-5 relative'>
+                    <div className='bg-white bg-opacity-30 backdrop-blur-md backdrop-opacity-70 border rounded-lg p-5 relative'>
                         <button
-                            className='absolute top-2 right-2 text-gray-500 hover-text-gray-800'
+                            className='absolute top-2 right-2 text-white hover-text-gray-800'
                             onClick={closeNewsletter}
                         >
                             Close

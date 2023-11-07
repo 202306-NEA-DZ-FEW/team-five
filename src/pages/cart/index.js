@@ -5,7 +5,7 @@ import React from "react";
 import CartPage from "@/containers/Cart/Cartpage";
 
 const Cart = () => {
-    const { t } = useTranslation("cart", "footer", "common");
+    const { t } = useTranslation("cart", "footer", "common", "navbar");
 
     return (
         <div Classname='overflow-x-hidden'>
@@ -23,6 +23,7 @@ export async function getStaticProps({ locale }) {
                 "cart",
                 "footer",
                 "common",
+                "navbar",
             ])),
         },
     };

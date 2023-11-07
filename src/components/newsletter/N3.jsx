@@ -1,5 +1,5 @@
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 const N3 = () => {
     return (
@@ -13,11 +13,11 @@ const N3 = () => {
                         alt='no image'
                     />
                 </div>
-                <div className='col-span-2 text-center ...'>
+                <div className='col-span-2 text-xl  ...'>
                     <b>join our newsletter to learn more</b>
                     <h1>We need you to stop hunger!</h1>
                 </div>
-                <div class='row-span-2 col-span-2 ...'>
+                <div class='row-span-2 col-span-2 mt-5 ...'>
                     <form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'
