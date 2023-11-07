@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -6,7 +7,7 @@ import { addToCart } from "@/redux/shopperSlice";
 
 const Coupons = ({ companies }) => {
     // Define state variables using the useState hook
-
+    const { t } = useTranslation("couponsPage");
     const [selectedRestaurants, setSelectedRestaurants] = useState([]);
     const [selectedCoupon, setSelectedCoupon] = useState(null);
     const [customCouponAmount, setCustomCouponAmount] = useState(0);
@@ -52,17 +53,13 @@ const Coupons = ({ companies }) => {
 
             if (isNaN(couponAmount)) {
                 // Show an alert if the amount is not a valid number
-                alert(
-                    "You need to choose a valid amount of money you want to donate."
-                );
+                alert(`${t("alert.alert1")}`);
             } else if (couponAmount === 0) {
                 // Show an alert if the amount is 0
-                alert(
-                    "You need to choose the amount of money you want to donate."
-                );
+                alert(`${t("alert.alert2")}`);
             } else if (couponAmount < 5) {
                 // Show an alert if the amount is less than $5
-                alert("Please, the donation needs to be $5 or more.");
+                `${t("alert.alert3")}`;
             } else {
                 // Prepare data for the backend and log it
                 const restaurantsWithCoupon = selectedRestaurants.map(
@@ -96,7 +93,7 @@ const Coupons = ({ companies }) => {
             {/* Header section */}
             <div className='bg-sky-400 w-full h-28 rounded-b-full'>
                 <h1 className='text-4xl text-white font-semibold mb-4 text-center m-3'>
-                    Restaurants
+                    {t("cards.title")}
                 </h1>
             </div>
 
@@ -132,8 +129,8 @@ const Coupons = ({ companies }) => {
                                 onClick={() => handleToggleSelectRestaurant(r)}
                             >
                                 {selectedRestaurants.includes(r)
-                                    ? "Selected"
-                                    : "Select"}
+                                    ? `${t("cards.selected")}`
+                                    : `${t("cards.select")}`}
                             </button>
                         </div>
                     ))}
@@ -161,7 +158,7 @@ const Coupons = ({ companies }) => {
                     <input
                         type='number'
                         name='custom amount'
-                        placeholder='Custom amount'
+                        placeholder={t("cards.placeholder")}
                         className='h-28 p-8 w-full text-[#20DC49] font-bold text-4xl placeholder-[#20DC49] rounded-md bg-white shadow-md'
                         value={customCouponAmount}
                         onChange={handleCustomCouponAmountChange}
@@ -176,7 +173,7 @@ const Coupons = ({ companies }) => {
                     className='p-4 py-6 text-4xl font-bold w-full bg-[#20DC49] text-white rounded-2xl mb-28'
                     onClick={handleAddToCart}
                 >
-                    Add to Cart 🛒
+                    {t("cards.addTocart")} 🛒
                 </button>
             </div>
         </div>
