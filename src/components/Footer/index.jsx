@@ -15,9 +15,9 @@ export default function Footer() {
     const { t } = useTranslation("footer");
     return (
         <div className='relative'>
-            <div className=' mx-auto text-white bg-[#43AFD6] py-6 '>
-                <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 justify-center items-center ml-10 sm:ml-10 md:ml-20 lg:ml-40 xl:ml-40'>
-                    <div className='space-y-3 '>
+            <div className='text-white bg-[#43AFD6] py-6 w-full'>
+                <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 text-xs gap-4 justify-center items-center ml-10 place-items-start'>
+                    <div className=''>
                         <div>
                             <Image
                                 src='/footer_icons/logo.svg'
@@ -31,31 +31,25 @@ export default function Footer() {
                                 <b>Food on coupon</b>
                             </h1>
                         </div>
-                        <div>
+                        <div className='max-w-[250px]'>
                             <p>{t("footer.description")}</p>
                         </div>
                     </div>
-                    <div className='space-y-3'>
-                        <div className='space-y-1 space-x-10'>
+                    <div className=''>
+                        <div className='space-y-1 space-x-10 text-white flex gap-20'>
                             <Link href='/Home'>
-                                <b className='text-white'>
-                                    {t("footer.homePage")}
-                                </b>
+                                <b className=''>{t("footer.homePage")}</b>
                             </Link>
                             <Link href='/Coupons'>
-                                <b className='text-white'>
-                                    {t("footer.couponsPage")}
-                                </b>
+                                <b className=''>{t("footer.couponsPage")}</b>
                             </Link>
                             <Link href='/Blog'>
-                                <b className='text-white'>
-                                    {t("footer.blogPage")}
-                                </b>
+                                <b className=''>{t("footer.blogPage")}</b>
                             </Link>
                         </div>
-                        <div className='flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4'>
+                        <div className='flex flex-col md:flex-row my-10'>
                             <div
-                                className='flex items-center flex-col space-x-2 text-center'
+                                className='flex items-start flex-col space-x-2  gap-2'
                                 style={{ flex: "1" }}
                             >
                                 <Image
@@ -67,7 +61,7 @@ export default function Footer() {
                                 <p>{t("footer.address")}</p>
                             </div>
                             <div
-                                className='flex items-center flex-col space-x-2 text-center'
+                                className='flex items-start flex-col space-x-2  gap-2'
                                 style={{ flex: "1" }}
                             >
                                 <Image
@@ -82,7 +76,7 @@ export default function Footer() {
                                 </p>
                             </div>
                             <div
-                                className='flex items-center flex-col space-x-2 text-center'
+                                className='flex items-start flex-col space-x-2 gap-2'
                                 style={{ flex: "1" }}
                             >
                                 <Image
@@ -98,7 +92,7 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='space-y-3'>
+                    <div className='ml-20'>
                         <div>
                             <h3 className='pb-5'>
                                 <b>{t("footer.subNewsletter")}</b>
