@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
@@ -10,17 +11,19 @@ import Sponsor from "@/components/sponsors/sponsor";
 import Blogcontainer from "@/containers/Blogcontainer";
 import Newsl from "@/containers/Newsl";
 
-function homepage() {
+function Homepage() {
+    const { t } = useTranslation("common", "blog", "footer", "navbar");
+
     return (
         <>
             <Newsl />
             <Banner
-                btnText='Donate now'
+                btnText={t("btn")}
                 imageUrl='/BannerHome.svg'
-                description="Be a part of the breakthrough and make someone's dream come true."
-                title='Happiness'
-                title1=' comes from'
-                title2='Your action'
+                description={t("desc")}
+                title={t("title")}
+                title1={t("title1")}
+                title2={t("title2")}
             />
             <Steps />
             <div className='mb-14 '>
@@ -42,7 +45,7 @@ function homepage() {
     );
 }
 
-export default homepage;
+export default Homepage;
 export async function getStaticProps({ locale }) {
     return {
         props: {
