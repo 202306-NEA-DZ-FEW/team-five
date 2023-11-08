@@ -15,36 +15,43 @@ export default function Footer() {
     const { t } = useTranslation("footer");
     return (
         <div className='relative'>
-            <div className='text-white bg-[#43AFD6] py-6 w-full'>
-                <div className='flex flex-row text-xs gap-4 flex-wrap lg:flex-nowrap  justify-center items-center ml-10 '>
-                    <div className='lg:basis-1/4 '>
-                        <div>
-                            <Image
-                                src='/footer_icons/logo.svg'
-                                alt='logo-image'
-                                width={40}
-                                height={70}
-                            />
-                        </div>
-                        <div>
-                            <h1 className='text-3xl'>
+            <div className='text-white bg-[#43AFD6] py-6 w-full '>
+                <div className='flex flex-row text-xs gap-4 flex-wrap lg:flex-nowrap  justify-center items-center ml-10 mt-10 '>
+                    <div className='lg:basis-1/4 grid grid-cols-2 justify-items-stretch gap-5'>
+                        <div className='col-span-2 flex gap-4'>
+                            <div>
+                                <Image
+                                    src='/footer_icons/logo.svg'
+                                    alt='logo-image'
+                                    width={30}
+                                    height={60}
+                                />
+                            </div>
+
+                            <h1 className='text-3xl text-center translate-y-2 font-serif'>
                                 <b>Food on coupon</b>
                             </h1>
                         </div>
-                        <div className='max-w-[250px] p-5'>
+                        <div className='max-w-[250px] p-5 col-span-2'>
                             <p>{t("footer.description")}</p>
                         </div>
                     </div>
                     <div className='flex flex-col w-full basis-1/2'>
-                        <div className='space-y-1 space-x-10 text-white flex md:gap-20'>
+                        <div className='space-x-8 text-white text-center flex md:gap-20'>
                             <Link href='/Home'>
-                                <b className=''>{t("footer.homePage")}</b>
+                                <b className=' text-center'>
+                                    {t("footer.homePage")}
+                                </b>
                             </Link>
                             <Link href='/Coupons'>
-                                <b className=''>{t("footer.couponsPage")}</b>
+                                <b className='text-center'>
+                                    {t("footer.couponsPage")}
+                                </b>
                             </Link>
                             <Link href='/Blog'>
-                                <b className=''>{t("footer.blogPage")}</b>
+                                <b className='text-center'>
+                                    {t("footer.blogPage")}
+                                </b>
                             </Link>
                         </div>
                         <div className='flex flex-col md:flex-row my-10'>
@@ -102,17 +109,17 @@ export default function Footer() {
                             <div>
                                 <input
                                     type='email'
-                                    className='p-1 text-zinc-700'
+                                    className='p-1 text-zinc-700 w-48 h-8'
                                     placeholder={t("footer.emailEnter")}
                                 />
                             </div>
                             <div>
-                                <button className='submit-button bg-[#20DC49] p-1 text-white'>
+                                <button className='submit-button bg-[#20DC49] p-2  text-white'>
                                     {t("footer.submit")} →
                                 </button>
                             </div>
                         </div>
-                        <div className='flex items-center text-2xl space-x-10 mt-5'>
+                        <div className='flex items-center text-xl gap-10 mt-5'>
                             <a href='http://www.twitter.com'>
                                 <FaTwitter />
                             </a>
