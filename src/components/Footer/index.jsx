@@ -99,9 +99,9 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='lg:ml-10 basis-1/4'>
+                    <div className='lg:ml-10 basis-1/4 -translate-y-7'>
                         <div>
-                            <h3 className='pb-5'>
+                            <h3 className='pb-5 mb-5'>
                                 <b>{t("footer.subNewsletter")}</b>
                             </h3>
                         </div>
