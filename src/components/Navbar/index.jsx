@@ -93,14 +93,14 @@ function Navbar() {
                 />
             </div>
 
-            <div className='md:hidden fixed bottom-4 right-4 z-[2000]'>
+            <div className='md:hidden fixed bottom-10 right-8 z-[2000]'>
                 <button
                     className='bg-green-500 z-[2000] w-10 h-14 rounded-full p-2 flex flex-col items-center justify-center text-2xl font-bold text-white space-y-4 relative'
                     onClick={toggleSidebar}
                 >
                     ☰
                     {showSidebar && (
-                        <div className='absolute -top-8 bg-green-500 w-60 h-8 gap-2 flex justify-center items-center rounded-full'>
+                        <div className=' right-[-20px] mt-[10px] bg-green-500 w-[81px] h-[120px] gap-2 flex flex-col justify-center items-center rounded-full'>
                             <Link href='/home'>
                                 <p className='text-white text-lg font-semibold'>
                                     {t("navbar.home")}

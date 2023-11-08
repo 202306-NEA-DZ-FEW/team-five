@@ -16,3 +16,10 @@
         }
     }
 }
+body {
+    overflow-x: hidden;
+}
+
+.slide-in-right {
+    padding-left: 96%;
+}
