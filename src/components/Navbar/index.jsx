@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
 import LanguageDropdown from "../Language";
 
 function Navbar() {
@@ -62,7 +63,7 @@ function Navbar() {
                         {t("navbar.coupons")}
                     </p>
                 </Link>
-                <Link href='/'>
+                <Link href='/blog'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                         {t("navbar.blog")}
                     </p>
