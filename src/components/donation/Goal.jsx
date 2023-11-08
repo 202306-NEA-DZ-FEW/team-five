@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import AOS from "aos";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
-import AOS from "aos";
+import React, { useEffect } from "react";
+
 import "aos/dist/aos.css";
 
 const Goal = () => {
@@ -78,6 +79,7 @@ const Goal = () => {
                     </div>
                 </div>
             </div>
+
             <div className='flex flex-col md:flex-row items-center justify-center gap-4 ml-20 mr-20'>
                 <div
                     className='md:w-35'

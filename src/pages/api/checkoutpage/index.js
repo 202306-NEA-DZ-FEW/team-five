@@ -19,8 +19,8 @@ export default async function handler(req, res) {
                     quantity: item.quantity,
                 })),
                 mode: "payment",
-                success_url: "http://localhost:3000/success",
-                cancel_url: "http://localhost:3000/checkout",
+                success_url: `http://${process.env.NEXT_PUBLIC_HOST_URL}/success`,
+                cancel_url: `http://${process.env.NEXT_PUBLIC_HOST_URL}/checkout`,
             });
 
             res.status(200).json({ id: session.id });
