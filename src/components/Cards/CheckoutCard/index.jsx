@@ -1,9 +1,9 @@
+import { loadStripe } from "@stripe/stripe-js";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import FormatePrice from "@/pages/auth/FormatePrice";
-import { loadStripe } from "@stripe/stripe-js";
 import { resetCart } from "@/redux/shopperSlice";
 
 const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
@@ -42,9 +42,9 @@ const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
     const { t } = useTranslation("cart", "footer", "common");
 
     return (
-        <div className='mr-10  relative border h-[700px] bg-white shadow-xl rounded-[20px] p-4 md:w-[300px] lg:w-[400px] xl:w-[500px]'>
-            <div className='w-full flex flex-col gap-4 border-b-[1px] border-b-zinc-200 pb-4'>
-                <div className='text-xl bg-green-500 text-white font-bold flex items-center gap-2 p-2'>
+        <div className='md:mr-10  relative border h-[700px]  bg-white shadow-xl rounded-[20px]  p-4 md:w-[300px] lg:w-[400px] xl:w-[500px]'>
+            <div className='w-full flex flex-col gap-4 border-b-[1px] border-b-zinc-200 pb-4 '>
+                <div className='text-xl bg-green-500 text-white font-bold flex items-center gap-2 p-2 '>
                     <p>{t("cart.yourBag")}</p>
                 </div>
                 <div className='flex flex-col gap-1'>

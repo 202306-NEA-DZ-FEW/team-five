@@ -1,13 +1,15 @@
+import { collection, getDocs } from "firebase/firestore";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React, { useEffect, useState } from "react";
 
 import Coupons from "@/components/CouponsCard/Coupons";
 import CouponsBanner from "@/components/CouponsCard/CouponsBanner";
-import Link from "next/link";
-import { collection, getDocs } from "firebase/firestore";
+
 import { db } from "@/Utils/firebase";
-import React, { useState, useEffect, useRef } from "react";
 
 export default function CouponsPage() {
+    const { t } = useTranslation("couponsPage,common,footer,navbar");
     const [Data, setData] = useState([]);
 
     useEffect(() => {
@@ -42,7 +44,12 @@ export default function CouponsPage() {
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common", "footer"])),
+            ...(await serverSideTranslations(locale, [
+                "common",
+                "footer",
+                "couponsPage",
+                "navbar",
+            ])),
         },
     };
 }

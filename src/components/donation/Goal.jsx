@@ -1,23 +1,33 @@
-import React from "react";
+import AOS from "aos";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import React, { useEffect } from "react";
+
+import "aos/dist/aos.css";
 
 const Goal = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const { t } = useTranslation("steps");
 
     return (
         <div>
+            <center className='mt-10'>
+                <b style={{ fontSize: "50px" }}>{t("goal")}</b>
+            </center>
             <div
-                class='grid grid-cols-4 gap-40  flex-wrap mb-20'
+                className='grid grid-cols-4 gap-40  flex-wrap'
                 style={{
                     textAlign: "center",
-                    marginTop: "100px",
+                    marginTop: "50px",
                     display: "flex",
                     justifyContent: "center",
                     textAlignLast: "center",
                 }}
             >
-                <div>
+                <div data-aos='fade-up' data-aos-duration='1000'>
                     <Image
                         src='/icon.png'
                         width={250}
@@ -34,7 +44,7 @@ const Goal = () => {
                         </center>
                     </div>
                 </div>
-                <div>
+                <div data-aos='fade-up' data-aos-duration='1000'>
                     <Image
                         src='/soupe.png'
                         alt='this is an image'
@@ -51,15 +61,15 @@ const Goal = () => {
                         </center>
                     </div>
                 </div>
-                <div>
+                <div data-aos='fade-up' data-aos-duration='1000'>
                     <Image
                         src='/person.png'
                         alt='this is an image'
                         width={250}
                         height={300}
                     />
-                    <div className='mb-5'>
-                        <center className='mb-5'>
+                    <div className=''>
+                        <center className=''>
                             <b style={{ fontSize: "40px" }}>
                                 {t("GOOD")}
                                 <br />
@@ -69,48 +79,36 @@ const Goal = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex gap-8 justify-center ml-[300px] mr-[250px]'>
+
+            <div className='flex flex-col md:flex-row items-center justify-center gap-4 ml-20 mr-20'>
                 <div
+                    className='md:w-35'
                     style={{
-                        width: "35%",
-                        height: "200px",
-                        position: "relative",
+                        width: "100%",
+                        height: "auto",
                     }}
+                    data-aos='fade-right'
                 >
                     <Image
                         src='/Give.png'
                         width={800}
                         height={200}
                         alt='this is an image'
-                        style={{
-                            marginTop: "-80px",
-                        }}
                     />
                 </div>
 
                 <div
-                    className=' w-10'
+                    className='md:w-70'
                     style={{
-                        width: "70%",
-                        height: "200px",
-                        overflow: "hidden",
+                        width: "100%",
                     }}
+                    data-aos='fade-left'
                 >
                     <div style={{ fontSize: "20px", marginTop: "20px" }}>
                         <b>{t("WorkingtogethertoendHunger")}</b>
                     </div>
                     <div>
-                        <p>
-                            Hunger is a global issue, but together, we can make
-                            a difference. Communities, global partnerships, and
-                            grassroots initiatives are uniting to provide food
-                            and support. Education and awareness campaigns are
-                            vital, informing people and policymakers about the
-                            issue. Donations, volunteering, and advocacy play
-                            crucial roles in the fight against hunger. Join us
-                            in this collective effort to create a world without
-                            hunger.
-                        </p>
+                        <p>{t("working")}</p>
                     </div>
                 </div>
             </div>

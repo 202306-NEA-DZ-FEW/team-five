@@ -48,8 +48,8 @@ export default function Footer() {
                                     {t("footer.couponsPage")}
                                 </b>
                             </Link>
-                            <Link href='/Blog'>
-                                <b className='text-center'>
+                            <Link href='/blog'>
+                                <b className='text-white'>
                                     {t("footer.blogPage")}
                                 </b>
                             </Link>

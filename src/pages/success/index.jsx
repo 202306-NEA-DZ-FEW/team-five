@@ -7,7 +7,7 @@ import ButtonBack from "@/components/ButtonBack";
 import SocialShare from "@/components/SocialShare";
 
 function PaymentSuccess() {
-    const { t } = useTranslation("success", "footer", "common");
+    const { t } = useTranslation("success", "footer", "common", "navbar");
     return (
         <div className='flex flex-col items-center'>
             <div>
@@ -51,6 +51,7 @@ export async function getStaticProps({ locale }) {
                 "success",
                 "footer",
                 "common",
+                "navbar",
             ])),
         },
     };

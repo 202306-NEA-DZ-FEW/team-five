@@ -1,12 +1,13 @@
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
+
 import Banner from "@/components/Banner";
 import Blog from "@/components/Cards/Blog";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Stories from "@/containers/Stories";
 
 const BlogPage = () => {
-    const { t } = useTranslation("blog", "footer", "navbar");
+    const { t } = useTranslation("blog", "footer", "navbar", "stories");
     return (
         <div>
             <Banner
@@ -27,6 +28,9 @@ const BlogPage = () => {
             <div className='mb-10'>
                 <Blog />
             </div>
+            <div>
+                <Stories />
+            </div>
         </div>
     );
 };
@@ -43,6 +47,7 @@ export async function getStaticProps({ locale }) {
                 "blog",
                 "emails",
                 "navbar",
+                "stories",
             ])),
             // Will be passed to the page component as props
         },

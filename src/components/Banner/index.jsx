@@ -1,7 +1,20 @@
+import AOS from "aos";
+import React, { useEffect } from "react";
+
+import "aos/dist/aos.css";
+
+import Line from "../Cards/Line";
 const Banner = ({ description, title, title1, imageUrl, btnText, title2 }) => {
     const imgStyle = {
         backgroundImage: "url(" + imageUrl + ")",
     };
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            offset: 230,
+        });
+    }, []);
     return (
         <section>
             <div
@@ -26,6 +39,9 @@ const Banner = ({ description, title, title1, imageUrl, btnText, title2 }) => {
                         </button>
                     </div>
                 </div>
+            </div>
+            <div data-aos='slide-left'>
+                <Line />
             </div>
         </section>
     );
