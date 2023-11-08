@@ -15,35 +15,36 @@ export default function Footer() {
     const { t } = useTranslation("footer");
     return (
         <div className='relative'>
-            <div className=' mx-auto text-white bg-[#43AFD6] py-6 '>
-                <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 justify-center items-center ml-10 sm:ml-10 md:ml-20 lg:ml-40 xl:ml-40'>
-                    <div className='space-y-3 '>
-                        <div>
-                            <Image
-                                src='/footer_icons/logo.svg'
-                                alt='logo-image'
-                                width={40}
-                                height={70}
-                            />
-                        </div>
-                        <div>
-                            <h1 className='text-3xl'>
+            <div className='text-white bg-[#43AFD6] py-6 w-full '>
+                <div className='flex flex-row text-xs gap-4 flex-wrap lg:flex-nowrap  justify-center items-center ml-10 mt-10 '>
+                    <div className='lg:basis-1/4 grid grid-cols-2 justify-items-stretch gap-5'>
+                        <div className='col-span-2 flex gap-4'>
+                            <div>
+                                <Image
+                                    src='/footer_icons/logo.svg'
+                                    alt='logo-image'
+                                    width={30}
+                                    height={60}
+                                />
+                            </div>
+
+                            <h1 className='text-3xl text-center translate-y-2 font-serif'>
                                 <b>Food on coupon</b>
                             </h1>
                         </div>
-                        <div>
+                        <div className='max-w-[250px] p-5 col-span-2'>
                             <p>{t("footer.description")}</p>
                         </div>
                     </div>
-                    <div className='space-y-3'>
-                        <div className='space-y-1 space-x-10'>
+                    <div className='flex flex-col w-full basis-1/2'>
+                        <div className='space-x-8 text-white text-center flex md:gap-20'>
                             <Link href='/Home'>
-                                <b className='text-white'>
+                                <b className=' text-center'>
                                     {t("footer.homePage")}
                                 </b>
                             </Link>
                             <Link href='/Coupons'>
-                                <b className='text-white'>
+                                <b className='text-center'>
                                     {t("footer.couponsPage")}
                                 </b>
                             </Link>
@@ -53,9 +54,9 @@ export default function Footer() {
                                 </b>
                             </Link>
                         </div>
-                        <div className='flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4'>
+                        <div className='flex flex-col md:flex-row my-10'>
                             <div
-                                className='flex items-center flex-col space-x-2 text-center'
+                                className='flex items-start flex-col space-x-2  gap-2'
                                 style={{ flex: "1" }}
                             >
                                 <Image
@@ -64,10 +65,10 @@ export default function Footer() {
                                     width={40}
                                     height={40}
                                 />
-                                <p>{t("footer.address")}</p>
+                                <p className='w-28'>{t("footer.address")}</p>
                             </div>
                             <div
-                                className='flex items-center flex-col space-x-2 text-center'
+                                className='flex items-start flex-col space-x-2  gap-2'
                                 style={{ flex: "1" }}
                             >
                                 <Image
@@ -82,7 +83,7 @@ export default function Footer() {
                                 </p>
                             </div>
                             <div
-                                className='flex items-center flex-col space-x-2 text-center'
+                                className='flex items-start flex-col space-x-2 gap-2'
                                 style={{ flex: "1" }}
                             >
                                 <Image
@@ -98,9 +99,9 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='space-y-3'>
+                    <div className='lg:ml-10 basis-1/4 -translate-y-7'>
                         <div>
-                            <h3 className='pb-5'>
+                            <h3 className='pb-5 mb-5'>
                                 <b>{t("footer.subNewsletter")}</b>
                             </h3>
                         </div>
@@ -108,31 +109,31 @@ export default function Footer() {
                             <div>
                                 <input
                                     type='email'
-                                    className='p-1'
+                                    className='p-1 text-zinc-700 w-48 h-8'
                                     placeholder={t("footer.emailEnter")}
                                 />
                             </div>
                             <div>
-                                <button className='submit-button bg-[#20DC49] p-1 pl-3 pr-3 text-white'>
+                                <button className='submit-button bg-[#20DC49] p-2  text-white'>
                                     {t("footer.submit")} →
                                 </button>
                             </div>
                         </div>
-                        <div className='flex items-center space-x-10'>
+                        <div className='flex items-center text-xl gap-10 mt-5'>
                             <a href='http://www.twitter.com'>
-                                <FaTwitter className='text-2xl' />
+                                <FaTwitter />
                             </a>
                             <a href='http://www.linkedin.com'>
-                                <FaLinkedin className='text-2xl' />
+                                <FaLinkedin />
                             </a>
                             <a href='http://www.instagram.com'>
-                                <FaInstagram className='text-2xl' />
+                                <FaInstagram />
                             </a>
                             <a href='http://www.facebook.com'>
-                                <FaFacebookF className='text-2xl' />
+                                <FaFacebookF />
                             </a>
                             <a href='http://www.youtube.com'>
-                                <FaYoutube className='text-2xl' />
+                                <FaYoutube />
                             </a>
                         </div>
                     </div>
