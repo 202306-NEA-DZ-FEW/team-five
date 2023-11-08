@@ -16,8 +16,8 @@ export default function Footer() {
     return (
         <div className='relative'>
             <div className='text-white bg-[#43AFD6] py-6 w-full'>
-                <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 text-xs gap-4 justify-center items-center ml-10 place-items-start'>
-                    <div className=''>
+                <div className='flex flex-row text-xs gap-4 flex-wrap lg:flex-nowrap  justify-center items-center ml-10 '>
+                    <div className='lg:basis-1/4 '>
                         <div>
                             <Image
                                 src='/footer_icons/logo.svg'
@@ -35,8 +35,8 @@ export default function Footer() {
                             <p>{t("footer.description")}</p>
                         </div>
                     </div>
-                    <div className=''>
-                        <div className='space-y-1 space-x-10 text-white flex gap-20'>
+                    <div className='flex flex-col w-full basis-1/2'>
+                        <div className='space-y-1 space-x-10 text-white flex md:gap-20'>
                             <Link href='/Home'>
                                 <b className=''>{t("footer.homePage")}</b>
                             </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
                                     width={40}
                                     height={40}
                                 />
-                                <p>{t("footer.address")}</p>
+                                <p className='w-28'>{t("footer.address")}</p>
                             </div>
                             <div
                                 className='flex items-start flex-col space-x-2  gap-2'
@@ -92,7 +92,7 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='ml-20'>
+                    <div className='lg:ml-10 basis-1/4'>
                         <div>
                             <h3 className='pb-5'>
                                 <b>{t("footer.subNewsletter")}</b>
