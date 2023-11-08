@@ -31,7 +31,7 @@ export default function Footer() {
                                 <b>Food on coupon</b>
                             </h1>
                         </div>
-                        <div className='max-w-[250px]'>
+                        <div className='max-w-[250px] p-5'>
                             <p>{t("footer.description")}</p>
                         </div>
                     </div>
@@ -102,31 +102,31 @@ export default function Footer() {
                             <div>
                                 <input
                                     type='email'
-                                    className='p-1'
+                                    className='p-1 text-zinc-700'
                                     placeholder={t("footer.emailEnter")}
                                 />
                             </div>
                             <div>
-                                <button className='submit-button bg-[#20DC49] p-1 pl-3 pr-3 text-white'>
+                                <button className='submit-button bg-[#20DC49] p-1 text-white'>
                                     {t("footer.submit")} →
                                 </button>
                             </div>
                         </div>
-                        <div className='flex items-center space-x-10'>
+                        <div className='flex items-center text-2xl space-x-10 mt-5'>
                             <a href='http://www.twitter.com'>
-                                <FaTwitter className='text-2xl' />
+                                <FaTwitter />
                             </a>
                             <a href='http://www.linkedin.com'>
-                                <FaLinkedin className='text-2xl' />
+                                <FaLinkedin />
                             </a>
                             <a href='http://www.instagram.com'>
-                                <FaInstagram className='text-2xl' />
+                                <FaInstagram />
                             </a>
                             <a href='http://www.facebook.com'>
-                                <FaFacebookF className='text-2xl' />
+                                <FaFacebookF />
                             </a>
                             <a href='http://www.youtube.com'>
-                                <FaYoutube className='text-2xl' />
+                                <FaYoutube />
                             </a>
                         </div>
                     </div>
