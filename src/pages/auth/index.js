@@ -8,7 +8,7 @@ import Signup from "@/components/Auth/Signup/index";
 
 export default function Auth() {
     // eslint-disable-next-line unused-imports/no-unused-vars
-    const { t } = useTranslation("signup");
+    const { t } = useTranslation("signup,navbar");
     const [currentComponent, setCurrentComponent] = useState("signin");
 
     const ToggleMail = () => {
@@ -48,6 +48,7 @@ export async function getStaticProps({ locale }) {
                 "signup",
                 "footer",
                 "common",
+                "navbar",
             ])),
         },
     };
