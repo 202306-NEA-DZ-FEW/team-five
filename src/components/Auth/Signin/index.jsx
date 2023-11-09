@@ -168,8 +168,13 @@ export default function Signin({ onToggleComponent, onToggleMail }) {
                     {t("signup.termsOfUse")}
                 </p>
             </div>
-            <div className='relative col-span-1 bg-white h-screen mb-10'>
-                <img src='/sign.svg' alt='signin' width='100%' />
+            <div className='relative col-span-1 bg-white h-screen mb-10 sm:hidden md:block'>
+                <img
+                    src='/sign.svg'
+                    alt='signin'
+                    width='100%'
+                    className='h-full object-cover'
+                />
             </div>
         </div>
     );

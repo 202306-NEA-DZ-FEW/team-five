@@ -53,17 +53,17 @@ function Navbar() {
             </div>
             {/* Large screen navigation */}
             <div className='hidden md:flex px-4 mx-auto font-semibold font-heading space-x-0'>
-                <Link href='/home'>
+                <Link href='/'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover:bg-[#43acd6]'>
                         {t("navbar.home")}
                     </p>
                 </Link>
-                <Link href='/coupons'>
+                <Link href='/Coupons'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                         {t("navbar.coupons")}
                     </p>
                 </Link>
-                <Link href='/blog'>
+                <Link href='/Blog'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                         {t("navbar.blog")}
                     </p>
@@ -101,7 +101,7 @@ function Navbar() {
                     ☰
                     {showSidebar && (
                         <div className=' right-[-20px] -mt-[10px] bg-green-500 w-[81px] h-[120px] gap-2 flex flex-col justify-center items-center rounded-full'>
-                            <Link href='/home'>
+                            <Link href='/'>
                                 <p className='text-white text-lg font-semibold'>
                                     {t("navbar.home")}
                                 </p>
