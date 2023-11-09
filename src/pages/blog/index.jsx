@@ -28,7 +28,7 @@ const BlogPage = () => {
             <div className='mb-10'>
                 <Blog />
             </div>
-            <div>
+            <div className='bg-gray-100 '>
                 <Stories />
             </div>
         </div>

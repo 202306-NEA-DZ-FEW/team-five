@@ -1,8 +1,12 @@
+import AOS from "aos";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import React from "react";
-import Link from "next/link";
+
+import "aos/dist/aos.css";
+
 import BlogCard from "@/components/BlogCard";
-import { useTranslation } from "next-i18next";
 
 export default function Blog() {
     const { t, i18n } = useTranslation("blog", "footer", "navbar");
@@ -32,6 +36,10 @@ export default function Blog() {
         fetchData();
     }, [i18n.language]);
 
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <div>
             <div>
@@ -42,6 +50,8 @@ export default function Blog() {
                                 href={`/blog/${encodeURIComponent(
                                     article.title
                                 )}`}
+                                data-aos='fade-left'
+                                data-aos-duration='1000'
                             >
                                 <BlogCard blog={article} />
                             </Link>
@@ -54,7 +64,11 @@ export default function Blog() {
                         {t("blog.latest")}{" "}
                     </h1>
                 </div>
-                <div className='flex flex-wrap justify-center gap-4'>
+                <div
+                    className='flex flex-wrap justify-center gap-4'
+                    data-aos='zoom-in'
+                    data-aos-duration='1000'
+                >
                     {articles?.slice(4, 7).map((member, index) => (
                         <BlogCard key={member.id} blog={member} />
                     ))}

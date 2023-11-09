@@ -82,7 +82,7 @@ function Navbar() {
                     <p className='w-full h-5 mt-[-8px] text-center font-bold text-white rounded-full'>
                         ${totalAmt}
                     </p>
-                    <span className='absolute w-5 h-5 mt-[-2px] bg-yellow-200 text-center font-bold text-black top-[3px] right-2 rounded-full'>
+                    <span className='absolute w-5 h-5 mt-[-3px]  bg-yellow-200 text-center font-bold text-black top-[3px] right-0 rounded-full'>
                         {productData.length > 0 ? productData.length : 0}
                     </span>
                 </div>
@@ -100,7 +100,7 @@ function Navbar() {
                 >
                     ☰
                     {showSidebar && (
-                        <div className=' right-[-20px] mt-[10px] bg-green-500 w-[81px] h-[120px] gap-2 flex flex-col justify-center items-center rounded-full'>
+                        <div className=' right-[-20px] -mt-[10px] bg-green-500 w-[81px] h-[120px] gap-2 flex flex-col justify-center items-center rounded-full'>
                             <Link href='/home'>
                                 <p className='text-white text-lg font-semibold'>
                                     {t("navbar.home")}
