@@ -7,16 +7,18 @@ import Coupons from "@/components/CouponsCard/Coupons";
 import CouponsBanner from "@/components/CouponsCard/CouponsBanner";
 
 import { db } from "@/Utils/firebase";
+import Loading from "@/Utils/Loading";
 
 export default function CouponsPage() {
     const { t } = useTranslation("couponsPage,common,footer,navbar");
+    const [loading, setLoading] = useState(true);
     const [Data, setData] = useState([]);
 
     useEffect(() => {
         const collectionRef = collection(db, "users");
 
         try {
-            (async () => {
+            setTimeout(async () => {
                 const querySnapshot = await getDocs(collectionRef);
 
                 const items = [];
@@ -27,16 +29,24 @@ export default function CouponsPage() {
                 });
 
                 setData(items);
-            })();
+                setLoading(false);
+            }, 3000);
         } catch (error) {
             console.error("Error fetching data from Firestore:", error);
+            setLoading(false);
         }
     }, []);
 
     return (
         <div>
-            <CouponsBanner />
-            <Coupons companies={Data} />
+            {loading ? (
+                <Loading />
+            ) : (
+                <>
+                    <CouponsBanner />
+                    <Coupons companies={Data} />
+                </>
+            )}
         </div>
     );
 }
