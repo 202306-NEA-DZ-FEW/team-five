@@ -9,8 +9,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "@/redux/shopperSlice";
 
+import { addUser, removeUser } from "@/redux/shopperSlice";
 import { auth } from "@/Utils/firebase";
 
 export default function Signin({ onToggleComponent, onToggleMail }) {

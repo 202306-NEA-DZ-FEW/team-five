@@ -137,7 +137,6 @@ const Coupons = ({ companies }) => {
                     {companies?.map((r, index) => (
                         <div
                             key={index}
-                            data-aos='flip-left'
                             className={`flex flex-col items-center justify-center p-4  bg-white shadow-md gap-2 border border-gray-100 transition-transform transform-gpu hover:scale-105 hover:filter-grayscale hover:bg-gray-100  ${
                                 selectedRestaurants.includes(r)
                                     ? "bg-green-200"
@@ -150,6 +149,7 @@ const Coupons = ({ companies }) => {
                                 src={r.ProductImg}
                                 width={300}
                                 height={200}
+                                data-aos='flip-left'
                             />
                             <h3 className='font-semibold text-3xl my-5'>
                                 {r.UserName}
