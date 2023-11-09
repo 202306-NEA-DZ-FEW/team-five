@@ -1,11 +1,15 @@
+import AOS from "aos";
 import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
+
 import CheckoutCard from "@/components/Cards/CheckoutCard";
 import CouponCard from "@/components/Cards/CouponCard";
+
 import { resetCart } from "@/redux/shopperSlice";
+import Loading from "@/Utils/Loading";
 
 function CartPage() {
     const { t } = useTranslation("cart", "footer", "common");
@@ -14,6 +18,7 @@ function CartPage() {
     const [totalOldPrice, setTotalOldPrice] = useState(0);
     const [totalSavings, setTotalSavings] = useState(0);
     const [totalamt, setTotalAmt] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         AOS.init({
@@ -35,6 +40,10 @@ function CartPage() {
         setTotalOldPrice(oldprice);
         setTotalSavings(savings);
         setTotalAmt(amt);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
     }, [productData]);
 
     return (
@@ -51,40 +60,44 @@ function CartPage() {
                                 ({productData.length} {t("cart.item")})
                             </span>
                         </h1>
-                        <div
-                            className='text-xl gap-5 font-bold flex flex-col mb-2 relative bg-white border rounded-2xl p-4 shadow-md md:w-[500px] lg:w-[700px] xl:w-[900px] mx-auto'
-                            data-aos='slide-right'
-                        >
-                            <p>{t("cart.items")}</p>
+                        {loading ? (
+                            <Loading />
+                        ) : (
                             <div
-                                className='cart-items-container'
-                                style={{
-                                    maxHeight: "650px",
-                                    overflowY: "auto",
-                                    overflowX: "hidden",
-                                }}
+                                className='text-xl gap-5 font-bold flex flex-col mb-2 relative bg-white border rounded-2xl p-4 shadow-md md:w-[500px] lg:w-[700px] xl:w-[900px] mx-auto'
+                                data-aos='slide-right'
                             >
-                                {productData.map((item, index) => (
-                                    <div
-                                        key={item._id}
-                                        className='flex items-center justify-center border-b border-zinc-200 pb-4'
-                                    >
-                                        <CouponCard
-                                            quantity={item.quantity}
-                                            image={item.image}
-                                            UserName={item.UserName}
-                                            price={item.price}
-                                            _id={item._id}
-                                            ProductImg={item.ProductImg}
-                                            CouponAmount={item.CouponAmount}
-                                        />
-                                    </div>
-                                ))}
+                                <p>{t("cart.items")}</p>
+                                <div
+                                    className='cart-items-container'
+                                    style={{
+                                        maxHeight: "650px",
+                                        overflowY: "auto",
+                                        overflowX: "hidden",
+                                    }}
+                                >
+                                    {productData.map((item, index) => (
+                                        <div
+                                            key={item._id}
+                                            className='flex items-center justify-center border-b border-zinc-200 pb-4'
+                                        >
+                                            <CouponCard
+                                                quantity={item.quantity}
+                                                image={item.image}
+                                                UserName={item.UserName}
+                                                price={item.price}
+                                                _id={item._id}
+                                                ProductImg={item.ProductImg}
+                                                CouponAmount={item.CouponAmount}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                                <button onClick={() => dispatch(resetCart())}>
+                                    {t("cart.reset")}
+                                </button>
                             </div>
-                            <button onClick={() => dispatch(resetCart())}>
-                                {t("cart.reset")}
-                            </button>
-                        </div>
+                        )}
                     </div>
 
                     <div

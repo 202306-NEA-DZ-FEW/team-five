@@ -60,7 +60,7 @@ function Sponsor() {
                 <div
                     className='w-1/2 flex items-center justify-center'
                     data-aos='fade-right'
-                    data-aos-duration='1000'
+                    data-aos-duration='600'
                 >
                     <img
                         alt='image'
@@ -86,7 +86,7 @@ function Sponsor() {
             <div
                 className='md:hidden bg-[#80D6F6] mt-20 text-white'
                 data-aos='fade-up'
-                data-aos-duration='1000'
+                data-aos-duration='600'
             >
                 <div className='flex flex-col items-center justify-center ml-10 mr-10'>
                     <img
