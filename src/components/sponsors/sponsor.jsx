@@ -62,7 +62,7 @@ function Sponsor() {
                     data-aos='fade-right'
                     data-aos-duration='1000'
                 >
-                    <img
+                    <Image
                         alt='image'
                         src='/comm.png'
                         className='mt-10'
@@ -89,7 +89,7 @@ function Sponsor() {
                 data-aos-duration='1000'
             >
                 <div className='flex flex-col items-center justify-center ml-10 mr-10'>
-                    <img
+                    <Image
                         alt='image'
                         src='/comm.png'
                         className='mt-10'
