@@ -56,22 +56,16 @@ function Sponsor() {
                     />
                 </div>
             </div>
-            <div className='hidden md:flex flex-nowrap bg-[#80D6F6] mt-10'>
+            <div className='flex flex-col  lg:flex-row flex-wrap bg-[#80D6F6] mt-10 justify-center items-center lg:justify-normal lg:items-start '>
                 <div
-                    className='w-1/2 flex items-center justify-center'
+                    className='w-1/2 flex items-center lg:justify-start justify-center  lg:ml-10 basis-3/12'
                     data-aos='fade-right'
                     data-aos-duration='600'
                 >
-                    <img
-                        alt='image'
-                        src='/comm.png'
-                        className='mt-10'
-                        width={300}
-                        height={20}
-                    />
+                    <img alt='image' src='/comm.png' width={300} height={20} />
                 </div>
                 <div
-                    className='w-1/2 text-white relative mt-20 ml-[-200px]'
+                    className='w-1/2 text-white mt-20 basis-2/3'
                     data-aos='fade-left'
                     data-aos-duration='1000'
                 >
@@ -83,8 +77,8 @@ function Sponsor() {
                 </div>
             </div>
 
-            <div
-                className='md:hidden bg-[#80D6F6] mt-20 text-white'
+            {/* <div
+                className=' bg-[#80D6F6] mt-20 text-white'
                 data-aos='fade-up'
                 data-aos-duration='600'
             >
@@ -102,7 +96,7 @@ function Sponsor() {
                         {t("donation")}
                     </button>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }
