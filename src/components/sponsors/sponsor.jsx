@@ -71,32 +71,11 @@ function Sponsor() {
                 >
                     <b className='text-4xl mt-30'>{t("joinus")}</b>
                     <p className='text-xl mt-10'>{t("disc")}</p>
-                    <button className='py-2 px-4 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540] mt-4 mr-10 mb-10'>
-                        {t("donation")}
+                    <button className='py-2 px-4 lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10'>
+                        {t("donation")} ❤
                     </button>
                 </div>
             </div>
-
-            {/* <div
-                className=' bg-[#80D6F6] mt-20 text-white'
-                data-aos='fade-up'
-                data-aos-duration='600'
-            >
-                <div className='flex flex-col items-center justify-center ml-10 mr-10'>
-                    <img
-                        alt='image'
-                        src='/comm.png'
-                        className='mt-10'
-                        width={300}
-                        height={20}
-                    />
-                    <b className='text-4xl mt-30'>{t("joinus")}</b>
-                    <p className='text-xl mt-10'>{t("disc")}</p>
-                    <button className='py-2 px-4 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540] mt-4 mb-10'>
-                        {t("donation")}
-                    </button>
-                </div>
-            </div> */}
         </>
     );
 }
