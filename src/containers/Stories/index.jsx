@@ -29,7 +29,7 @@ function Stories() {
                     data-aos-duration='1000'
                 >
                     <li
-                        key='name'
+                        key='name1'
                         className='group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200'
                     >
                         <img
@@ -45,7 +45,7 @@ function Stories() {
                         </p>
                     </li>
                     <li
-                        key='name'
+                        key='name2'
                         className='group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200'
                     >
                         <img
@@ -61,7 +61,7 @@ function Stories() {
                         </p>
                     </li>
                     <li
-                        key='name'
+                        key='name3'
                         className='group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200'
                     >
                         <img

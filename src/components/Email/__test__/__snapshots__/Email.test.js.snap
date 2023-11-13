@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Email Component should render correctly 1`] = `
+<layout>
+  <div
+    className="md:hidden"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    <div
+      className="text-center"
+    >
+      <h1
+        className="text-gray-500 font-bold text-lg"
+      >
+        GetupdateonBlogandEvents
+      </h1>
+      <h2
+        className="text-gray-400 font-bold text-lg"
+      >
+        Getdirectlyonyouremail
+      </h2>
+    </div>
+    <form
+      action="https://formsubmit.co/sidisaidmel@gmail.com"
+      className="flex flex-col items-center"
+      method="POST"
+    >
+      <div
+        className="mb-2 mt-2"
+      >
+        <input
+          className="border-2 border-gray-300 rounded h-11 w-full"
+          name="email"
+          placeholder="email"
+          type="email"
+        />
+      </div>
+      <input
+        name="_subject"
+        type="hidden"
+        value="New submission"
+      />
+      <button
+        className="bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700 mt-2"
+      >
+        Subscribe
+      </button>
+      <input
+        name="_autoresponse"
+        type="hidden"
+        value="Successfully subscribed"
+      />
+    </form>
+  </div>
+  <div
+    className="hidden md:grid grid-cols-2 mt-1"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    <div
+      className="col-start"
+    >
+      <h1
+        className="text-gray-500 font-bold text-lg"
+      >
+        <p>
+          GetupdateonBlogandEvents
+        </p>
+      </h1>
+      <h2
+        className="text-gray-400 font-bold text-lg"
+      >
+        <p>
+          Getdirectlyonyouremail
+        </p>
+      </h2>
+    </div>
+    <div
+      className="col-end flex h-7"
+    >
+      <form
+        action="https://formsubmit.co/sidisaidmel@gmail.com"
+        method="POST"
+      >
+        <input
+          class="border-2 border-gray-300 rounded h-11"
+          name="email"
+          placeholder="email"
+          style={
+            Object {
+              "width": "400px",
+            }
+          }
+          type="email"
+        />
+        <input
+          name="_subject"
+          type="hidden"
+          value="New submission!"
+        />
+        <button
+          className="bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover-bg-green-700"
+        >
+          Subscribe
+        </button>
+        <input
+          name="_autoresponse"
+          type="hidden"
+          value="Successfully subscribed"
+        />
+      </form>
+    </div>
+  </div>
+  <div
+    className="text-center md:text-right mt-2 md:mt-0 mb-10"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    privacyPolicy
+  </div>
+</layout>
+`;
