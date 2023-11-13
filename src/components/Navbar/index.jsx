@@ -1,10 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import LanguageDropdown from "../Language";
+import Profile from "@/components/Profile";
 
+import LanguageDropdown from "../Language";
 function Navbar() {
     const productData = useSelector((state) => state.shopper.productData);
     const [totalAmt, setTotalAmt] = useState("");
@@ -12,6 +14,7 @@ function Navbar() {
     const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
     const [isSelected, setIsSelected] = useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
+    const userInfo = useSelector((state) => state.shopper.userInfo);
 
     const handleLanguageChange = (languageChange) => {
         setSelectedLanguage(languageChange);
@@ -19,7 +22,6 @@ function Navbar() {
 
         i18n.changeLanguage(languageChange);
     };
-
     useEffect(() => {
         let price = 0;
         let itemNumber = 0;
@@ -69,11 +71,15 @@ function Navbar() {
                     </p>
                 </Link>
             </div>
-
             <div className='flex items-center space-x-5 mr-10'>
-                <Link href='Loggin'>
-                    <img src='/admin.svg' alt='admin' />
-                </Link>
+                {userInfo ? (
+                    <Profile />
+                ) : (
+                    <Link href='Loggin'>
+                        <img src='/admin.svg' alt='admin' />
+                    </Link>
+                )}
+
                 {/* Cart icon */}
                 <div className='mt-1 flex flex-col justify-center items-center gap-0 relative'>
                     <Link href='/cart'>
