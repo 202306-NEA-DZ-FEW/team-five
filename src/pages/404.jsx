@@ -15,6 +15,7 @@ export async function getStaticProps({ locale }) {
                 "common",
                 "cart",
                 "blog",
+                "navbar",
             ])),
             // Will be passed to the page component as props
         },

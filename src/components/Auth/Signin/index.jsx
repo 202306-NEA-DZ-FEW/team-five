@@ -9,8 +9,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "@/redux/shopperSlice";
 
+import { addUser, removeUser } from "@/redux/shopperSlice";
 import { auth } from "@/Utils/firebase";
 
 export default function Signin({ onToggleComponent, onToggleMail }) {
@@ -168,8 +168,13 @@ export default function Signin({ onToggleComponent, onToggleMail }) {
                     {t("signup.termsOfUse")}
                 </p>
             </div>
-            <div className='relative col-span-1 bg-white h-screen mb-10'>
-                <img src='/sign.svg' alt='signin' width='100%' />
+            <div className='relative col-span-1 bg-white h-screen mb-10 sm:hidden md:block'>
+                <img
+                    src='/sign.svg'
+                    alt='signin'
+                    width='100%'
+                    className='h-full object-cover'
+                />
             </div>
         </div>
     );

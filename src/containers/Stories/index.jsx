@@ -1,27 +1,39 @@
+import AOS from "aos";
 import { useTranslation } from "next-i18next";
-import React from "react";
+import React, { useEffect } from "react";
+
+import "aos/dist/aos.css";
 
 function Stories() {
     const { t } = useTranslation("stories");
 
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
-        <div className='bg-gray-100 py-12 sm:py-12 max-w-screen-xl mx-auto'>
+        <div className='py-12 sm:py-12 max-w-screen-xl mx-auto'>
             <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-                <div className='mx-auto max-w-2xl lg:mx-0'>
-                    <h2 className='text-center text-3xl font-semibold tracking-tight  text-sky-600 sm:text-4xl'>
+                <div className='mb-5'>
+                    <h2 className='text-center text-3xl font-semibold tracking-tight text-sky-600 sm:text-4xl'>
                         {t("life")}
                     </h2>
-                    <p className='text-center mt-4 text-lg leading-8 text-gray-600'>
+                    <p className='text-center mt-4 text-lg leading-8 text-gray-600 mb-5'>
                         {t("we")}
                     </p>
                 </div>
                 <ul
                     role='list'
                     className='mx-auto mt-5 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'
+                    data-aos='fade-up'
+                    data-aos-duration='1000'
                 >
-                    <li key='name'>
+                    <li
+                        key='name'
+                        className='group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200'
+                    >
                         <img
-                            className='aspect-[3/2] w-full  object-cover'
+                            className='aspect-[3/2] w-full object-cover'
                             src='storie01.png'
                             alt=''
                         />
@@ -32,9 +44,12 @@ function Stories() {
                             {t("blog1")}
                         </p>
                     </li>
-                    <li key='name'>
+                    <li
+                        key='name'
+                        className='group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200'
+                    >
                         <img
-                            className='aspect-[3/2] w-full  object-cover'
+                            className='aspect-[3/2] w-full object-cover'
                             src='storie02.png'
                             alt=''
                         />
@@ -45,7 +60,10 @@ function Stories() {
                             {t("blog2")}
                         </p>
                     </li>
-                    <li key='name'>
+                    <li
+                        key='name'
+                        className='group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200'
+                    >
                         <img
                             className='aspect-[3/2] w-full object-cover'
                             src='storie03.png'

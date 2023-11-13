@@ -1,10 +1,13 @@
+import AOS from "aos";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import React from "react";
-import Link from "next/link";
+
+import "aos/dist/aos.css";
+
 import BlogCard from "@/components/BlogCard";
-import { useTranslation } from "next-i18next";
 import Email from "@/components/Email/Email";
-import { useRouter } from "next/router";
 
 const Article = () => {
     const { t, i18n } = useTranslation(
@@ -21,6 +24,7 @@ const Article = () => {
 
     useEffect(() => {
         const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
+
         async function fetchData() {
             let endpoint = "";
 
@@ -48,6 +52,13 @@ const Article = () => {
         }
     }, [i18n.language, id]);
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            offset: 100,
+        });
+    }, []);
+
     return (
         <div className='text-center'>
             <div className='p-4'>
@@ -58,27 +69,43 @@ const Article = () => {
                                 src={article.image}
                                 alt={article.title}
                                 className='w-full  rounded-lg mb-4'
+                                data-aos='fade-up'
                             />
                         )}
-                        <h1 className='text-3xl font-semibold mb-4'>
+                        <h1
+                            className='text-3xl font-semibold mb-4'
+                            data-aos='fade-up'
+                        >
                             {article.title}
                         </h1>
-                        <p className='text-gray-500 mx-4 md:mx-20'>
+                        <p
+                            className='text-gray-500 mx-4 md:mx-20'
+                            data-aos='fade-up'
+                        >
                             {article.description}
                         </p>
-                        <p className='mx-4 md:mx-20'>
+                        <p className='mx-4 md:mx-20' data-aos='fade-up'>
                             {article.content} {t("blog.disc")}
                         </p>
 
-                        <h1 className='text-3xl font-semibold mb-4 mt-5'>
+                        <h1
+                            className='text-3xl font-semibold mb-4 mt-5'
+                            data-aos='fade-up'
+                        >
                             {t("blog.read")}
                         </h1>
-                        <div className='flex flex-wrap justify-center gap-4'>
+                        <div
+                            className='flex flex-wrap justify-center gap-4'
+                            data-aos='fade-up'
+                        >
                             {articles?.slice(0, 3).map((member, index) => (
                                 <BlogCard key={member.id} blog={member} />
                             ))}
                         </div>
-                        <div className='border rounded-lg border-black pt-3 mx-4 md:mx-auto my-4 md:my-auto max-w-[1200px]'>
+                        <div
+                            className='border rounded-lg border-black pt-3 mx-4 md:mx-auto my-4 md:my-auto max-w-[1200px]'
+                            data-aos='fade-up'
+                        >
                             <Email />
                         </div>
                     </>

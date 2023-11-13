@@ -53,17 +53,17 @@ function Navbar() {
             </div>
             {/* Large screen navigation */}
             <div className='hidden md:flex px-4 mx-auto font-semibold font-heading space-x-0'>
-                <Link href='/home'>
+                <Link href='/'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover:bg-[#43acd6]'>
                         {t("navbar.home")}
                     </p>
                 </Link>
-                <Link href='/coupons'>
+                <Link href='/Coupons'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                         {t("navbar.coupons")}
                     </p>
                 </Link>
-                <Link href='/blog'>
+                <Link href='/Blog'>
                     <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                         {t("navbar.blog")}
                     </p>
@@ -82,7 +82,7 @@ function Navbar() {
                     <p className='w-full h-5 mt-[-8px] text-center font-bold text-white rounded-full'>
                         ${totalAmt}
                     </p>
-                    <span className='absolute w-5 h-5 mt-[-2px] bg-yellow-200 text-center font-bold text-black top-[3px] right-2 rounded-full'>
+                    <span className='absolute w-5 h-5 mt-[-3px]  bg-yellow-200 text-center font-bold text-black top-[3px] right-0 rounded-full'>
                         {productData.length > 0 ? productData.length : 0}
                     </span>
                 </div>
@@ -100,8 +100,8 @@ function Navbar() {
                 >
                     ☰
                     {showSidebar && (
-                        <div className=' right-[-20px] mt-[10px] bg-green-500 w-[81px] h-[120px] gap-2 flex flex-col justify-center items-center rounded-full'>
-                            <Link href='/home'>
+                        <div className=' right-[-20px] -mt-[10px] bg-green-500 w-[81px] h-[120px] gap-2 flex flex-col justify-center items-center rounded-full'>
+                            <Link href='/'>
                                 <p className='text-white text-lg font-semibold'>
                                     {t("navbar.home")}
                                 </p>

@@ -3,18 +3,20 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import nextI18NextConfig from "../../next-i18next.config";
 
 import "@/styles/globals.css";
 
 import Layout from "@/layout/Layout";
 import { persistor, store } from "@/redux/store";
+import Loading from "@/Utils/Loading";
+
+import nextI18NextConfig from "../../next-i18next.config";
 
 function MyApp({ Component, pageProps }) {
     const { t } = useTranslation("footer", "common", "cart", "blog");
     return (
         <Provider store={store}>
-            <PersistGate loading={"loading"} persistor={persistor}>
+            <PersistGate loading={<Loading />} persistor={persistor}>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>

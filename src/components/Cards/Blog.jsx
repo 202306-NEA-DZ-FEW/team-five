@@ -1,12 +1,19 @@
+import AOS from "aos";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 import React from "react";
-import Link from "next/link";
+
+import "aos/dist/aos.css";
+
 import BlogCard from "@/components/BlogCard";
-import { useTranslation } from "next-i18next";
+
+import Loading from "@/Utils/Loading";
 
 export default function Blog() {
     const { t, i18n } = useTranslation("blog", "footer", "navbar");
     const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const apiToken = process.env.NEXT_PUBLIC_API_TOKEN;
@@ -19,47 +26,71 @@ export default function Blog() {
                 endpoint = `https://gnews.io/api/v4/search?q=food%20problems%20hunger&token=${apiToken}&lang=en`;
             }
 
-            const response = await fetch(endpoint);
+            try {
+                await new Promise((resolve) => setTimeout(resolve, 2000));
 
-            if (response.ok) {
-                const data = await response.json();
-                setArticles(data.articles);
-            } else {
-                console.error("Error fetching data:", response.statusText);
+                const response = await fetch(endpoint);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setArticles(data.articles);
+                } else {
+                    console.error("Error fetching data:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
             }
         }
 
         fetchData();
     }, [i18n.language]);
 
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <div>
-            <div>
-                <div className='flex flex-wrap justify-center'>
-                    {articles?.map((article, index) => (
-                        <div key={index} className='mx-2'>
-                            <Link
-                                href={`/blog/${encodeURIComponent(
-                                    article.title
-                                )}`}
-                            >
-                                <BlogCard blog={article} />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+            {loading ? (
+                <Loading />
+            ) : (
                 <div>
-                    <h1 className='text-3xl font-semibold text-sky-600  mt-5 mb-2 text-center'>
-                        {" "}
-                        {t("blog.latest")}{" "}
-                    </h1>
+                    <div>
+                        <div className='flex flex-wrap justify-center'>
+                            {articles?.map((article, index) => (
+                                <div key={index} className='mx-2'>
+                                    <Link
+                                        href={`/blog/${encodeURIComponent(
+                                            article.title
+                                        )}`}
+                                        data-aos='fade-left'
+                                        data-aos-duration='1000'
+                                    >
+                                        <BlogCard blog={article} />
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                        <div>
+                            <h1 className='text-3xl font-semibold text-sky-600  mt-5 mb-2 text-center'>
+                                {" "}
+                                {t("blog.latest")}{" "}
+                            </h1>
+                        </div>
+                        <div
+                            className='flex flex-wrap justify-center gap-4'
+                            data-aos='zoom-in'
+                            data-aos-duration='1000'
+                        >
+                            {articles?.slice(4, 7).map((member, index) => (
+                                <BlogCard key={member.id} blog={member} />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-                <div className='flex flex-wrap justify-center gap-4'>
-                    {articles?.slice(4, 7).map((member, index) => (
-                        <BlogCard key={member.id} blog={member} />
-                    ))}
-                </div>
-            </div>
+            )}
         </div>
     );
 }
