@@ -48,6 +48,7 @@
         "redux-persist": "^6.0.0",
         "slick-carousel": "^1.8.1",
         "stripe": "^14.2.0",
+        "swiper": "^11.0.4",
         "universal-cookie": "^6.1.1"
     },
     "devDependencies": {
