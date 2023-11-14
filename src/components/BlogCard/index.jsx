@@ -1,20 +1,19 @@
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 const BlogCard = ({ blog }) => {
     const { t } = useTranslation("BlogCard");
 
     const authorsNames = [
-        "Achraf Mehanneche ",
-        "Sidahmed Slikh    ",
+        "Achraf Mehanneche",
+        "Sidahmed Slikh",
         "Mohammed Tchoketch",
-        "Abdelhamid Serhan ",
-        "Mellisa Sidisaid  ",
+        "Abdelhamid Serhan",
+        "Mellisa Sidisaid",
     ];
     const images = [
         "achraf.jpg",
         "sidahmed.jpg",
-        "admin.svg",
+        "mohamed_tchoketch.png",
         "hamid_ahmidat.jpg",
         "melisa.jpg",
     ];
@@ -24,20 +23,25 @@ const BlogCard = ({ blog }) => {
     const randomAuthorImage = images[randomIndex];
 
     const truncateText = (text, maxLength) => {
-        if (text.length <= maxLength) {
+        if (text && text.length <= maxLength) {
             return text;
         }
-        return text.slice(0, maxLength) + "... ";
+        return text ? text.slice(0, maxLength) + "... " : "";
     };
 
-    const truncatedTitle = truncateText(blog.title, 65);
-    const truncatedDescription = truncateText(blog.description, 210);
+    const truncatedTitle =
+        blog && blog.title ? truncateText(blog.title, 65) : "";
+    const truncatedDescription =
+        blog && blog.description ? truncateText(blog.description, 210) : "";
+    const publishedDate = blog && blog.publishedAt ? blog.publishedAt : "";
+
+    const imageSrc = blog && blog.image ? blog.image : "";
 
     return (
         <div className='relative w-[416px] h-[528px] rounded overflow-hidden shadow-lg m-4 hover:bg-gray-100 transform hover:scale-105 transition duration-300 ease-in-out'>
             <img
-                src={blog.image}
-                alt={blog.title}
+                src={imageSrc}
+                alt={blog && blog.title ? blog.title : ""}
                 className='w-full h-56 object-cover'
             />
             <div className='flex flex-col flex-grow p-4'>
@@ -52,14 +56,13 @@ const BlogCard = ({ blog }) => {
                         {randomAuthorName}
                     </div>
                     <div className='flex space-x-4 text-gray-700'>
-                        {blog.publishedAt}
+                        {publishedDate}
                     </div>
                 </div>
                 <p className='text-gray-600 mb-4 flex-grow p-4'>
                     {truncatedDescription}
                 </p>
                 <div className='mt-auto'></div>
-
                 <button
                     className='absolute bottom-0 left-0 hover:text-gray-300 text-green-500 font-bold py-2 px-4 mb-1 rounded-full text-center'
                     style={{ textDecoration: "underline" }}
