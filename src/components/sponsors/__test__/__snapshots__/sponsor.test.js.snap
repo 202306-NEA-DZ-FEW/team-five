@@ -133,7 +133,7 @@ Array [
         disc
       </p>
       <button
-        className="py-2 px-4 lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10"
+        className="py-2  lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10"
       >
         donation
          ❤
