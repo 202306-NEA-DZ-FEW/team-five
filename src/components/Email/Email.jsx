@@ -93,7 +93,6 @@ function Email() {
                         <button className='bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover-bg-green-700'>
                             Subscribe
                         </button>
-
                         <input
                             type='hidden'
                             name='_autoresponse'
