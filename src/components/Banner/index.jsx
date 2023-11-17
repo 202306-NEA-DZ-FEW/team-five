@@ -40,9 +40,6 @@ const Banner = ({ description, title, title1, imageUrl, btnText, title2 }) => {
                     </div>
                 </div>
             </div>
-            <div data-aos='slide-left'>
-                <Line />
-            </div>
         </section>
     );
 };

@@ -71,7 +71,7 @@ function Sponsor() {
                 >
                     <b className='text-4xl mt-30'>{t("joinus")}</b>
                     <p className='text-xl mt-10'>{t("disc")}</p>
-                    <button className='py-2 px-4 lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10'>
+                    <button className='py-2  lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10'>
                         {t("donation")} ❤
                     </button>
                 </div>
