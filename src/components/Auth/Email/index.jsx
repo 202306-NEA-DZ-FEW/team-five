@@ -2,9 +2,9 @@
 import {
     createUserWithEmailAndPassword,
     GoogleAuthProvider,
+    sendPasswordResetEmail,
     signInWithPopup,
     updateProfile,
-    sendPasswordResetEmail,
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
@@ -70,9 +70,15 @@ export default function Email({ onToggleComponent }) {
     };
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-0 h-screen'>
-            <div className='md:col-span-1  h-screen'>
-                <img src='/signup.svg' alt='signup' width='99%' height='100%' />
+        <div className='md:grid grid-cols-1 md:grid-cols-2 flex flex-row-reverse gap-0 h-screen'>
+            <div className='md:col-span-1 h-screen'>
+                <img
+                    src='/signup.svg'
+                    alt='signup'
+                    width='99%'
+                    height='90%'
+                    className='h-full object-cover hidden sm:block'
+                />
             </div>
             <div className='col-span-1 bg-white h-screen'>
                 <div className='flex h-screen items-center justify-center'>

@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 const MemberCard = ({ member }) => {
-    const { name, image, socialMedia, description, memberShip } = member;
+    const {
+        name = "",
+        image = "",
+        socialMedia = [],
+        description = "",
+        memberShip = "",
+    } = member || {};
     const { t } = useTranslation("members");
     return (
         <div className='bg-white flex flex-col gap-4 items-center rounded-md w-96 shadow-lg relative '>

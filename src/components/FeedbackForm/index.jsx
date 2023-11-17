@@ -1,0 +1,125 @@
+import { useTranslation } from "next-i18next";
+import React, { useState } from "react";
+import { usePopper } from "react-popper";
+
+const FeedbackForm = () => {
+    const { t } = useTranslation("error");
+    const [referenceElement, setReferenceElement] = useState(null);
+    const [popperElement, setPopperElement] = useState(null);
+    const { styles, attributes } = usePopper(referenceElement, popperElement, {
+        modifiers: [{ name: "offset", options: { offset: [10, 10] } }],
+    });
+    const [showWidget, setShowWidget] = useState(false);
+    const [feedbackMessage, setFeedbackMessage] = useState("");
+    const [email, setEmail] = useState("");
+    const [rating, setRating] = useState(0);
+    const [error, setError] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (
+            feedbackMessage.trim() === "" ||
+            email.trim() === "" ||
+            rating === 0
+        ) {
+            setError("Please fill in all fields before submitting.");
+        } else {
+            setError("");
+            setShowWidget(false);
+        }
+    };
+
+    return (
+        <div>
+            <div
+                ref={setReferenceElement}
+                className='absolute bottom-6 right-2 p-2 rounded-l-lg rounded-t-lg bg-green-500 hover:bg-green-400 shadow-md hover:shadow-lg text-white'
+            >
+                <button
+                    onClick={() => setShowWidget(!showWidget)}
+                    type='button'
+                >
+                    {t("error.feedback")}
+                </button>
+            </div>
+            {showWidget && (
+                <div
+                    ref={setPopperElement}
+                    style={styles.popper}
+                    {...attributes.popper}
+                    className='bg-white p-2 rounded-md shadow-lg'
+                >
+                    <form
+                        onSubmit={handleSubmit}
+                        // action='https://formsubmit.co/example@gmail.com'
+                        method='POST'
+                    >
+                        <label htmlFor='feedback'>{t("error.improve")}</label>
+                        <div className='flex flex-col space-y-2'>
+                            <textarea
+                                id='feedback'
+                                className='p-2 h-24 w-64 border border-gray-400 rounded-md'
+                                type='textarea'
+                                name='texterea'
+                                value={feedbackMessage}
+                                onChange={(e) =>
+                                    setFeedbackMessage(e.target.value)
+                                }
+                            ></textarea>
+
+                            <label htmlFor='email'>{t("error.email")}</label>
+                            <input
+                                id='email'
+                                className='p-2 border border-gray-400 rounded-md'
+                                type='email'
+                                name='email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+
+                            <label htmlFor='rating'>{t("error.rate")}</label>
+                            <div className='text-3xl'>
+                                {[1, 2, 3, 4, 5].map((star) => (
+                                    <span
+                                        key={star}
+                                        role='button'
+                                        name='star'
+                                        onClick={() => setRating(star)}
+                                        className={
+                                            star <= rating
+                                                ? "text-yellow-500"
+                                                : "text-gray-300"
+                                        }
+                                    >
+                                        ★
+                                    </span>
+                                ))}
+                            </div>
+
+                            {error && <p className='text-red-500'>{error}</p>}
+                            <input
+                                type='hidden'
+                                name='_subject'
+                                value='New feedback submission'
+                            />
+                            <button
+                                className='p-2 ml-auto rounded-lg bg-green-500 hover:bg-green-400 shadow-md hover:shadow-lg text-white'
+                                type='submit'
+                            >
+                                {t("error.send")}
+                            </button>
+                            <input
+                                type='hidden'
+                                name='_autoresponse'
+                                value='Successfully submitted feedback'
+                            />
+                        </div>
+                    </form>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default FeedbackForm;

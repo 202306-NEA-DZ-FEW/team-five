@@ -56,50 +56,23 @@ function Sponsor() {
                     />
                 </div>
             </div>
-            <div className='hidden md:flex flex-nowrap bg-[#80D6F6] mt-10'>
+            <div className='flex flex-col  lg:flex-row flex-wrap bg-[#80D6F6] mt-10 justify-center items-center lg:justify-normal lg:items-start '>
                 <div
-                    className='w-1/2 flex items-center justify-center'
+                    className='w-1/2 flex items-center lg:justify-start justify-center  lg:ml-10 basis-3/12'
                     data-aos='fade-right'
-                    data-aos-duration='1000'
+                    data-aos-duration='600'
                 >
-                    <Image
-                        alt='image'
-                        src='/comm.png'
-                        className='mt-10'
-                        width={300}
-                        height={20}
-                    />
+                    <img alt='image' src='/comm.png' width={300} height={20} />
                 </div>
                 <div
-                    className='w-1/2 text-white relative mt-20 ml-[-200px]'
+                    className='w-1/2 text-white mt-20 basis-2/3'
                     data-aos='fade-left'
                     data-aos-duration='1000'
                 >
                     <b className='text-4xl mt-30'>{t("joinus")}</b>
                     <p className='text-xl mt-10'>{t("disc")}</p>
-                    <button className='py-2 px-4 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540] mt-4 mr-10 mb-10'>
-                        {t("donation")}
-                    </button>
-                </div>
-            </div>
-
-            <div
-                className='md:hidden bg-[#80D6F6] mt-20 text-white'
-                data-aos='fade-up'
-                data-aos-duration='1000'
-            >
-                <div className='flex flex-col items-center justify-center ml-10 mr-10'>
-                    <Image
-                        alt='image'
-                        src='/comm.png'
-                        className='mt-10'
-                        width={300}
-                        height={20}
-                    />
-                    <b className='text-4xl mt-30'>{t("joinus")}</b>
-                    <p className='text-xl mt-10'>{t("disc")}</p>
-                    <button className='py-2 px-4 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540] mt-4 mb-10'>
-                        {t("donation")}
+                    <button className='py-2  lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10'>
+                        {t("donation")} ❤
                     </button>
                 </div>
             </div>

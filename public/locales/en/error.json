@@ -1,0 +1,12 @@
+{
+    "error": {
+        "notfound": "Page Not Found",
+        "oops": "Oops! It looks like you've ventured off the coupon trail. No amount of coupons, not even a lifetime supply, will get you to this page.",
+        "feedback": "Feedback",
+        "errorMsg": "Please fill in all fields before submitting.",
+        "improve": "How can we improve?",
+        "email": "Enter your Email:",
+        "rate": "Rate us:",
+        "send": "Send Feedback"
+    }
+}

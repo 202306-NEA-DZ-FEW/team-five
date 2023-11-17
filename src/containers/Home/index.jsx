@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import "aos/dist/aos.css";
 
 import Banner from "@/components/Banner";
-import Line from "@/components/Cards/Line";
 import Goal from "@/components/donation/Goal";
 import Steps from "@/components/donation/Steps";
 import Email from "@/components/Email/Email";
@@ -38,15 +37,11 @@ function Home() {
                     className='  slide-in-right'
                     data-aos='slide-right'
                     data-aos-offset='200'
-                >
-                    <Line />
-                </div>
+                ></div>
 
                 <Goal />
             </div>
-            <div className=' ' data-aos='slide-left' data-aos-offset='200'>
-                <Line />
-            </div>
+
             <div className='bg-[#F9FAFB]  '>
                 <Blogcontainer />
                 <div className='flex justify-center'>
@@ -56,16 +51,12 @@ function Home() {
                     className='  slide-in-right'
                     data-aos='slide-right'
                     data-aos-offset='200'
-                >
-                    <Line />
-                </div>
+                ></div>
             </div>
             <div className='flex justify-center '>
                 <MemberList />
             </div>
-            <div className=' ' data-aos='slide-left' data-aos-offset='200'>
-                <Line />
-            </div>
+
             <div className='bg-[#F9FAFB] '>
                 <Sponsor />
             </div>

@@ -1,10 +1,12 @@
 import { loadStripe } from "@stripe/stripe-js";
+import { doc, setDoc } from "firebase/firestore";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import FormatePrice from "@/pages/auth/FormatePrice";
 import { resetCart } from "@/redux/shopperSlice";
+import { db } from "@/Utils/firebase";
 
 const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
     const productData = useSelector((state) => state.shopper.productData);
@@ -12,6 +14,17 @@ const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
         "pk_test_51O6byUK7ISzWtqlYUj6XjZRB9ynV7BYRPUYhcPYyEvVy3asqXVrY3iS2luIXHEAsE2EC11CkzZ3adU1IRhI6yFkQ00lYWfsxlt"
     );
     const dispatch = useDispatch();
+
+    const generateCouponNumber = () => {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let couponNumber = "";
+        for (let i = 0; i < 8; i++) {
+            couponNumber += characters.charAt(
+                Math.floor(Math.random() * characters.length)
+            );
+        }
+        return couponNumber;
+    };
 
     const handleCheckout = async () => {
         const stripe = await stripePromise;
@@ -29,6 +42,39 @@ const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
                 return response.json();
             })
             .then(function (session) {
+                const addCouponsToFirestore = async () => {
+                    try {
+                        await Promise.all(
+                            productData?.map(async (product) => {
+                                const couponNumber = generateCouponNumber();
+                                const username = product.UserName;
+                                const price = product.price;
+                                const image = product.image;
+
+                                const documentRef = doc(
+                                    db,
+                                    "coupons",
+                                    couponNumber
+                                );
+
+                                await setDoc(documentRef, {
+                                    coupon: couponNumber,
+                                    company: username,
+                                    price: price,
+                                    image: image,
+                                });
+                            })
+                        );
+                    } catch (error) {
+                        console.error(
+                            "Error adding coupons to Firestore:",
+                            error
+                        );
+                    }
+                };
+
+                addCouponsToFirestore();
+                dispatch(resetCart());
                 return stripe.redirectToCheckout({ sessionId: session.id });
             })
             .then(function (result) {
@@ -36,7 +82,6 @@ const CheckoutCard = ({ totalOldPrice, totalSavings, totalamt }) => {
                     alert(result.error.message);
                 }
             });
-        dispatch(resetCart());
     };
 
     const { t } = useTranslation("cart", "footer", "common");

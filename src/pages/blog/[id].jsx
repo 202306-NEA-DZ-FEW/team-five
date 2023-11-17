@@ -1,8 +1,9 @@
 import { useTranslation } from "next-i18next";
-import React from "react";
-import Article from "@/components/Cards/Article";
-import "core-js/modules/es.array.map";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React from "react";
+import "core-js/modules/es.array.map";
+
+import Article from "@/components/Cards/Article";
 
 function BlogSingle({ article }) {
     const { t } = useTranslation([
