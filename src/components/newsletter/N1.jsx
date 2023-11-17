@@ -43,6 +43,12 @@ const N1 = () => {
                                 textAlign: "center",
                             }}
                         />
+                        <input
+                            type='hidden'
+                            name='_subject'
+                            value='New submission!'
+                        />
+
                         <button
                             type='submit'
                             style={{
@@ -55,6 +61,12 @@ const N1 = () => {
                         >
                             Send
                         </button>
+
+                        <input
+                            type='hidden'
+                            name='_autoresponse'
+                            value='Successfully subscribed'
+                        ></input>
                     </form>
                 </div>
             </div>

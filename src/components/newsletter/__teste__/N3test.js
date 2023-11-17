@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import configureMockStore from "redux-mock-store";
 
-import N2 from "../N2";
+import N3 from "../N3";
 
 jest.mock("next/router", () => ({
     useRouter: () => ({
@@ -23,11 +23,11 @@ const store = mockStore({
     userInfo: null,
 });
 
-describe("N2 Component", () => {
+describe("Button Component", () => {
     it("should render correctly", () => {
         const component = renderer.create(
             <Provider store={store}>
-                <N2 />
+                <N3 />
             </Provider>
         );
         const tree = component.toJSON();
