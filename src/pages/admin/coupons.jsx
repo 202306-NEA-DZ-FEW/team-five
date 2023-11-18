@@ -162,6 +162,7 @@ export async function getStaticProps({ locale }) {
                 "footer",
                 "common",
                 "cart",
+                "navbar",
             ])),
         },
     };

@@ -1,9 +1,9 @@
 import AOS from "aos";
+import Link from "next/link";
 import React, { useEffect } from "react";
 
 import "aos/dist/aos.css";
 
-import Line from "../Cards/Line";
 const Banner = ({ description, title, title1, imageUrl, btnText, title2 }) => {
     const imgStyle = {
         backgroundImage: "url(" + imageUrl + ")",
@@ -34,9 +34,12 @@ const Banner = ({ description, title, title1, imageUrl, btnText, title2 }) => {
                         </p>
                     </div>
                     <div className='mt-6 sm:mt-8 md:mt-10'>
-                        <button className='bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700'>
+                        <Link
+                            href='/coupons'
+                            className='bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700'
+                        >
                             {btnText}
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

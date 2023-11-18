@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { FaCartPlus, FaUser, FaHome, FaCamera, FaCog } from "react-icons/fa";
-import { RiCoupon5Fill } from "react-icons/ri";
+import { FaCartPlus, FaHome, FaUser } from "react-icons/fa";
 import { FaMicroblog } from "react-icons/fa6";
-import { useRouter } from "next/router";
+import { RiCoupon5Fill } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 import Profile from "@/components/Profile";
 
@@ -140,15 +139,19 @@ function Navbar() {
             <div className=' fixed bottom-0 left-0 right-0 flex justify-center z-10 md:hidden'>
                 <div className='bg-[#43AFD6] max-h-[3.2rem] px-6 h-[150px] rounded-t-xl'>
                     <ul className='flex relative'>
-                        <span
-                            className={`bg-white-500 duration-500 ${Menus[active].dis} bg-green-500 border-4 border-transparent-900 h-16 w-16 absolute -top-5 rounded-full`}
-                        >
-                            <span className='w-3.5 h-3.5 bg-transparent absolute top-4 -left-[18px] rounded-tr-[11px] shadow-myShadow1'></span>
-                            <span className='w-3.5 h-3.5 bg-transparent absolute top-4 -right-[18px] rounded-tl-[11px] shadow-myShadow2'></span>
-                        </span>
+                        {Menus && active >= 0 && active < Menus.length && (
+                            <span
+                                className={`bg-white-500 duration-500 ${
+                                    Menus[active]?.dis || ""
+                                } bg-green-500 border-4 border-transparent-900 h-16 w-16 absolute -top-5 rounded-full`}
+                            >
+                                <span className='w-3.5 h-3.5 bg-transparent absolute top-4 -left-[18px] rounded-tr-[11px] shadow-myShadow1'></span>
+                                <span className='w-3.5 h-3.5 bg-transparent absolute top-4 -right-[18px] rounded-tl-[11px] shadow-myShadow2'></span>
+                            </span>
+                        )}
                         {Menus.map((menu, i) => (
                             <li key={i} className='w-16'>
-                                <a
+                                <Link
                                     href={menu.link}
                                     className='flex flex-col text-center pt-6'
                                     onClick={() => handleMenuClick(i)}
@@ -169,7 +172,7 @@ function Navbar() {
                                                 : "opacity-0 translate-y-10 "
                                         }`}
                                     ></span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

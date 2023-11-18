@@ -1,6 +1,9 @@
 import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import { usePopper } from "react-popper";
+import { toast, ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const FeedbackForm = () => {
     const { t } = useTranslation("error");
@@ -15,7 +18,7 @@ const FeedbackForm = () => {
     const [rating, setRating] = useState(0);
     const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (
@@ -25,13 +28,39 @@ const FeedbackForm = () => {
         ) {
             setError("Please fill in all fields before submitting.");
         } else {
-            setError("");
-            setShowWidget(false);
+            try {
+                setError("");
+                setShowWidget(false);
+
+                const response = await fetch(
+                    "https://formsubmit.co/sidisaidmel@gmail.com",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            feedbackMessage,
+                            email,
+                            rating,
+                        }),
+                    }
+                );
+
+                if (response.ok) {
+                    toast.success("Feedback submitted successfully!");
+                } else {
+                    toast.error("Failed to submit feedback. Please try again.");
+                }
+            } catch (err) {
+                setError("There was an error submitting the form.");
+            }
         }
     };
 
     return (
         <div>
+            <ToastContainer />
             <div
                 ref={setReferenceElement}
                 className='absolute bottom-6 right-2 p-2 rounded-l-lg rounded-t-lg bg-green-500 hover:bg-green-400 shadow-md hover:shadow-lg text-white'
@@ -50,11 +79,7 @@ const FeedbackForm = () => {
                     {...attributes.popper}
                     className='bg-white p-2 rounded-md shadow-lg'
                 >
-                    <form
-                        onSubmit={handleSubmit}
-                        // action='https://formsubmit.co/example@gmail.com'
-                        method='POST'
-                    >
+                    <form onSubmit={handleSubmit} method='POST'>
                         <label htmlFor='feedback'>{t("error.improve")}</label>
                         <div className='flex flex-col space-y-2'>
                             <textarea

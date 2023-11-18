@@ -8,7 +8,7 @@ exports[`CouponsBanner Component should render correctly 1`] = `
     className="flex  bg-cover w-full xl:w-1/2 -mt-20 "
   >
     <img
-      src="don.png"
+      src="don2.svg"
     />
   </div>
   <div

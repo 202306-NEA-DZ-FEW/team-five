@@ -1,13 +1,18 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const router = useRouter();
     const handleDropdownToggle = () => {
         setIsOpen(!isOpen);
     };
 
+    const changeLanguage = (locale) => {
+        onLanguageChange(locale);
+        router.push(router.asPath, router.asPath, { locale });
+        setIsOpen(false);
+    };
     return (
         <div className='relative z-[2000] inline-block text-left '>
             <div>
@@ -19,13 +24,13 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                     {selectedLanguage === "en" ? (
                         <img
                             className='w-6 h-6 rounded-full'
-                            src='gb.svg'
+                            src='/gb.svg'
                             alt='US'
                         />
                     ) : (
                         <img
                             className='w-6 h-6 rounded-full'
-                            src='dz.svg'
+                            src='/dz.svg'
                             alt='DZ'
                         />
                     )}
@@ -43,43 +48,33 @@ const LanguageDropdown = ({ selectedLanguage, onLanguageChange }) => {
                     aria-orientation='vertical'
                 >
                     <div className='py-1' role='none'>
-                        <Link
-                            href='/'
-                            locale='en'
-                            className='flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                        <button
+                            className='flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left'
                             role='menuitem'
-                            onClick={() => {
-                                handleDropdownToggle();
-                                onLanguageChange("en");
-                            }}
+                            onClick={() => changeLanguage("en")}
                         >
                             <img
-                                src='gb.svg'
+                                src='/gb.svg'
                                 alt='Gb'
                                 className='w-4 h-4 mr-2'
                                 name='GB'
                             />{" "}
                             English
-                        </Link>
+                        </button>
 
-                        <Link
-                            href='/'
-                            locale='ar'
-                            className=' flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                        <button
+                            className='flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left'
                             role='menuitem'
-                            onClick={() => {
-                                handleDropdownToggle();
-                                onLanguageChange("ar");
-                            }}
+                            onClick={() => changeLanguage("ar")}
                         >
                             <img
-                                src='dz.svg'
+                                src='/dz.svg'
                                 alt='dz'
                                 className='w-4 h-4 mr-2'
                                 name='DZ'
                             />
                             العربية
-                        </Link>
+                        </button>
                     </div>
                 </div>
             )}
