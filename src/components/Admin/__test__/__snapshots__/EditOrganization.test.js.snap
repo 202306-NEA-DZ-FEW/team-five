@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditOrganization Component should render correctly 1`] = `
+<div
+  className="text-center w-[50%] items-center justify-center "
+>
+  <div
+    className="text-center mt-4 mb-4 relative "
+  >
+    <hr
+      className="border-gray-300 border-t-1 mt-3 absolute w-full "
+    />
+    <p
+      className="relative z-10 bg-white inline "
+    >
+      edit.changeemail
+    </p>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="mb-4 "
+    >
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="email"
+      />
+      <input
+        className="h-[50px] text-center shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="edit.email"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="text-center mt-4 mb-4 relative "
+    >
+      <hr
+        className="border-gray-300 border-t-1 mt-3 absolute w-full "
+      />
+      <p
+        className="relative z-10 bg-white inline "
+      >
+        edit.name
+      </p>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="name"
+      />
+      <input
+        className="h-[50px] text-center shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="edit.nameoforg"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="text-center mt-4 mb-4 relative "
+    >
+      <hr
+        className="border-gray-300 border-t-1 mt-3 absolute w-full "
+      />
+      <p
+        className="relative z-10 bg-white inline "
+      >
+        edit.changepassword
+      </p>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="password"
+      />
+      <input
+        className="h-[50px] text-center shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="edit.newpass"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="mb-4"
+    >
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="confirmPassword"
+      />
+      <input
+        className="h-[50px] text-center shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="confirmPassword"
+        name="confirmPassword"
+        onChange={[Function]}
+        placeholder="edit.confirmpass"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="text-center mt-4 mb-4 relative "
+    >
+      <hr
+        className="border-gray-300 border-t-1 mt-3 absolute w-full "
+      />
+      <p
+        className="relative z-10 bg-white inline "
+      >
+        edit.urcurrent
+      </p>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <label
+        className="block text-gray-700 text-sm font-bold mb-2"
+        htmlFor="currentPassword"
+      />
+      <input
+        className="h-[50px] text-center shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="currentPassword"
+        name="currentPassword"
+        onChange={[Function]}
+        placeholder="edit.current"
+        type="password"
+        value=""
+      />
+    </div>
+    <button
+      className="bg-[#20DC49] text-black rounded px-4 mt-3 py-2 mb-10"
+    >
+      edit.update
+    </button>
+  </form>
+</div>
+`;
