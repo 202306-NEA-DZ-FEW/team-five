@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { onAuthStateChanged, updateProfile } from "firebase/auth";
 import {
     doc,
@@ -13,9 +14,9 @@ import {
     updateMetadata,
     uploadBytes,
 } from "firebase/storage";
+import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { useTranslation } from "next-i18next";
 
 import { auth } from "@/Utils/firebase";
 
