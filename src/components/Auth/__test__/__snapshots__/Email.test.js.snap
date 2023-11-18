@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Email Component should render correctly 1`] = `
+<div
+  className="md:grid grid-cols-1 md:grid-cols-2 flex flex-row-reverse gap-0 h-screen"
+>
+  <div
+    className="md:col-span-1 h-screen"
+  >
+    <img
+      alt="signup"
+      className="h-full object-cover hidden sm:block"
+      height="90%"
+      src="/signup.svg"
+      width="99%"
+    />
+  </div>
+  <div
+    className="col-span-1 bg-white h-screen"
+  >
+    <div
+      className="flex h-screen items-center justify-center"
+    >
+      <div
+        className="top-20 flex gap-4 right-5 absolute text-right"
+      >
+        <h2
+          className=""
+        >
+          signup.haveAccount
+        </h2>
+        <button
+          className="text-[#20DC49]  "
+          onClick={[Function]}
+        >
+          signup.signIn
+        </button>
+      </div>
+      <div
+        className="text-center w-[50%]"
+      >
+        <p
+          className="mb-10 font-bold text-[150%]"
+        >
+          email.check
+        </p>
+        <p
+          className="mb-10 text-[100%] text-gray-500 border bg-gray-100 p-5"
+        >
+          email.spam
+        </p>
+        <div
+          className="text-center mt-4 mb-4 relative"
+        >
+          <hr
+            className="border-gray-300 border-t-1 mt-3 absolute w-full"
+          />
+          <p
+            className="relative z-10 bg-white inline "
+          >
+            email.yourmail
+          </p>
+        </div>
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="mb-4"
+          >
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            />
+            <input
+              className="h-[50px] shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              name="email"
+              onChange={[Function]}
+              placeholder="signup.emailLabel"
+              type="email"
+              value=""
+            />
+          </div>
+          <button
+            className="bg-[#20DC49] text-black rounded px-4 mt-3 py-2"
+          >
+            email.send
+          </button>
+        </form>
+        <div
+          className="top-5 flex flex-row mr-5"
+        >
+          <button
+            className="text-[#D93F21] "
+          >
+            email.help
+          </button>
+        </div>
+      </div>
+    </div>
+    <p
+      className="text-left ml-20  text-gray-500 text-[12px] "
+    >
+      signup.termsOfUse
+    </p>
+  </div>
+</div>
+`;
