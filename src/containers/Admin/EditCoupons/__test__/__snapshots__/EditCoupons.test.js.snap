@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditCoupons Component should render correctly 1`] = `
+<div>
+  <div
+    className="items-center text-center font-bold text-[35px]"
+  >
+    edit.editcoupons
+  </div>
+  <p
+    className="items-center text-center font-semibold text-[25px] mt-3"
+  >
+    edit.defaultcouponamounts
+  </p>
+  <div
+    className="flex justify-center gap-10 mb-10 mt-10"
+  >
+    <div
+      className="p-4 shadow-md rounded-lg cursor-pointer w-60 text-center  h-50 "
+      onClick={[Function]}
+    >
+      <div
+        className="font-bold text-xl"
+      >
+        10₺
+      </div>
+      <div
+        className="font-bold text-sm"
+      />
+    </div>
+    <div
+      className="p-4 shadow-md rounded-lg cursor-pointer w-60 text-center  h-50 "
+      onClick={[Function]}
+    >
+      <div
+        className="font-bold text-xl"
+      >
+        25₺
+      </div>
+      <div
+        className="font-bold text-sm"
+      />
+    </div>
+    <div
+      className="p-4 shadow-md rounded-lg cursor-pointer w-60 text-center  h-50 "
+      onClick={[Function]}
+    >
+      <div
+        className="font-bold text-xl"
+      >
+        50₺
+      </div>
+      <div
+        className="font-bold text-sm"
+      />
+    </div>
+    <div
+      className="p-4 shadow-md rounded-lg cursor-pointer w-60 text-center  h-50 "
+      onClick={[Function]}
+    >
+      <div
+        className="font-bold text-xl"
+      >
+        100₺
+      </div>
+      <div
+        className="font-bold text-sm"
+      />
+    </div>
+  </div>
+  <p
+    className="items-center text-center font-bold text-[30px] mt-3"
+  >
+    edit.uploadlogo
+  </p>
+  <div>
+    <div
+      className="container mx-auto p-4 text-center"
+    >
+      <div
+        className="flex items-center justify-center mb-4"
+      />
+      <form
+        autoComplete="off"
+        className="space-y-4"
+        onSubmit={[Function]}
+      >
+        <div
+          className="border-2 border-dashed p-4 border-green-500 flex justify-center items-center h-60"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          role="presentation"
+          tabIndex={0}
+        >
+          <input
+            accept="image/png, image/jpeg"
+            multiple={true}
+            onChange={[Function]}
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            tabIndex={-1}
+            type="file"
+          />
+          <div>
+            <p>
+              edit.uploadphototext
+            </p>
+          </div>
+        </div>
+        <button
+          className="bg-green-500 text-white rounded px-4 py-2 hover:bg-blue-500 transition duration-300 ease-in-out"
+          type="submit"
+        >
+          edit.Upload
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
