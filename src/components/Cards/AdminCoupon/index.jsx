@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -84,7 +83,7 @@ function AdminCoupon({ image, UserName, price, _id, coupon, onRemove }) {
                     </h2>
 
                     <p className='text-sm md:text-2xl font-semibold text-white mb-5'>
-                        {t("couponCard.coupon")} {coupon}
+                        {t("couponCard.coupon")} : {coupon}
                     </p>
                     <p className='text-sm md:text-2xl font-semibold text-white'>
                         {t("couponCard.price")} ${price}
