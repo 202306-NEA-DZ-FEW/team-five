@@ -94,7 +94,10 @@ const Coupons = () => {
                                     ({Data.length} {t("cart.item")})
                                 </span>
                             </h1>
-                            <p className=' text-2xl'>Filter by price :</p>
+                            <p className=' text-2xl'>
+                                {" "}
+                                {t("couponCard.filter")} :
+                            </p>
 
                             <div className='flex gap-10 items-center flex-wrap justify-center border-b-4 border-dashed border-b-green-500 pb-10 mt-5'>
                                 {couponCards.map((coupon, i) => (
@@ -113,8 +116,11 @@ const Coupons = () => {
                                     </button>
                                 ))}
                             </div>
-                            <button onClick={() => setSelectedCoupon(null)}>
-                                Reset
+                            <button
+                                className='bg-red-100 text-sm font-medium text-red-600 text-center px-2  rounded-md self-center'
+                                onClick={() => setSelectedCoupon(null)}
+                            >
+                                {t("couponCard.reset")}
                             </button>
 
                             <Swiper
