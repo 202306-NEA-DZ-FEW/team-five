@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CouponCard Component should render correctly 1`] = `
+<div
+  className="p-4 shadow-md rounded-lg cursor-pointer w-60 text-center  h-50 "
+>
+  <div
+    className="font-bold text-xl"
+  />
+  <div
+    className="font-bold text-sm"
+  />
+</div>
+`;

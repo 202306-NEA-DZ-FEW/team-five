@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import { useTranslation } from "next-i18next";
-import { useSelector } from "react-redux";
-import { auth } from "@/Utils/firebase";
+/* eslint-disable no-console */
 import {
-    updateProfile,
+    EmailAuthProvider,
     getAuth,
+    reauthenticateWithCredential,
     signOut,
     updateEmail,
     updatePassword,
-    EmailAuthProvider,
-    reauthenticateWithCredential,
+    updateProfile,
 } from "firebase/auth";
 import { useRouter } from "next/router";
-import SignOutButton from "@/components/Admin/EditOrganization";
-import { removeUser } from "@/redux/shopperSlice";
+import { useTranslation } from "next-i18next";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+
+import { removeUser } from "@/redux/shopperSlice";
 
 export default function EditOrganization() {
     const { t } = useTranslation("admin");
