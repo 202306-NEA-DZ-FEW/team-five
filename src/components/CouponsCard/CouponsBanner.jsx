@@ -21,7 +21,7 @@ const CouponsBanner = () => {
     return (
         <section className='flex flex-col xl:flex-row items-center w-full'>
             <div className='flex  bg-cover w-full xl:w-1/2 -mt-20 '>
-                <img src='don.png' />
+                <img src='don2.svg' />
             </div>
             <div className='flex-1 px-4 lg:px-10 lg:mb-0 py-16'>
                 <div className='w-full'>

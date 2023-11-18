@@ -15,6 +15,9 @@
     "price": "Price: ",
     "remove": "Remove",
     "quantity": "Quantity",
-    "total": "Total :"
+    "total": "Total :",
+    "coupon": "coupon",
+    "filter": "Filter by price",
+    "reset": "Reset Filter"
   }
 }

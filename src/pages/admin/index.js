@@ -39,6 +39,7 @@ export async function getStaticProps({ locale }) {
                 "admin",
                 "footer",
                 "common",
+                "navbar",
             ])),
         },
     };

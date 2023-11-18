@@ -13,7 +13,7 @@ const Loading = () => {
 
     return (
         <div className='flex items-center justify-center'>
-            {showLoading && <img src='coupon.gif' alt='Loading...' />}
+            {showLoading && <img src='/coupon.gif' alt='Loading...' />}
         </div>
     );
 };
