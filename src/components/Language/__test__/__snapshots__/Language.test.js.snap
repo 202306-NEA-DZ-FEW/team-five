@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageDropdown Component should render correctly 1`] = `
+<div
+  className="relative z-[2000] inline-block text-left "
+>
+  <div>
+    <button
+      className="flex items-center space-x-2 text-white font-semibold focus:outline-none"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="DZ"
+        className="w-6 h-6 rounded-full"
+        src="dz.svg"
+      />
+      <span>
+        العربية
+      </span>
+    </button>
+  </div>
+</div>
+`;
