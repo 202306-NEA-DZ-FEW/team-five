@@ -7,6 +7,9 @@
         "improve": "How can we improve?",
         "email": "Enter your Email:",
         "rate": "Rate us:",
-        "send": "Send Feedback"
+        "send": "Send Feedback",
+        "feedbackSuccess": "Feedback submitted successfully!",
+        "feedbackFail": "Failed to submit feedback. Please try again.",
+        "feedbackError": "There was an error submitting the form."
     }
 }
