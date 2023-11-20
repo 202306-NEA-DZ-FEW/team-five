@@ -13,7 +13,7 @@ const Goal = () => {
     const { t } = useTranslation("steps");
 
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <center className='mt-10'>
                 <b style={{ fontSize: "50px" }}>{t("goal")}</b>
             </center>
