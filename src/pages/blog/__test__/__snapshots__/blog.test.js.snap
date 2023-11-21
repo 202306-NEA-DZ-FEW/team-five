@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog page Component should render correctly 1`] = `
+<div>
+  <section>
+    <div
+      className="bg-cover bg-center h-[30vh] sm:h-[50vh] md:h-[70vh] text-white  object-fill"
+      style={
+        Object {
+          "backgroundImage": "url(/children.png)",
+        }
+      }
+    >
+      <div
+        className="bg-opacity-50 bg-black h-full items-center flex justify-center flex-col"
+      >
+        <div
+          className="text-center"
+        >
+          <h1
+            className="text-xl sm:text-3xl md:text-5xl font-bold text-green-500"
+          >
+            <span
+              className="text-white"
+            >
+              blog.lives
+            </span>
+            <br />
+          </h1>
+          <p
+            className="mt-6 sm:mt-8 md:mt-10 text-center text-[9px] sm:text-xs md:text-xl "
+          >
+            blog.give
+          </p>
+        </div>
+        <div
+          className="mt-6 sm:mt-8 md:mt-10"
+        >
+          <a
+            className="bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700"
+            href="/coupons"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Donate 🤍
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div>
+    <p
+      className="text-3xl font-semibold text-sky-600 ml-20 mt-5 mb-2"
+    >
+      blog.hunger
+    </p>
+    <p
+      className="text-gray-600 ml-20 text-xl mb-2"
+    >
+      blog.needs
+    </p>
+  </div>
+  <div
+    className="mb-10"
+  >
+    <div>
+      <div
+        className="flex items-center justify-center"
+      />
+    </div>
+  </div>
+  <div
+    className="bg-gray-100 "
+  >
+    <div
+      className="py-12 sm:py-12 max-w-screen-xl mx-auto"
+    >
+      <div
+        className="mx-auto max-w-7xl px-6 lg:px-8"
+      >
+        <div
+          className="mb-5"
+        >
+          <h2
+            className="text-center text-3xl font-semibold tracking-tight text-sky-600 sm:text-4xl"
+          >
+            life
+          </h2>
+          <p
+            className="text-center mt-4 text-lg leading-8 text-gray-600 mb-5"
+          >
+            we
+          </p>
+        </div>
+        <ul
+          className="mx-auto mt-5 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          role="list"
+        >
+          <li
+            className="group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200"
+          >
+            <img
+              alt=""
+              className="aspect-[3/2] w-full object-cover"
+              src="storie01.png"
+            />
+            <h3
+              className="mt-6 text-xs font-semibold leading-8 tracking-tight text-gray-600"
+            >
+              story
+            </h3>
+            <p
+              className="text-xl leading-7 text-sky-600"
+            >
+              blog1
+            </p>
+          </li>
+          <li
+            className="group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200"
+          >
+            <img
+              alt=""
+              className="aspect-[3/2] w-full object-cover"
+              src="storie02.png"
+            />
+            <h3
+              className="mt-6 text-xs font-semibold leading-8 tracking-tight text-gray-600"
+            >
+              story
+            </h3>
+            <p
+              className="text-xl leading-7 text-sky-600"
+            >
+              blog2
+            </p>
+          </li>
+          <li
+            className="group cursor-pointer transform transition-transform hover:scale-105 hover:bg-gray-200"
+          >
+            <img
+              alt=""
+              className="aspect-[3/2] w-full object-cover"
+              src="storie03.png"
+            />
+            <h3
+              className="mt-6 text-xs font-semibold leading-8 tracking-tight text-gray-600"
+            >
+              story
+            </h3>
+            <p
+              className="text-xl leading-7 text-sky-600"
+            >
+              blog3
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
