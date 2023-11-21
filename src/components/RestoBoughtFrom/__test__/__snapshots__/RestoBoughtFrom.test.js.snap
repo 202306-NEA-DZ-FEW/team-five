@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Resto Bought From Component should render correctly 1`] = `
+<div
+  className="restaurant-section lg:flex lg:flex-row flex flex-col items-center"
+>
+  <h2
+    className="text-2xl font-semibold mb-4"
+  >
+    payment.title
+  </h2>
+  <ul
+    className="retaurant-list list-none p-0 flex flex-wrap gap-10"
+  >
+    <li
+      className="retaurant-item lg:w-1/3 w-full"
+    >
+      Restaurant A
+    </li>
+  </ul>
+</div>
+`;
