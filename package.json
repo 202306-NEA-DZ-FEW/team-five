@@ -33,6 +33,7 @@
         "firebaseui": "^6.1.0",
         "i18next": "^21.9.0",
         "js-cookie": "^3.0.5",
+        "matchmedia-polyfill": "^0.3.2",
         "next": "^13.5.3",
         "next-i18next": "^11.2.2",
         "next-share": "^0.27.0",

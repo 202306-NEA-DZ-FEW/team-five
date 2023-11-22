@@ -2,11 +2,38 @@ import { useTranslation } from "next-i18next";
 import { BsLinkedin } from "react-icons/bs";
 import { ImGithub } from "react-icons/im";
 import { ImFacebook } from "react-icons/im";
-import { MdChevronLeft } from "react-icons/md";
-import { MdChevronRight } from "react-icons/md";
+import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import MemberCard from "./MemberCard";
+
 const MemberList = () => {
+    const PrevArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <button
+                className='p-4 text-black bg-opacity-25 text-2xl z-30 absolute lg:left-0 left-2 top-1/2'
+                onClick={onClick}
+            >
+                <PiCaretLeftLight />
+            </button>
+        );
+    };
+    const NextArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <button
+                className='p-4 text-black bg-opacity-25 text-2xl z-30 absolute lg:right-0 right-2 top-1/2'
+                onClick={onClick}
+            >
+                <PiCaretRightLight />
+            </button>
+        );
+    };
+
     const { t } = useTranslation("members");
     const members = [
         {
@@ -103,39 +130,57 @@ const MemberList = () => {
         },
     ];
 
-    const slideLeft = () => {
-        const slider = document.getElementById("slider");
-        slider.scrollLeft = slider.scrollLeft - 500;
-    };
-    const slideRight = () => {
-        const slider = document.getElementById("slider");
-        slider.scrollLeft = slider.scrollLeft + 500;
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        draggable: true,
+        variableWidth: true,
+        centerPadding: "0px",
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        centerMode: true,
+        adaptiveHeight: true,
+        initialSlide: 1,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    variableWidth: true,
+                    initialSlide: 0,
+                },
+            },
+            {
+                breakpoint: 920,
+                settings: {
+                    infinite: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    variableWidth: true,
+                    initialSlide: 0,
+                },
+            },
+        ],
     };
     return (
-        <section className='px-4 md:p-0 mt-[-90px] flex flex-col container justify-center mx-auto min-h-screen gap-20 overflow-y-visible'>
-            <h1 className='text-4xl font-bold text-center text-[#212B36]'>
+        <section className=' max-w-6xl mx-auto flex flex-col container justify-center min-h-screen gap-4 overflow-y-visible'>
+            <h1 className='text-6xl font-bold text-center mb-20 text-[#212B36]'>
                 {t("member.team")}
             </h1>
-            <div className='relative flex items-center group'>
-                <MdChevronLeft
-                    onClick={slideLeft}
-                    className='bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
-                    size={40}
-                />
-                <div
-                    id='slider'
-                    className='w-full h-full flex gap-20 whitespace-nowrap overflow-x-hidden scroll-smooth no-scrollbar relative overflow-y-visible pt-40 pl-40 pr-40'
-                >
-                    {members.map((member, index) => (
-                        <MemberCard key={index} member={member} />
-                    ))}
-                </div>
-                <MdChevronRight
-                    onClick={slideRight}
-                    className='bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
-                    size={40}
-                />
-            </div>
+
+            <Slider {...settings} className='w-full px-4'>
+                {members.map((member, index) => (
+                    <div className='py-32 mx-6' key={index}>
+                        <MemberCard member={member} />
+                    </div>
+                ))}
+            </Slider>
         </section>
     );
 };

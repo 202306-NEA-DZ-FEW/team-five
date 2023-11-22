@@ -2,7 +2,7 @@
 
 exports[`MemberCard Component should render correctly 1`] = `
 <div
-  className="bg-white flex flex-col gap-4 items-center rounded-md w-96 shadow-lg relative "
+  className="bg-white flex h-72 flex-col gap-4 items-center rounded-md w-80 shadow-lg relative "
 >
   <figure
     className="absolute"
@@ -25,7 +25,7 @@ exports[`MemberCard Component should render correctly 1`] = `
     />
   </figure>
   <div
-    className="flex flex-col gap-4 p-6 w-96 "
+    className="flex flex-col gap-4 p-4"
   >
     <span
       className="bg-green-100 text-sm font-medium text-green-600 text-center px-2 rounded-md self-start"
@@ -34,10 +34,10 @@ exports[`MemberCard Component should render correctly 1`] = `
       className="text-xl font-bold text-center"
     />
     <p
-      className="text-center font-medium text-gray-700 whitespace-normal"
+      className="text-center font-medium  text-gray-700 whitespace-normal"
     />
     <div
-      className="flex space-x-5  justify-center "
+      className="flex space-x-5  justify-center"
     />
   </div>
 </div>

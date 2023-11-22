@@ -10,7 +10,7 @@ const MemberCard = ({ member }) => {
     } = member || {};
     const { t } = useTranslation("members");
     return (
-        <div className='bg-white flex flex-col gap-4 items-center rounded-md w-96 shadow-lg relative '>
+        <div className='bg-white flex h-72 flex-col gap-4 items-center rounded-md w-80 shadow-lg relative '>
             <figure className='absolute'>
                 <Image
                     src={image}
@@ -20,15 +20,15 @@ const MemberCard = ({ member }) => {
                     className='rounded-full shadow-md object-cover -translate-y-[75%]'
                 />
             </figure>
-            <div className='flex flex-col gap-4 p-6 w-96 '>
+            <div className='flex flex-col gap-4 p-4'>
                 <span className='bg-green-100 text-sm font-medium text-green-600 text-center px-2 rounded-md self-start'>
                     {memberShip}
                 </span>
                 <h3 className='text-xl font-bold text-center'>{name}</h3>
-                <p className='text-center font-medium text-gray-700 whitespace-normal'>
+                <p className='text-center font-medium  text-gray-700 whitespace-normal'>
                     {description}
                 </p>
-                <div className='flex space-x-5  justify-center '>
+                <div className='flex space-x-5  justify-center'>
                     {socialMedia.map((platform, index) => (
                         <a
                             key={index}
