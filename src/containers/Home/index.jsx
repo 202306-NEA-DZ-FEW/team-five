@@ -44,7 +44,7 @@ function Home() {
 
             <div className='bg-[#F9FAFB]  '>
                 <Blogcontainer />
-                <div className='flex justify-center'>
+                <div className=''>
                     <Email />
                 </div>
                 <div

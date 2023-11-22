@@ -27,10 +27,10 @@ exports[`Email Component should render correctly 1`] = `
       method="POST"
     >
       <div
-        className="mb-2 mt-2"
+        className="m-2"
       >
         <input
-          className="border-2 border-gray-300 rounded h-11 w-full"
+          className="border-2 border-gray-300 rounded-lg h-11 w-full placeholder:px-3"
           name="email"
           placeholder="email"
           type="email"
@@ -42,7 +42,7 @@ exports[`Email Component should render correctly 1`] = `
         value="New submission"
       />
       <button
-        className="bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700 mt-2"
+        className="bg-[#20DC49]  text-white rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-600  mt-2"
       >
         Subscribe
       </button>
@@ -54,12 +54,12 @@ exports[`Email Component should render correctly 1`] = `
     </form>
   </div>
   <div
-    className="hidden md:grid grid-cols-2 mt-1"
+    className=" hidden md:flex justify-evenly md:gap-48 lg:gap-96 "
     data-aos="fade-up"
     data-aos-duration="1000"
   >
     <div
-      className="col-start"
+      className="lg:ml-6"
     >
       <h1
         className="text-gray-500 font-bold text-lg"
@@ -77,14 +77,14 @@ exports[`Email Component should render correctly 1`] = `
       </h2>
     </div>
     <div
-      className="col-end flex h-7"
+      className=""
     >
       <form
         action="https://formsubmit.co/sidisaidmel@gmail.com"
         method="POST"
       >
         <input
-          class="border-2 border-gray-300 rounded h-11"
+          className="border-2 border-gray-300 rounded-lg h-11 placeholder:px-3"
           name="email"
           placeholder="email"
           style={
@@ -100,7 +100,7 @@ exports[`Email Component should render correctly 1`] = `
           value="New submission!"
         />
         <button
-          className="bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover-bg-green-700"
+          className="bg-[#20DC49] ml-2 text-white rounded-full p-2 px-3 text-base sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-600"
         >
           Subscribe
         </button>
@@ -113,11 +113,13 @@ exports[`Email Component should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="text-center mt-2 md:mt-0 mb-10"
+    className="text-center mt-2 mb-10"
     data-aos="fade-up"
     data-aos-duration="1000"
   >
-    privacyPolicy
+    <p>
+      privacyPolicy
+    </p>
   </div>
 </layout>
 `;

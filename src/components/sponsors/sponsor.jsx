@@ -73,7 +73,7 @@ function Sponsor() {
                     <h1 className='text-5xl mt-30 font-bold'>{t("joinus")}</h1>
                     <p className='md:text-xl  text-base mt-10'>{t("disc")}</p>
                     <Link href='/auth'>
-                        <button className='py-2 px-5 lg:px-10  font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-10 mr-10 mb-10 text-lg md:text-xl'>
+                        <button className='py-2 px-5 lg:px-10  font-semibold shadow-md hover:bg-green-600  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-10 mr-10 mb-10 text-lg md:text-xl'>
                             {t("donation")} ❤
                         </button>
                     </Link>

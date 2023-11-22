@@ -1,8 +1,10 @@
 {
     "successfullySubscribed": "تمت عملية الاشتراك بنجاح!",
     "submit": "إرسال",
-    "email": "البريد الإلكتروني",
+    "email": "أدخل بريدك الإلكتروني",
     "privacyPolicy": "نحن  نهتم بخصوصيتك في سياستنا",
     "GetupdateonBlogandEvents": "الحصول على تحديث على المدونة والأحداث",
-    "Getdirectlyonyouremail": " احصل مباشرة على بريدك الإلكتروني "
+    "Getdirectlyonyouremail": " احصل مباشرة على بريدك الإلكتروني ",
+    "Subscribe":"إشترك"
+
 }

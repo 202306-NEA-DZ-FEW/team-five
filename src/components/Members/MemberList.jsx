@@ -170,7 +170,7 @@ const MemberList = () => {
     };
     return (
         <section className=' max-w-6xl mx-auto flex flex-col container justify-center min-h-screen gap-4 overflow-y-visible'>
-            <h1 className='text-6xl font-bold text-center mb-20 text-[#212B36]'>
+            <h1 className='text-5xl font-bold text-center mb-20 text-[#212B36]'>
                 {t("member.team")}
             </h1>
 
