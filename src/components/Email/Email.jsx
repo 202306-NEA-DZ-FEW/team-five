@@ -1,23 +1,26 @@
-import Link from "next/link";
+import AOS from "aos";
 import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 function Email() {
+    // Aos effect loop
     useEffect(() => {
         AOS.init();
     }, []);
-
+    //   adding translation
     const { t } = useTranslation("emails");
 
     return (
+        // page content
         <layout>
             <div
                 className='md:hidden'
                 data-aos='fade-up'
                 data-aos-duration='1000'
             >
+                {/* the get update and get directly mail with the translation section */}
                 <div className='text-center'>
                     <h1 className='text-gray-500 font-bold text-lg'>
                         {t("GetupdateonBlogandEvents")}
@@ -26,12 +29,16 @@ function Email() {
                         {t("Getdirectlyonyouremail")}
                     </h2>
                 </div>
+                {/* the form to fill in order to get the updates */}
                 <form
+                    //    where to recieve the information that have been entered
                     action='https://formsubmit.co/sidisaidmel@gmail.com'
+                    // the form action
                     method='POST'
                     className='flex flex-col items-center'
                 >
                     <div className='mb-2 mt-2'>
+                        {/* where to enter the email */}
                         <input
                             type='email'
                             placeholder={t("email")}
@@ -39,17 +46,17 @@ function Email() {
                             className='border-2 border-gray-300 rounded h-11 w-full'
                         />
                     </div>
-
+                    {/* the message we will recieve */}
                     <input
                         type='hidden'
                         name='_subject'
                         value='New submission'
                     />
-
+                    {/* the button to send */}
                     <button className='bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700 mt-2'>
                         {t("Subscribe")}
                     </button>
-
+                    {/* the message we will recieve and the user will recive with the information entered  */}
                     <input
                         type='hidden'
                         name='_autoresponse'
@@ -72,6 +79,7 @@ function Email() {
                     </h2>
                 </div>
                 <div className='col-end flex h-7'>
+                    {/* the form to fill */}
                     <form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'

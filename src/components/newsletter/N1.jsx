@@ -3,6 +3,7 @@ import React from "react";
 
 const N1 = () => {
     return (
+        // the photo with the text join our newsletter and we need to stop hunger
         <div className=''>
             <div className='grid grid-rows-3 grid-flow-col gap-4'>
                 <div className='row-span-3 ...'>
@@ -18,6 +19,7 @@ const N1 = () => {
                     <h1>We need you to stop hunger!</h1>
                 </div>
                 <div class='row-span-2 col-span-2 mt-5 ...'>
+                    {/* the form to fill */}
                     <form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'

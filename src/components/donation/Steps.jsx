@@ -1,18 +1,20 @@
+import AOS from "aos";
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React, { useEffect } from "react";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 function Steps() {
     useEffect(() => {
+        // AOS effect Loop
         AOS.init();
     }, []);
-
+    //    adding the translation
     const { t } = useTranslation("steps");
 
     return (
+        // page content
         <div style={{ backgroundColor: "#F9FAFB" }}>
             <div
                 style={{
@@ -23,6 +25,7 @@ function Steps() {
             ></div>
 
             <center className='mt-20'>
+                {/* the donation process with the translation */}
                 <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
             </center>
             <br />
@@ -38,6 +41,7 @@ function Steps() {
                 }}
             >
                 <div data-aos='fade-up' data-aos-duration='1000'>
+                    {/* the step one section */}
                     <Image
                         src='/phone.png'
                         alt='this is an image'
@@ -65,6 +69,7 @@ function Steps() {
                     />
                     <div>
                         <b>
+                            {/* the step 2 section  */}
                             <center>
                                 <b className='text-[23px] font-bold'>
                                     {t("step")} 2
@@ -87,6 +92,7 @@ function Steps() {
                     />
                     <div>
                         <center>
+                            {/* the step three section */}
                             <b className='text-[23px] font-bold'>
                                 {t("step")} 3
                             </b>

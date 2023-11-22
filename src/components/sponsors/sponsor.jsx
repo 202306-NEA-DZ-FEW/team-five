@@ -6,18 +6,23 @@ import React, { useEffect } from "react";
 import "aos/dist/aos.css";
 
 function Sponsor() {
+    // introduce translation
     const { t } = useTranslation("sponsor");
 
     useEffect(() => {
+        // Loop to AOS effect
         AOS.init();
     }, []);
 
     return (
         <>
+            {/* page Content */}
             <div data-aos='fade-up' data-aos-duration='1000'>
                 <center className='pt-10'>
+                    {/* introduce the sponsors   */}
                     <b style={{ fontSize: "30px" }}>{t("Oursponsor")}</b>
                 </center>
+
                 <div
                     style={{
                         display: "flex",
@@ -25,6 +30,7 @@ function Sponsor() {
                         flexWrap: "wrap",
                     }}
                 >
+                    {/*sponsor's  logo */}
                     <Image
                         alt='image'
                         src='/Burger.png'
@@ -75,10 +81,12 @@ function Sponsor() {
                     data-aos='fade-left'
                     data-aos-duration='1000'
                 >
+                    {/* join us section  */}
                     <b className='text-4xl mt-30'>{t("joinus")}</b>
                     <p className='text-xl mt-10'>{t("disc")}</p>
                     <button className='py-2 px-4 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 rounded-full bg-[#8CC540] mt-4 mr-10 mb-10'>
                         {t("donation")}
+                        {/* button to donate */}
                     </button>
                 </div>
             </div>
