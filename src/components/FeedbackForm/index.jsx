@@ -26,7 +26,7 @@ const FeedbackForm = () => {
             email.trim() === "" ||
             rating === 0
         ) {
-            setError("Please fill in all fields before submitting.");
+            setError(t("error.errorMsg"));
         } else {
             try {
                 setError("");
@@ -48,12 +48,12 @@ const FeedbackForm = () => {
                 );
 
                 if (response.ok) {
-                    toast.success("Feedback submitted successfully!");
+                    toast.success(t("error.feedbackSuccess"));
                 } else {
-                    toast.error("Failed to submit feedback. Please try again.");
+                    toast.error(t("error.feedbackFail"));
                 }
             } catch (err) {
-                setError("There was an error submitting the form.");
+                setError(t("error.feedbackError"));
             }
         }
     };

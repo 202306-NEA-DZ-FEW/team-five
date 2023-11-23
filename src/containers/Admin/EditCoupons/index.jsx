@@ -1,8 +1,8 @@
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 
 import ChangeLogo from "@/components/Admin/ChangeLogo";
 import CouponCard from "@/components/Admin/CouponCard";
-import { useTranslation } from "next-i18next";
 
 const EditCoupons = () => {
     const [activeCardIndex, setActiveCardIndex] = useState(null);

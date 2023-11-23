@@ -93,7 +93,10 @@ function CartPage() {
                                         </div>
                                     ))}
                                 </div>
-                                <button onClick={() => dispatch(resetCart())}>
+                                <button
+                                    className='bg-red-100 text-sm font-medium text-red-600 text-center px-2 rounded-md self-start'
+                                    onClick={() => dispatch(resetCart())}
+                                >
                                     {t("cart.reset")}
                                 </button>
                             </div>

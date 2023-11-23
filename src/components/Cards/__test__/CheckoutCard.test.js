@@ -1,0 +1,44 @@
+import React from "react";
+import { Provider } from "react-redux";
+import renderer from "react-test-renderer";
+import configureMockStore from "redux-mock-store";
+
+import CheckoutCard from "../CheckoutCard";
+
+jest.mock("next/router", () => ({
+    useRouter: () => ({
+        route: "/",
+        pathname: "",
+        query: {},
+        asPath: "",
+    }),
+}));
+
+jest.mock("react-i18next", () => ({
+    useTranslation: () => ({ t: (key) => key, i18n: { language: "en" } }),
+}));
+
+const mockStore = configureMockStore([]);
+const store = mockStore({
+    shopper: {
+        productData: {
+            id: 1,
+            name: "test",
+        },
+        userInfo: {
+            name: "tester",
+        },
+    },
+});
+
+describe("CheckoutCard Component", () => {
+    it("should render correctly", () => {
+        const component = renderer.create(
+            <Provider store={store}>
+                <CheckoutCard />
+            </Provider>
+        );
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
