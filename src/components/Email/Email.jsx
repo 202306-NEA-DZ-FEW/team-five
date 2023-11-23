@@ -103,7 +103,7 @@ function Email() {
             </div>
 
             <div
-                className='text-center mt-2 mb-10'
+                className='text-center mt-2 mb-10 text-[#212B36]'
                 data-aos='fade-up'
                 data-aos-duration='1000'
             >
