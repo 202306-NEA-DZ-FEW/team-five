@@ -4,15 +4,16 @@ exports[`Sponsor Component should render correctly 1`] = `
 Array [
   <div
     data-aos="fade-up"
-    data-aos-duration="1000"
+    data-aos-duration="600"
   >
     <center
-      className="pt-10"
+      className="pt-10 "
     >
       <b
+        className="text-[#212B36]"
         style={
           Object {
-            "fontSize": "30px",
+            "fontSize": "50px",
           }
         }
       >

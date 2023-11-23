@@ -15,9 +15,11 @@ function Sponsor() {
 
     return (
         <>
-            <div data-aos='fade-up' data-aos-duration='1000'>
-                <center className='pt-10'>
-                    <b style={{ fontSize: "30px" }}>{t("Oursponsor")}</b>
+            <div data-aos='fade-up' data-aos-duration='600'>
+                <center className='pt-10 '>
+                    <b style={{ fontSize: "50px" }} className='text-[#212B36]'>
+                        {t("Oursponsor")}
+                    </b>
                 </center>
                 <div
                     style={{
