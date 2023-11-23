@@ -6,10 +6,10 @@ function Blogcontainer() {
     const { t } = useTranslation("common");
 
     return (
-        <div className='container mx-auto px-5 sm:px-10 py-5 lg:px-32 lg:pt-24'>
+        <div className='container mx-auto p-5 sm:px-10  lg:px-32 lg:pt-24'>
             <div>
                 <Link href='/blog'>
-                    <h1 className='text-3xl font-bold text-gray-700 flex items-center justify-center mb-20'>
+                    <h1 className='text-5xl font-bold text-[#212B36] flex items-center justify-center mb-20'>
                         {t("blog")}
                     </h1>
                 </Link>

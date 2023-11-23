@@ -13,9 +13,9 @@ const Goal = () => {
     const { t } = useTranslation("steps");
 
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <center className='mt-10'>
-                <b style={{ fontSize: "50px" }}>{t("goal")}</b>
+                <b className='text-[#212B36] text-5xl '>{t("goal")}</b>
             </center>
             <div
                 className='grid grid-cols-4 gap-40  flex-wrap'
@@ -36,7 +36,10 @@ const Goal = () => {
                     />
                     <div>
                         <center>
-                            <b style={{ fontSize: "40px" }}>
+                            <b
+                                className='text-[#212B36] '
+                                style={{ fontSize: "40px" }}
+                            >
                                 {t("NO")}
                                 <br />
                                 {t("POVERTY")}
@@ -53,7 +56,10 @@ const Goal = () => {
                     />
                     <div>
                         <center>
-                            <b style={{ fontSize: "40px" }}>
+                            <b
+                                className='text-[#212B36] '
+                                style={{ fontSize: "40px" }}
+                            >
                                 {t("ZERO")}
                                 <br />
                                 {t("HUNGER")}
@@ -70,7 +76,10 @@ const Goal = () => {
                     />
                     <div className=''>
                         <center className=''>
-                            <b style={{ fontSize: "40px" }}>
+                            <b
+                                className='text-[#212B36] '
+                                style={{ fontSize: "40px" }}
+                            >
                                 {t("GOOD")}
                                 <br />
                                 {t("HEALTH")}
@@ -105,10 +114,12 @@ const Goal = () => {
                     data-aos='fade-left'
                 >
                     <div style={{ fontSize: "20px", marginTop: "20px" }}>
-                        <b>{t("WorkingtogethertoendHunger")}</b>
+                        <b className='text-[#212B36] '>
+                            {t("WorkingtogethertoendHunger")}
+                        </b>
                     </div>
                     <div>
-                        <p>{t("working")}</p>
+                        <p className='text-[#212B36] '>{t("working")}</p>
                     </div>
                 </div>
             </div>

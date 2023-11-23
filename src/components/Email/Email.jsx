@@ -1,7 +1,7 @@
-import Link from "next/link";
+import AOS from "aos";
 import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 function Email() {
@@ -31,12 +31,12 @@ function Email() {
                     method='POST'
                     className='flex flex-col items-center'
                 >
-                    <div className='mb-2 mt-2'>
+                    <div className='m-2'>
                         <input
                             type='email'
                             placeholder={t("email")}
                             name='email'
-                            className='border-2 border-gray-300 rounded h-11 w-full'
+                            className='border-2 border-gray-300 rounded-lg h-11 w-full placeholder:px-3'
                         />
                     </div>
 
@@ -46,7 +46,7 @@ function Email() {
                         value='New submission'
                     />
 
-                    <button className='bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-700 mt-2'>
+                    <button className='bg-[#20DC49]  text-white rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-600  mt-2'>
                         {t("Subscribe")}
                     </button>
 
@@ -59,11 +59,11 @@ function Email() {
             </div>
 
             <div
-                className='hidden md:grid grid-cols-2 mt-1'
+                className=' hidden md:flex justify-evenly md:gap-48 lg:gap-96 '
                 data-aos='fade-up'
                 data-aos-duration='1000'
             >
-                <div className='col-start'>
+                <div className='lg:ml-6'>
                     <h1 className='text-gray-500 font-bold text-lg'>
                         <p>{t("GetupdateonBlogandEvents")}</p>
                     </h1>
@@ -71,7 +71,7 @@ function Email() {
                         <p>{t("Getdirectlyonyouremail")}</p>
                     </h2>
                 </div>
-                <div className='col-end flex h-7'>
+                <div className=''>
                     <form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'
@@ -80,7 +80,7 @@ function Email() {
                             type='email'
                             placeholder={t("email")}
                             name='email'
-                            class='border-2 border-gray-300 rounded h-11'
+                            className='border-2 border-gray-300 rounded-lg h-11 placeholder:px-3'
                             style={{ width: "400px" }}
                         />
 
@@ -90,8 +90,8 @@ function Email() {
                             value='New submission!'
                         />
 
-                        <button className='bg-green-500 rounded-full p-2 px-3 text-[9px] sm:text-base sm:px-6 text-center cursor-pointer font-medium hover-bg-green-700'>
-                            Subscribe
+                        <button className='bg-[#20DC49] ml-2 text-white rounded-full p-2 px-3 text-base sm:text-base sm:px-6 text-center cursor-pointer font-medium hover:bg-green-600'>
+                            {t("Subscribe")}
                         </button>
                         <input
                             type='hidden'
@@ -103,11 +103,11 @@ function Email() {
             </div>
 
             <div
-                className='text-center mt-2 md:mt-0 mb-10'
+                className='text-center mt-2 mb-10 text-[#212B36]'
                 data-aos='fade-up'
                 data-aos-duration='1000'
             >
-                {t("privacyPolicy")}
+                <p>{t("privacyPolicy")}</p>
             </div>
         </layout>
     );

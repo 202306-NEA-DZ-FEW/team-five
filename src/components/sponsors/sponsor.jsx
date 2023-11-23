@@ -14,9 +14,11 @@ function Sponsor() {
 
     return (
         <>
-            <div data-aos='fade-up' data-aos-duration='1000'>
-                <center className='pt-10'>
-                    <b style={{ fontSize: "30px" }}>{t("Oursponsor")}</b>
+            <div>
+                <center className='pt-10 '>
+                    <b style={{ fontSize: "50px" }} className='text-[#212B36]'>
+                        {t("Oursponsor")}
+                    </b>
                 </center>
                 <div
                     style={{
@@ -56,22 +58,18 @@ function Sponsor() {
                     />
                 </div>
             </div>
-            <div className='flex flex-col  lg:flex-row flex-wrap bg-[#80D6F6] mt-10 justify-center items-center lg:justify-normal lg:items-start '>
-                <div
-                    className='w-1/2 flex items-center lg:justify-start justify-center  lg:ml-10 basis-3/12'
-                    data-aos='fade-right'
-                    data-aos-duration='600'
-                >
+            <div className='flex flex-col  lg:flex-row flex-wrap bg-[#80D6F6] mt-10 justify-center items-center '>
+                <div className='w-1/2 flex items-center justify-start  lg:ml-10 basis-3/12'>
                     <img alt='image' src='/comm.png' width={300} height={20} />
                 </div>
-                <div
-                    className='w-1/2 text-white mt-20 basis-2/3'
-                    data-aos='fade-left'
-                    data-aos-duration='1000'
-                >
-                    <b className='text-4xl mt-30'>{t("joinus")}</b>
-                    <p className='text-xl mt-10'>{t("disc")}</p>
-                    <button className='py-2  lg:px-10 ml-[200px] text-white font-semibold shadow-md hover:bg-green-700  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-4 mr-10 mb-10'>
+                <div className='w-1/2 text-white mt-10 basis-2/3 lg:p-20 flex flex-col gap-5'>
+                    <h1 className='text-5xl mt-30 font-bold'>{t("joinus")}</h1>
+                    <p className='md:text-xl  text-base mt-10'>{t("disc")}</p>
+
+                    <button
+                        href='/auth'
+                        className='py-2 px-5 lg:px-10  w-44 font-semibold shadow-md hover:bg-green-600  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-10 mr-10 mb-10 text-lg md:text-xl'
+                    >
                         {t("donation")} ❤
                     </button>
                 </div>

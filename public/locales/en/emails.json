@@ -1,8 +1,9 @@
 {
     "successfullySubscribed": "Successfully subscribed",
     "submit": "submit",
-    "email": "email",
+    "email": "Enter your email",
     "privacyPolicy": "we care about your privacy in our policy",
-    "GetupdateonBlogandEvents": "Get up date on Blog and Events",
-    "Getdirectlyonyouremail": " Get directly on your email"
+    "GetupdateonBlogandEvents": "Get update on Blog and Events",
+    "Getdirectlyonyouremail": " Get directly on your email",
+    "Subscribe": "Subscribe"
 }

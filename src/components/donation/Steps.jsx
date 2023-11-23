@@ -1,8 +1,8 @@
+import AOS from "aos";
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React, { useEffect } from "react";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 function Steps() {
@@ -22,7 +22,7 @@ function Steps() {
                 }}
             ></div>
 
-            <center className='mt-20'>
+            <center className='mt-20 text-[#212B36]'>
                 <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
             </center>
             <br />
@@ -46,11 +46,11 @@ function Steps() {
                     />
                     <div>
                         <b>
-                            <center className='text-[23px] font-bold'>
+                            <center className='text-[23px] font-bold text-[#212B36]'>
                                 {t("step")}1
                             </center>
                         </b>
-                        <p>
+                        <p className='text-[#212B36]'>
                             {t("Donatorbuythecoupon")}
                             <br /> {t("inthewebsite")}
                         </p>
@@ -66,12 +66,12 @@ function Steps() {
                     <div>
                         <b>
                             <center>
-                                <b className='text-[23px] font-bold'>
+                                <b className='text-[23px] font-bold text-[#212B36]'>
                                     {t("step")} 2
                                 </b>
                             </center>
                         </b>
-                        <p>
+                        <p className='text-[#212B36]'>
                             {t("thepersoninneedcan")}
                             <br /> {t("eatwithoutaskingin")}
                             <br /> {t("anyavailableRestaurant")}
@@ -87,11 +87,11 @@ function Steps() {
                     />
                     <div>
                         <center>
-                            <b className='text-[23px] font-bold'>
+                            <b className='text-[23px] font-bold text-[#212B36]'>
                                 {t("step")} 3
                             </b>
                         </center>
-                        <p className='mb-20'>
+                        <p className='mb-20 text-[#212B36]'>
                             {t("theRestaurantdelete")} <br />
                             {t("theusedcouponinthe")}
                             <br />

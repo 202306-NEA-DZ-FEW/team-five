@@ -18,7 +18,7 @@ exports[`Step Component should render correctly 1`] = `
     }
   />
   <center
-    className="mt-20"
+    className="mt-20 text-[#212B36]"
   >
     <b
       style={
@@ -67,13 +67,15 @@ exports[`Step Component should render correctly 1`] = `
       <div>
         <b>
           <center
-            className="text-[23px] font-bold"
+            className="text-[23px] font-bold text-[#212B36]"
           >
             step
             1
           </center>
         </b>
-        <p>
+        <p
+          className="text-[#212B36]"
+        >
           Donatorbuythecoupon
           <br />
            
@@ -106,14 +108,16 @@ exports[`Step Component should render correctly 1`] = `
         <b>
           <center>
             <b
-              className="text-[23px] font-bold"
+              className="text-[23px] font-bold text-[#212B36]"
             >
               step
                2
             </b>
           </center>
         </b>
-        <p>
+        <p
+          className="text-[#212B36]"
+        >
           thepersoninneedcan
           <br />
            
@@ -148,14 +152,14 @@ exports[`Step Component should render correctly 1`] = `
       <div>
         <center>
           <b
-            className="text-[23px] font-bold"
+            className="text-[23px] font-bold text-[#212B36]"
           >
             step
              3
           </b>
         </center>
         <p
-          className="mb-20"
+          className="mb-20 text-[#212B36]"
         >
           theRestaurantdelete
            
