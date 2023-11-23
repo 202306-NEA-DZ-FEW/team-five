@@ -8,11 +8,7 @@ exports[`Goal Component should render correctly 1`] = `
     className="mt-10"
   >
     <b
-      style={
-        Object {
-          "fontSize": "50px",
-        }
-      }
+      className="text-[#212B36] text-5xl "
     >
       goal
     </b>
@@ -53,6 +49,7 @@ exports[`Goal Component should render correctly 1`] = `
       <div>
         <center>
           <b
+            className="text-[#212B36] "
             style={
               Object {
                 "fontSize": "40px",
@@ -90,6 +87,7 @@ exports[`Goal Component should render correctly 1`] = `
       <div>
         <center>
           <b
+            className="text-[#212B36] "
             style={
               Object {
                 "fontSize": "40px",
@@ -131,6 +129,7 @@ exports[`Goal Component should render correctly 1`] = `
           className=""
         >
           <b
+            className="text-[#212B36] "
             style={
               Object {
                 "fontSize": "40px",
@@ -193,12 +192,16 @@ exports[`Goal Component should render correctly 1`] = `
           }
         }
       >
-        <b>
+        <b
+          className="text-[#212B36] "
+        >
           WorkingtogethertoendHunger
         </b>
       </div>
       <div>
-        <p>
+        <p
+          className="text-[#212B36] "
+        >
           working
         </p>
       </div>
