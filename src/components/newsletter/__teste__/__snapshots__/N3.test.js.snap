@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should render correctly 1`] = `
+<div>
+  <div
+    className="grid grid-rows-3 grid-flow-col gap-4"
+  >
+    <div
+      className="row-span-3 ..."
+    >
+      <img
+        alt="no image"
+        data-nimg="1"
+        decoding="async"
+        height={200}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fflat.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fflat.png&w=256&q=75 1x, /_next/image?url=%2Fflat.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={200}
+      />
+    </div>
+    <div
+      className="col-span-2 text-xl  ..."
+    >
+      <b>
+        join our newsletter to learn more
+      </b>
+      <h1>
+        We need you to stop hunger!
+      </h1>
+    </div>
+    <div
+      class="row-span-2 col-span-2 mt-5 ..."
+    >
+      <form
+        action="https://formsubmit.co/sidisaidmel@gmail.com"
+        method="POST"
+      >
+        <input
+          name="name"
+          placeholder="name"
+          required={true}
+          style={
+            Object {
+              "border": "1px solid black",
+              "textAlign": "center",
+            }
+          }
+          type="text"
+        />
+        <input
+          name="email"
+          placeholder="email"
+          required={true}
+          style={
+            Object {
+              "border": "1px solid black",
+              "marginLeft": "20px",
+              "textAlign": "center",
+            }
+          }
+          type="email"
+        />
+        <input
+          name="_subject"
+          type="hidden"
+          value="New submission!"
+        />
+        <button
+          style={
+            Object {
+              "backgroundColor": "green",
+              "color": "white",
+              "marginLeft": "10px",
+              "padding": "2px",
+              "width": "200px",
+            }
+          }
+          type="submit"
+        >
+          Send
+        </button>
+        <input
+          name="_autoresponse"
+          type="hidden"
+          value="Successfully subscribed"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;
