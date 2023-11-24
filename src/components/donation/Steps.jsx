@@ -23,6 +23,7 @@ function Steps() {
             ></div>
 
             <center className='mt-20 text-[#212B36]'>
+                {/* the title */}
                 <b style={{ fontSize: "50px" }}>{t("donationprocess")}</b>
             </center>
             <br />
@@ -38,6 +39,7 @@ function Steps() {
                 }}
             >
                 <div data-aos='fade-up' data-aos-duration='1000'>
+                    {/* the illustration of the steps*/}
                     <Image
                         src='/phone.png'
                         alt='this is an image'
@@ -45,6 +47,7 @@ function Steps() {
                         height={400}
                     />
                     <div>
+                        {/* the step 1 section */}
                         <b>
                             <center className='text-[23px] font-bold text-[#212B36]'>
                                 {t("step")}1
@@ -66,6 +69,7 @@ function Steps() {
                     <div>
                         <b>
                             <center>
+                                {/* the step two section */}
                                 <b className='text-[23px] font-bold text-[#212B36]'>
                                     {t("step")} 2
                                 </b>
@@ -87,6 +91,7 @@ function Steps() {
                     />
                     <div>
                         <center>
+                            {/* the step three section */}
                             <b className='text-[23px] font-bold text-[#212B36]'>
                                 {t("step")} 3
                             </b>

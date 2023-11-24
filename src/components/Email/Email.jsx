@@ -13,6 +13,7 @@ function Email() {
 
     return (
         <layout>
+            {/* the mobile section */}
             <div
                 className='md:hidden'
                 data-aos='fade-up'
@@ -27,6 +28,7 @@ function Email() {
                     </h2>
                 </div>
                 <form
+                    // the form to fill in order to subscribe
                     action='https://formsubmit.co/sidisaidmel@gmail.com'
                     method='POST'
                     className='flex flex-col items-center'
@@ -57,7 +59,7 @@ function Email() {
                     />
                 </form>
             </div>
-
+            {/* the device section */}
             <div
                 className=' hidden md:flex justify-evenly md:gap-48 lg:gap-96 '
                 data-aos='fade-up'
@@ -73,6 +75,7 @@ function Email() {
                 </div>
                 <div className=''>
                     <form
+                        // the form to fill in order to subscribe
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'
                     >
@@ -101,7 +104,7 @@ function Email() {
                     </form>
                 </div>
             </div>
-
+            {/* your privacypolicy section */}
             <div
                 className='text-center mt-2 mb-10 text-[#212B36]'
                 data-aos='fade-up'

@@ -6,6 +6,7 @@ const N3 = () => {
         <div>
             <div className='grid grid-rows-3 grid-flow-col gap-4'>
                 <div className='row-span-3 ...'>
+                    {/* the image */}
                     <Image
                         src='/flat.png'
                         width={200}
@@ -19,6 +20,7 @@ const N3 = () => {
                 </div>
                 <div class='row-span-2 col-span-2 mt-5 ...'>
                     <form
+                        // the form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'
                     >
