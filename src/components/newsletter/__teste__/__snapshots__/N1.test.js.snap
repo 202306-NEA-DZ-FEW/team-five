@@ -1,14 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Component should render correctly 1`] = `
-<div
-  className=""
->
+<div>
   <div
-    className="grid grid-rows-3 grid-flow-col gap-4"
+    className="flex flex-row"
   >
     <div
-      className="row-span-3 ..."
+      className="hidden md:block"
     >
       <img
         alt="no image"
@@ -19,17 +17,17 @@ exports[`Button Component should render correctly 1`] = `
         onError={[Function]}
         onLoad={[Function]}
         src="/_next/image?url=%2Fheart.png&w=640&q=75"
-        srcSet="/_next/image?url=%2Fheart.png&w=384&q=75 1x, /_next/image?url=%2Fheart.png&w=640&q=75 2x"
+        srcSet="/_next/image?url=%2Fheart.png&w=256&q=75 1x, /_next/image?url=%2Fheart.png&w=640&q=75 2x"
         style={
           Object {
             "color": "transparent",
           }
         }
-        width={300}
+        width={200}
       />
     </div>
     <div
-      className="col-span-2 text-xl  ..."
+      className="p-10 text-[#212B36]"
     >
       <b>
         join our newsletter to learn more
@@ -37,37 +35,23 @@ exports[`Button Component should render correctly 1`] = `
       <h1>
         We need you to stop hunger!
       </h1>
-    </div>
-    <div
-      class="row-span-2 col-span-2 mt-5 ..."
-    >
       <form
         action="https://formsubmit.co/sidisaidmel@gmail.com"
+        className="mt-10"
         method="POST"
       >
         <input
+          className="pl-2 mr-5 h-9 border rounded-sm mb-3"
           name="name"
-          placeholder="name"
+          placeholder="Name"
           required={true}
-          style={
-            Object {
-              "border": "1px solid black",
-              "textAlign": "center",
-            }
-          }
           type="text"
         />
         <input
+          className="pl-2 mr-5 h-9 border rounded-sm"
           name="email"
-          placeholder="email"
+          placeholder="E-mail"
           required={true}
-          style={
-            Object {
-              "border": "1px solid black",
-              "marginLeft": "20px",
-              "textAlign": "center",
-            }
-          }
           type="email"
         />
         <input
@@ -76,15 +60,7 @@ exports[`Button Component should render correctly 1`] = `
           value="New submission!"
         />
         <button
-          style={
-            Object {
-              "backgroundColor": "green",
-              "color": "white",
-              "marginLeft": "10px",
-              "padding": "2px",
-              "width": "200px",
-            }
-          }
+          className="bg-[#20DC49] text-white px-16  font-semibold mt-3 h-9 rounded-sm w-48"
           type="submit"
         >
           Send
