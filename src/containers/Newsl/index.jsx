@@ -1,11 +1,11 @@
 import Cookies from "js-cookie";
 import React from "react";
 import { useEffect, useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
 
 import N1 from "@/components/newsletter/N1";
 import N2 from "@/components/newsletter/N2";
 import N3 from "@/components/newsletter/N3";
-
 const Newsl = () => {
     const [showNewsletter, setShowNewsletter] = useState(false);
     const closeNewsletter = () => {
@@ -43,10 +43,10 @@ const Newsl = () => {
                 <div className='fixed inset-0 flex items-center justify-center z-50'>
                     <div className='bg-white bg-opacity-30 backdrop-blur-md backdrop-opacity-70 border rounded-lg p-5 relative'>
                         <button
-                            className='absolute top-2 right-2 text-white hover-text-gray-800'
+                            className='absolute top-2 right-2 text-[#212B36]  text-2xl'
                             onClick={closeNewsletter}
                         >
-                            Close
+                            <IoCloseOutline />
                         </button>
                         <RandomNewsletter />
                     </div>

@@ -27,14 +27,14 @@ const N2 = () => {
                             name='name'
                             placeholder='Name'
                             required
-                            className='pl-2 mr-5 h-8 border rounded-sm m'
+                            className='pl-2 mr-5 h-9 border rounded-sm mb-3'
                         />
                         <input
                             type='email'
                             name='email'
                             placeholder='E-mail'
                             required
-                            className='pl-2 mr-5 h-8 border rounded-sm mt-1'
+                            className='pl-2 mr-5 h-9 border rounded-sm'
                         />
                         <input
                             type='hidden'
@@ -43,7 +43,7 @@ const N2 = () => {
                         />
                         <button
                             type='submit'
-                            className='bg-[#20DC49] text-white px-16 py-1 font-semibold mt-3 rounded-sm w-48'
+                            className='bg-[#20DC49] text-white px-16  font-semibold mt-3  h-9 rounded-sm w-48'
                         >
                             Send
                         </button>
