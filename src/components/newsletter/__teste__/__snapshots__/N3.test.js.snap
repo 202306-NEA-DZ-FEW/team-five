@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should render correctly 1`] = `
+<div>
+  <div
+    className="flex flex-row"
+  >
+    <div
+      className="hidden md:block"
+    >
+      <img
+        alt="no image"
+        data-nimg="1"
+        decoding="async"
+        height={200}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fflat.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fflat.png&w=256&q=75 1x, /_next/image?url=%2Fflat.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={200}
+      />
+    </div>
+    <div
+      className="p-10 text-[#212B36]"
+    >
+      <b>
+        join our newsletter to learn more
+      </b>
+      <h1>
+        We need you to stop hunger!
+      </h1>
+      <form
+        action="https://formsubmit.co/sidisaidmel@gmail.com"
+        className="mt-10"
+        method="POST"
+      >
+        <input
+          className="pl-2 mr-5 h-9 border rounded-sm mb-3"
+          name="name"
+          placeholder="Name"
+          required={true}
+          type="text"
+        />
+        <input
+          className="pl-2 mr-5 h-9 border rounded-sm"
+          name="email"
+          placeholder="E-mail"
+          required={true}
+          type="email"
+        />
+        <input
+          name="_subject"
+          type="hidden"
+          value="New submission!"
+        />
+        <button
+          className="bg-[#20DC49] text-white px-16  font-semibold mt-3 h-9 rounded-sm w-48"
+          type="submit"
+        >
+          Send
+        </button>
+        <input
+          name="_autoresponse"
+          type="hidden"
+          value="Successfully subscribed"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,6 @@
 import AOS from "aos";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React, { useEffect } from "react";
 
@@ -66,12 +67,12 @@ function Sponsor() {
                     <h1 className='text-5xl mt-30 font-bold'>{t("joinus")}</h1>
                     <p className='md:text-xl  text-base mt-10'>{t("disc")}</p>
 
-                    <button
+                    <Link
                         href='/auth'
                         className='py-2 px-5 lg:px-10  w-44 font-semibold shadow-md hover:bg-green-600  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-10 mr-10 mb-10 text-lg md:text-xl'
                     >
                         {t("donation")} ❤
-                    </button>
+                    </Link>
                 </div>
             </div>
         </>

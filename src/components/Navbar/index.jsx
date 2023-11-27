@@ -80,7 +80,7 @@ function Navbar() {
                         <img src='/Logo.svg' alt='Logo' className='h-[55px]' />
                     </Link>
                     <div className='md:flex mx-auto justify-items-start text-slate-100 hover:text-gray-500 text-xl font-bold md:text-2xl hidden'>
-                        <Link href='/home'>
+                        <Link href='/'>
                             <img
                                 src='/LogoFood.svg'
                                 alt='LogoFood'
@@ -96,12 +96,12 @@ function Navbar() {
                             {t("navbar.home")}
                         </p>
                     </Link>
-                    <Link href='/Coupons'>
+                    <Link href='/coupons'>
                         <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                             {t("navbar.coupons")}
                         </p>
                     </Link>
-                    <Link href='/Blog'>
+                    <Link href='/blog'>
                         <p className='text-slate-100 bg-[#43AFD6] py-5 px-5 hover-bg-[#43acd6]'>
                             {t("navbar.blog")}
                         </p>
@@ -111,7 +111,7 @@ function Navbar() {
                     {userInfo ? (
                         <Profile />
                     ) : (
-                        <Link href='Loggin'>
+                        <Link href='auth'>
                             <img src='/admin.svg' alt='admin' />
                         </Link>
                     )}
