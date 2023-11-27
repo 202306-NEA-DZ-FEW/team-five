@@ -8,7 +8,7 @@ export default function GoBack() {
         <Link
             className='text-center font-bold p-2 pr-8 pl-8'
             type='button'
-            href='/Coupons'
+            href='/coupons'
         >
             {t("success.back")}
         </Link>

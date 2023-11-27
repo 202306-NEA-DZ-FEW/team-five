@@ -3,7 +3,7 @@
 exports[`ButtonBack Component should render correctly 1`] = `
 <a
   className="text-center font-bold p-2 pr-8 pl-8"
-  href="/Coupons"
+  href="/coupons"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onTouchStart={[Function]}
