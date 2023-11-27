@@ -4,9 +4,8 @@ import React from "react";
 const N3 = () => {
     return (
         <div>
-            <div className='grid grid-rows-3 grid-flow-col gap-4'>
-                <div className='row-span-3 ...'>
-                    {/* the image */}
+            <div className='flex flex-row'>
+                <div className='hidden md:block'>
                     <Image
                         src='/flat.png'
                         width={200}
@@ -14,36 +13,28 @@ const N3 = () => {
                         alt='no image'
                     />
                 </div>
-                <div className='col-span-2 text-xl  ...'>
+                <div className='p-10 text-[#212B36]'>
                     <b>join our newsletter to learn more</b>
                     <h1>We need you to stop hunger!</h1>
-                </div>
-                <div class='row-span-2 col-span-2 mt-5 ...'>
+
                     <form
-                        // the form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'
+                        className='mt-10'
                     >
                         <input
                             type='text'
                             name='name'
-                            placeholder='name'
+                            placeholder='Name'
                             required
-                            style={{
-                                border: "1px solid black",
-                                textAlign: "center",
-                            }}
+                            className='pl-2 mr-5 h-9 border rounded-sm mb-3'
                         />
                         <input
                             type='email'
                             name='email'
-                            placeholder='email'
+                            placeholder='E-mail'
                             required
-                            style={{
-                                border: "1px solid black",
-                                marginLeft: "20px",
-                                textAlign: "center",
-                            }}
+                            className='pl-2 mr-5 h-9 border rounded-sm'
                         />
                         <input
                             type='hidden'
@@ -52,13 +43,7 @@ const N3 = () => {
                         />
                         <button
                             type='submit'
-                            style={{
-                                marginLeft: "10px",
-                                padding: "2px",
-                                width: "200px",
-                                backgroundColor: "green",
-                                color: "white",
-                            }}
+                            className='bg-[#20DC49] text-white px-16  font-semibold mt-3 h-9 rounded-sm w-48'
                         >
                             Send
                         </button>
