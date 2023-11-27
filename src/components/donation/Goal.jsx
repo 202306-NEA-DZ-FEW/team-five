@@ -15,9 +15,12 @@ const Goal = () => {
     return (
         <div className='overflow-x-hidden'>
             <center className='mt-10'>
+                {/* THE TITLE */}
                 <b className='text-[#212B36] text-5xl '>{t("goal")}</b>
             </center>
             <div
+                // our goals
+
                 className='grid grid-cols-4 gap-40  flex-wrap'
                 style={{
                     textAlign: "center",
@@ -97,7 +100,9 @@ const Goal = () => {
                         height: "auto",
                     }}
                     data-aos='fade-right'
+                    // what we are working on
                 >
+                    {/* the image */}
                     <Image
                         src='/Give.png'
                         width={800}
@@ -115,6 +120,7 @@ const Goal = () => {
                 >
                     <div style={{ fontSize: "20px", marginTop: "20px" }}>
                         <b className='text-[#212B36] '>
+                            {/* the working to gether text */}
                             {t("WorkingtogethertoendHunger")}
                         </b>
                     </div>

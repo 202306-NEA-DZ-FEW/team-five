@@ -3,6 +3,7 @@ import React from "react";
 
 const N2 = () => {
     return (
+        // the image
         <div>
             <div className='flex flex-row'>
                 <div className='hidden md:block'>
@@ -18,6 +19,7 @@ const N2 = () => {
                     <h1>We need you to stop hunger!</h1>
 
                     <form
+                        // the form
                         action='https://formsubmit.co/sidisaidmel@gmail.com'
                         method='POST'
                         className='mt-10'
