@@ -1,0 +1,23 @@
+{
+  "cart":{
+    "title": "Cart :",
+    "items": "All Coupons :",
+    "item": "Items",
+    "reset": "Reset Cart",
+    "yourBag": "Your Bag :",
+    "total": "Total",
+    "taxes": "Taxes",
+    "totalAmount": "Total Amount",
+    "totalPrice": "Total Price",
+    "checkout": "Checkout"
+  },
+  "couponCard": {
+    "price": "Price: ",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "total": "Total :",
+    "coupon": "coupon",
+    "filter": "Filter by price",
+    "reset": "Reset Filter"
+  }
+}

@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Step Component should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#F9FAFB",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "gap": "20px",
+      }
+    }
+  />
+  <center
+    className="mt-20 text-[#212B36]"
+  >
+    <b
+      style={
+        Object {
+          "fontSize": "50px",
+        }
+      }
+    >
+      donationprocess
+    </b>
+  </center>
+  <br />
+  <div
+    className="grid grid-cols-4 gap-40 flex-wrap"
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+        "marginTop": "20px",
+        "textAlign": "center",
+        "textAlignLast": "center",
+      }
+    }
+  >
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        alt="this is an image"
+        data-nimg="1"
+        decoding="async"
+        height={400}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fphone.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fphone.png&w=384&q=75 1x, /_next/image?url=%2Fphone.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={300}
+      />
+      <div>
+        <b>
+          <center
+            className="text-[23px] font-bold text-[#212B36]"
+          >
+            step
+            1
+          </center>
+        </b>
+        <p
+          className="text-[#212B36]"
+        >
+          Donatorbuythecoupon
+          <br />
+           
+          inthewebsite
+        </p>
+      </div>
+    </div>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        alt="this is an image"
+        data-nimg="1"
+        decoding="async"
+        height={400}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fpeople.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fpeople.png&w=384&q=75 1x, /_next/image?url=%2Fpeople.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={300}
+      />
+      <div>
+        <b>
+          <center>
+            <b
+              className="text-[23px] font-bold text-[#212B36]"
+            >
+              step
+               2
+            </b>
+          </center>
+        </b>
+        <p
+          className="text-[#212B36]"
+        >
+          thepersoninneedcan
+          <br />
+           
+          eatwithoutaskingin
+          <br />
+           
+          anyavailableRestaurant
+        </p>
+      </div>
+    </div>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        alt="this is an image"
+        data-nimg="1"
+        decoding="async"
+        height={400}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Ffood.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Ffood.png&w=384&q=75 1x, /_next/image?url=%2Ffood.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={300}
+      />
+      <div>
+        <center>
+          <b
+            className="text-[23px] font-bold text-[#212B36]"
+          >
+            step
+             3
+          </b>
+        </center>
+        <p
+          className="mb-20 text-[#212B36]"
+        >
+          theRestaurantdelete
+           
+          <br />
+          theusedcouponinthe
+          <br />
+          website
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,22 @@
+{
+    "payment": {
+        "paymentDetails": "Payment Details",
+        "title": "Restaurants Bought From",
+        "donoAmount": "Donation Amount",
+        "donoInfo": "Donor Information",
+        "persDonation": "Personal Donation",
+        "orgDonation": "Organization Donation",
+        "name": "Name",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "orgName": "Organization Name",
+        "paymentInfo": "Payment Information",
+        "creditCard": "Credit Card",
+        "paypal": "PayPal",
+        "cardHolderName": "Card Holder Name",
+        "expiryMonth": "Expiry MM",
+        "expiryYear": "Expiry YY",
+        "cvv": "CVV",
+        "thanks": "THANK YOU FOR YOUR DONATION ❤️"
+    }
+}

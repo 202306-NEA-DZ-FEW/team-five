@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component should render correctly 1`] = `
+<div
+  className="relative z-[2000] inline-block text-left "
+>
+  <div>
+    <button
+      className="flex items-center space-x-2 text-white font-semibold focus:outline-none"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="icon"
+        className="w-10 h-10  rounded-full"
+        src="/admin.svg"
+      />
+    </button>
+  </div>
+</div>
+`;

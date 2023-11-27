@@ -1,0 +1,28 @@
+{
+  "banner": {
+    "title":"Let`s make an",
+    "titleStyled":"impact",
+    "description": "Together we can fight poverty and stop the hunger around us. Your donation is the shield to protect the poor from suffering.",
+    "title1": "Your help",
+    "title2":"Right place",
+    "title3":"Your Donation",
+    "title4":"Our valunteers",
+    "description1":"By your generous help we will stand together against poverty and hunger, and it is appreciated.",
+    "description2":"We are the right choice for your donation. We will guarantee your donation reach the right place.",
+    "description3":"Your donation will shape your smile and make poor people happy. Don`t underestimate your donation.",
+    "description4":"We have the elite as a volunteers, they know what they are doing and they value what you wish for."
+  },
+  "cards":{
+    "title":"Restaurants",
+    "select":"Select",
+    "selected":"Selected",
+   "placeholder":"Custom amount",
+   "addTocart":"Add to Cart"
+  },
+  "alert":{
+    "alert1":"You need to choose a valid amount of money you want to donate.",
+    "alert2":"You need to choose the amount of money you want to donate.",
+    "alert3":"Please, the donation needs to be $5 or more."
+  }
+
+}

@@ -4,3 +4,8 @@
 export default function hello(req, res) {
     res.status(200).json({ name: "api is working" });
 }
+
+// another api
+// export async function GET(request) {
+//     return new Response("Hello, Next.js!");
+// }

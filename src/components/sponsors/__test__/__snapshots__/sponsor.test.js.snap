@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sponsor Component should render correctly 1`] = `
+Array [
+  <div>
+    <center
+      className="pt-10 "
+    >
+      <b
+        className="text-[#212B36]"
+        style={
+          Object {
+            "fontSize": "50px",
+          }
+        }
+      >
+        Oursponsor
+      </b>
+    </center>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "justifyContent": "space-around",
+        }
+      }
+    >
+      <img
+        alt="image"
+        data-nimg="1"
+        decoding="async"
+        height={30}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2FBurger.png&w=640&q=75"
+        srcSet="/_next/image?url=%2FBurger.png&w=256&q=75 1x, /_next/image?url=%2FBurger.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+            "marginTop": "40px",
+          }
+        }
+        width={200}
+      />
+      <img
+        alt="image"
+        data-nimg="1"
+        decoding="async"
+        height={30}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fkfc.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fkfc.png&w=256&q=75 1x, /_next/image?url=%2Fkfc.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+            "marginTop": "40px",
+          }
+        }
+        width={200}
+      />
+      <img
+        alt="image"
+        data-nimg="1"
+        decoding="async"
+        height={30}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fchicken.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fchicken.png&w=256&q=75 1x, /_next/image?url=%2Fchicken.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+            "marginTop": "40px",
+          }
+        }
+        width={200}
+      />
+      <img
+        alt="image"
+        data-nimg="1"
+        decoding="async"
+        height={30}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fpizza.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fpizza.png&w=256&q=75 1x, /_next/image?url=%2Fpizza.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+            "marginTop": "40px",
+          }
+        }
+        width={200}
+      />
+    </div>
+  </div>,
+  <div
+    className="flex flex-col  lg:flex-row flex-wrap bg-[#80D6F6] mt-10 justify-center items-center "
+  >
+    <div
+      className="w-1/2 flex items-center justify-start  lg:ml-10 basis-3/12"
+    >
+      <img
+        alt="image"
+        height={20}
+        src="/comm.png"
+        width={300}
+      />
+    </div>
+    <div
+      className="w-1/2 text-white mt-10 basis-2/3 lg:p-20 flex flex-col gap-5"
+    >
+      <h1
+        className="text-5xl mt-30 font-bold"
+      >
+        joinus
+      </h1>
+      <p
+        className="md:text-xl  text-base mt-10"
+      >
+        disc
+      </p>
+      <a
+        className="py-2 px-5 lg:px-10  w-44 font-semibold shadow-md hover:bg-green-600  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-10 mr-10 mb-10 text-lg md:text-xl"
+        href="/auth"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        donation
+         ❤
+      </a>
+    </div>
+  </div>,
+]
+`;

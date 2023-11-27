@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Goal Component should render correctly 1`] = `
+<div
+  className="overflow-x-hidden"
+>
+  <center
+    className="mt-10"
+  >
+    <b
+      className="text-[#212B36] text-5xl "
+    >
+      goal
+    </b>
+  </center>
+  <div
+    className="grid grid-cols-4 gap-40  flex-wrap"
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+        "marginTop": "50px",
+        "textAlign": "center",
+        "textAlignLast": "center",
+      }
+    }
+  >
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        alt="this is an image "
+        data-nimg="1"
+        decoding="async"
+        height={300}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Ficon.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Ficon.png&w=256&q=75 1x, /_next/image?url=%2Ficon.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={250}
+      />
+      <div>
+        <center>
+          <b
+            className="text-[#212B36] "
+            style={
+              Object {
+                "fontSize": "40px",
+              }
+            }
+          >
+            NO
+            <br />
+            POVERTY
+          </b>
+        </center>
+      </div>
+    </div>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        alt="this is an image"
+        data-nimg="1"
+        decoding="async"
+        height={300}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fsoupe.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fsoupe.png&w=256&q=75 1x, /_next/image?url=%2Fsoupe.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={250}
+      />
+      <div>
+        <center>
+          <b
+            className="text-[#212B36] "
+            style={
+              Object {
+                "fontSize": "40px",
+              }
+            }
+          >
+            ZERO
+            <br />
+            HUNGER
+          </b>
+        </center>
+      </div>
+    </div>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        alt="this is an image"
+        data-nimg="1"
+        decoding="async"
+        height={300}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fperson.png&w=640&q=75"
+        srcSet="/_next/image?url=%2Fperson.png&w=256&q=75 1x, /_next/image?url=%2Fperson.png&w=640&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={250}
+      />
+      <div
+        className=""
+      >
+        <center
+          className=""
+        >
+          <b
+            className="text-[#212B36] "
+            style={
+              Object {
+                "fontSize": "40px",
+              }
+            }
+          >
+            GOOD
+            <br />
+            HEALTH
+          </b>
+        </center>
+      </div>
+    </div>
+  </div>
+  <div
+    className="flex flex-col md:flex-row items-center justify-center gap-4 ml-20 mr-20"
+  >
+    <div
+      className="md:w-35"
+      data-aos="fade-right"
+      style={
+        Object {
+          "height": "auto",
+          "width": "100%",
+        }
+      }
+    >
+      <img
+        alt="this is an image"
+        data-nimg="1"
+        decoding="async"
+        height={200}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2FGive.png&w=1920&q=75"
+        srcSet="/_next/image?url=%2FGive.png&w=828&q=75 1x, /_next/image?url=%2FGive.png&w=1920&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={800}
+      />
+    </div>
+    <div
+      className="md:w-70"
+      data-aos="fade-left"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "fontSize": "20px",
+            "marginTop": "20px",
+          }
+        }
+      >
+        <b
+          className="text-[#212B36] "
+        >
+          WorkingtogethertoendHunger
+        </b>
+      </div>
+      <div>
+        <p
+          className="text-[#212B36] "
+        >
+          working
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedbackForm Component should render correctly 1`] = `
+<div>
+  <div
+    className="Toastify"
+  />
+  <div
+    className="absolute bottom-6 right-2 p-2 rounded-l-lg rounded-t-lg bg-green-500 hover:bg-green-400 shadow-md hover:shadow-lg text-white"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      error.feedback
+    </button>
+  </div>
+</div>
+`;
