@@ -126,13 +126,16 @@ Array [
       >
         disc
       </p>
-      <button
+      <a
         className="py-2 px-5 lg:px-10  w-44 font-semibold shadow-md hover:bg-green-600  focus:ring-opacity-75 rounded-full bg-[#20DC49] mt-10 mr-10 mb-10 text-lg md:text-xl"
         href="/auth"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         donation
          ❤
-      </button>
+      </a>
     </div>
   </div>,
 ]
