@@ -34,7 +34,7 @@
         "i18next": "^21.9.0",
         "js-cookie": "^3.0.5",
         "matchmedia-polyfill": "^0.3.2",
-        "next": "^13.5.3",
+        "next": "^16.2.6",
         "next-i18next": "^11.2.2",
         "next-share": "^0.27.0",
         "react": "^18.2.0",
